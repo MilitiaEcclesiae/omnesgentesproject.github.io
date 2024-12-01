@@ -1,0 +1,101 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+
+const metadata = {
+   title: 'ofrece-misas',
+ };
+---
+
+ <!--- ref: 
+https://donar.ayudaalaiglesianecesitada.org/
+https://www.ayudaalaiglesianecesitada.org/herencias-y-legados
+--> 
+
+
+
+
+  <Layout metadata={metadata}>
+<!-- Image bg, 
+OFRECE UNA MISA
+¿Imaginas mayor acto de amor que la celebración de una Santa Misa en acción de gracias, para pedir ayuda o para interceder ante Dios por quien necesita consuelo, fortaleza y esperanza?    
+Si solicitas Misas a ACN, intercederás por los tuyos, por tus propias intenciones y sostendrás a la Iglesia que sufre pobreza, discriminación y persecución en el mundo. -->
+
+<!-- payment system -->
+
+<Content
+isReversed
+items={[
+  {
+    title:"La Santa Misa tiene un valor infinito, ¿por quién la quieres ofrecer?",
+    description: 
+"<p>¡Hay tantos motivos por los que pedir y tantos por los que dar gracias! Puedes ofrecer Misas por tus difuntos, por las almas del purgatorio, por la curación de tus enfermos, por aniversarios y cumpleaños, por celebraciones (bautizo, comunión, confirmación), por los matrimonios en crisis, por la situación laboral de familiares y amigos, por los exámenes de tus hijos, por la conversión a la fe de los nuestros, por las vocaciones y la santidad de los sacerdotes. \n\n </p> <p>Por nuestra Iglesia, por los cristianos perseguidos, por la paz en el mundo… La celebración de la Eucaristía es la mayor obra de misericordia espiritual, el regalo más valioso que puedes hacer a los demás.</p> ",
+    callToAction: {
+      target: '_blank',
+      text: 'OFRECE UNA MISA POR TUS INTENCIONES »',
+      href: '#',
+      icon: 'tabler:download',
+    }
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+/> 
+
+<Content
+isAfterContent
+items={[
+  {
+    title:"Con una Misa ayudas a un sacerdote y a su comunidad",
+    description:"Las Misas que solicitas a través de Ayuda a la Iglesia Necesitada, las celebran sacerdotes sin recursos en países de guerra, escasez, discriminación o persecución religiosa. ¿Imaginas que en la selva del Amazonas, en el altiplano boliviano, en plena guerra de Ucrania o en Tierra Santa, un sacerdote celebre una Santa Misa por tus intenciones o las de los tuyos?  ¡Tú puedes hacerlo posible! /n El donativo o estipendio de Misa que haces cuando encargas la celebración de una Eucaristía se convierte en auténtica ayuda de emergencia para el sacerdote en cuestión. /n Solo con tu ayuda miles de sacerdotes podrán disponer de los recursos mínimos (alimento, vivienda, asistencia médica y medicinas)  para sobrevivir y seguir siendo el sustento físico y espiritual de su comunidad. En ocasiones también destinan los estipendios a obras de caridad con sus feligreses, actividades pastorales y gastos en su parroquia.",
+    callToAction: {
+      target: '_blank',
+      text: 'OFRECE UNA MISA POR TUS INTENCIONES »',
+      href: '#',
+      icon: 'tabler:download',
+    }
+  },
+]}
+image={{
+  src: '',
+  alt: 'Colorful Image',
+  loading: '',
+}}
+/> 
+
+<!-- quotation with image as bg -->
+
+<Content
+isReversed
+items={[
+  {
+    title:"Un Bien para toda la Iglesia",
+    description: 
+"<p>Tu estipendio de Misa es un bien inmenso para toda la Iglesia universal pues gracias a ti, el cristianismo permanece en aquellos lugares donde no tiene recursos, o donde es minoría y corre peligro de desaparecer. Cada Misa que pides es luz en la oscuridad para muchos.</p> ",
+    callToAction: {
+      target: '_blank',
+      text: 'OFRECE UNA MISA »',
+      href: '#',
+      icon: 'tabler:download',
+    }
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+/>
+
+<!-- 
+Tipos de Misas
+
+image w/bg quotations -->
+
+</Layout>
+
+

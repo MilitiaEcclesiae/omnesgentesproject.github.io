@@ -1,0 +1,221 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import BgImagewithText from '~/components/common/BgImagewithText.astro';
+import Features from '~/components/widgets/Features.astro';
+import { getBlogPermalink } from '~/utils/permalinks';
+
+const metadata = {
+   title: 'Voluntario',
+ };
+---
+  <Layout metadata={metadata}>
+
+    <div class="space-y-8">
+      <!-- First Instance -->
+      <BgImagewithText
+        backgroundImage="src/assets/images/HEAD-COLABORA-VOD.jpg"
+        bgSize="91%"
+        bgOpacity="1"
+        title={"COLABORA"}
+        description1={`
+          SE PARTE DE LA MISION! 
+        `}
+        description2={`
+          TODOS SOMOS MISIONEROS!
+        `}
+      />
+    </div>
+
+<Content
+isAfterContent
+items={[
+  {
+    title:"¿QUÉ ES SER UN MISIONERO ÉPICO?",
+    description:"Los Misioneros del Omnes Gentes Project (OGP) predican el Evangelio en los lugares más desafiantes: la sabana, el hielo, la selva o las montañas. ¡Viven expediciones apostólicas emocionantes, hasta que cada nación sea ganada por Dios!",
+  },
+  {
+    description:"Entrenados para adaptarse y superar cualquier obstáculo, los misioneros del OGP son dedicados y resueltos a orar y predicar hasta ganar almas para Cristo. Ya sea a través de predicación directa, la construcción de capillas y escuelas, o la ayuda humanitaria, su misión no solo transforma vidas, sino que sigue impactando las comunidades incluso después de su servicio.",
+  },
+  {
+    title:"NUESTRO ESPÍRITU MISIONERO",
+    subtitle:"Espíritu Épico y de Aventura",
+    description:"Lo que diferencia a los Misioneros Épicos no es solo el entrenamiento o el equipo que usan. Lo que realmente los impulsa es un espíritu épico: un deseo profundo de alcanzar la gloria divina y cumplir con la misión de ganar almas para Cristo, sin importar los desafíos. Este espíritu se refleja en su determinación, dedicación y en su alto estándar de excelencia.",
+    callToAction: {
+      target: '_blank',
+      text: '',
+      href: '#',
+      icon: '',
+    }
+  },
+]}
+image={{
+  src: '~/assets/images/Colabora-Cuerpo-Misionero-test.jpg',
+  alt: 'Colorful Image',
+  loading: '',
+}}
+/> 
+
+<Content
+items={[
+  {
+    title:"NUESTRA MISIÓN COMO CUERPO MISIONERO CATÓLICO",
+    description:"Desde 2016, los Misioneros del OGP están comprometidos a ganar almas para Jesucristo, enfrentando desafíos en contextos de paganismo, idolatría, poligamia y territorios hostiles. A través de emocionantes expediciones apostólicas, nuestros misioneros inspiran a otros a comprometerse más profundamente en la expansión apostólica de la Iglesia. Predicamos en la sabana, el hielo, la selva y las montañas.",
+    callToAction: {
+      target: '_blank',
+      text: '¿Quieres saber más sobre nuestras misiones?',
+      href: getBlogPermalink(),
+      icon: 'tabler:book',
+    }
+  },
+]}
+image={{
+  src: '~/assets/images/Archipielago-01-300x225.jpg',
+  alt: '',
+  loading: '',
+}}
+/> 
+
+<Content
+isReversed
+items={[
+  {
+    title:"¿VOCACIÓN MISIONERA, YO?",
+    subtitle:"¿Alguna vez pensaste en ser misionero?",
+    description:"Como dijo el Papa Francisco: Quisiera animar a todos a ser portadores de la buena noticia de Cristo… Hago un llamamiento a todos aquellos que sienten la llamada del Espíritu Santo a no tener miedo y ser generosos con el Señor.",
+  },
+  {
+    title:"MISIONERO, ¿YO? ENCUENTRA TU MISIÓN",
+    subtitle:"¿Alguna vez pensaste en ser misionero?",
+    description:"El camino misionero es noble y exigente, reservado para aquellos con un corazón dispuesto a servir, superar adversidades y ganar almas para Jesucristo. Dotados por la gracia de Dios, nuestros misioneros enfrentan miedos, dudas y fatiga, llevando la luz del Evangelio a los rincones más oscuros del mundo.",
+    callToAction: {
+      target: '_blank',
+      text: 'Si sientes el llamado, ¡únete a nosotros!<br/>Envía un mensaje y un sacerdote se pondrá en contacto contigo:',
+      href: 'https://chat.whatsapp.com/CG4xxpAh8Y7FhAj2kOuNiK',
+      icon: 'tabler:brand-whatsapp',
+    }
+  },
+]}
+
+
+image={{
+  src: '~/assets/images/Colabora-Cuerpo-Misionero-02.jpg',
+  alt: '',
+  loading: '',
+}}
+/> 
+
+<div class="space-y-8">
+  <BgImagewithText
+    backgroundImage="src/assets/images/Panama-2022-06-300x225.jpg"
+    bgSize="contain"
+    bgOpacity="1"
+    title={"Como Individuales"}
+    description={`
+    `}
+  />
+</div>
+
+<Features
+id="features"
+title="¿Quieres colaborar con el OGP? "
+subtitle="Cada iniciativa es bienvenida. El OGP depende de la generosidad de voluntarios que colaboran de diversas maneras:"
+columns={3}
+items={[
+  {
+    title: 'Oraciones',
+    description: 'El poder de la oración sustenta nuestra misión',
+    icon: 'tabler:heart',
+  },
+  {
+    title: 'Talentos y Tiempo',
+    description: `Aporta tus habilidades para ayudar en nuestras iniciativas`,
+    icon: 'tabler:clock',
+  },
+  {
+    title: 'Donaciones',
+    description: 'Contribuye con recursos materiales o financieros',
+    icon: 'tabler:home',
+  },
+]}
+/>
+
+<div class="space-y-8">
+  <BgImagewithText
+    backgroundImage="src/assets/images/Voluntarios-Instituciones.jpg"
+    bgSize="100%"
+    bgOpacity="1"
+    title={"Como Instituciones y Parroquias"}
+    description={`
+    `}
+  />
+</div>
+
+<Content
+isAfterContent
+items={[
+  {
+    description:"Tu empresa, fundación o parroquia puede marcar una gran diferencia en la vida de los cristianos perseguidos y necesitados en todo el mundo. Al unirte como entidad, puedes apoyar proyectos, premios de solidaridad y programas de ayuda para aquellos que sufren por su fe.",
+  },
+  { title: "COLABORA COMO EMPRESA",
+    description:"Tu empresa o fundación tiene la oportunidad de ser una fuerza transformadora, adoptando proyectos, apoyando iniciativas de ayuda o contribuyendo a premios de solidaridad.",
+  },
+  {
+    title:"COLABORA COMO PARROQUIA",
+    description:"A través de Ayuda a la Iglesia Necesitada, tu parroquia puede acercarse a la realidad de los cristianos que sufren mediante conferencias, exposiciones, eventos benéficos y más actividades para dar visibilidad a su situación.",
+    callToAction: {
+      target: '_blank',
+      text: '',
+      href: '#',
+      icon: '',
+    }
+  },
+]}
+image={{
+  src: '~/assets/images/Adopta-Misionero-192x300.jpg',
+  alt: 'Colorful Image',
+  loading: '',
+}}
+/> 
+
+<Content
+isReversed
+items={[
+  {
+    title:"TU AYUDA MARCA LA DIFERENCIA",
+    description:"Si eres parte del consejo o patronato de una fundación, empresa o trabajas en ellas, puedes unirte a nuestra causa para apoyar a cristianos que sufren persecución, discriminación o viven en condiciones extremas en los países más necesitados del mundo.",
+  },
+  {
+    title:"Existen múltiples formas de involucrarse:",
+    description:"A través de programas de ayuda o premios a la Solidaridad en tu empresa o fundación. -Adoptando un proyecto específico para impactar de manera directa.",
+    callToAction: {
+      target: '_blank',
+      text: '¿Te interesa colaborar?<br/>Déjanos un mensaje con el objetivo social y ámbito de actuación de tu institución, y juntos encontraremos la mejor forma de colaborar para cambiar vidas.',
+      href: '#',
+      icon: 'tabler:mail',
+    }
+  },
+]}
+image={{
+  src: '~/assets/images/Panama-2022-Cronicas-07.jpg',
+  alt: 'Colorful Image',
+  loading: '',
+}}
+/> 
+
+<div class="space-y-8">
+  <BgImagewithText
+    backgroundImage="src/assets/images/Panama-2022-04.jpg"
+    bgSize="contain"
+    bgOpacity="1"
+    title={""}
+    description={`
+    `}
+  />
+</div>
+
+
+
+</Layout>
+
+

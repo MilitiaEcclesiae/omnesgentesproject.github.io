@@ -1,12 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
-import { trimSlash, getAsset } from '~/utils/permalinks';
+import { trimSlash } from '~/utils/permalinks';   //getAsset option for RSS
 import type { CallToAction } from '~/types';
 
 interface Link {
@@ -28,7 +27,7 @@ export interface Props {
   isDark?: boolean;
   isFullWidth?: boolean;
   showToggleTheme?: boolean;
-  showRssFeed?: boolean;
+//  showRssFeed?: boolean;
   position?: string;
 }
 
@@ -40,12 +39,14 @@ const {
   isDark = false,
   isFullWidth = false,
   showToggleTheme = false,
-  showRssFeed = false,
+//  showRssFeed = false,
   position = 'center',
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
+
+<!-- 2 features: Burger Menu, LangSWITCHER -->
 
 <header
   class:list={[
@@ -72,7 +73,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+        <!-- <Logo /> -->
+        <img src='Logotipo-OmnesGentesProject.png' class="h-12 mr-12" />
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
@@ -138,7 +140,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex">
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
-          {
+          <!-- {
             showRssFeed && (
               <a
                 class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
@@ -148,7 +150,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 <Icon name="tabler:rss" class="w-5 h-5" />
               </a>
             )
-          }
+          } -->
         </div>
         {
           actions?.length ? (
@@ -164,4 +166,6 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
   </div>
+  <!-- <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}  />  -->
+   <!-- <LangSwitcher /> -->
 </header>

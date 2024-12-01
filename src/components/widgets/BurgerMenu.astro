@@ -1,0 +1,34 @@
+---
+const { isMenuOpen, toggleMenu } = Astro.props;
+---
+
+<!-- Burger Menu -->
+<div class="burger-menu">
+  <button class="burger-icon" aria-label="Toggle menu" on:click={toggleMenu}>
+    <span class={isMenuOpen ? 'line line-cross' : 'line'}></span>
+    <span class={isMenuOpen ? 'line line-cross' : 'line'}></span>
+    <span class={isMenuOpen ? 'line line-cross' : 'line'}></span>
+  </button>
+
+  <!-- Menu content -->
+  <div class={`menu-content ${isMenuOpen ? 'open' : ''}`}>
+    <div class="menu-background"></div>
+    <nav class="menu-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="search" placeholder="Search..." />
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ interface Props extends Widget {
   tagline?: string;
   callToAction?: CallToAction;
   actions?: string | CallToAction[];
+  image?: string;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   actions = await Astro.slots.render('actions'),
+  image, 
 
   id,
   isDark = false,
@@ -25,10 +27,12 @@ const {
 } = Astro.props;
 ---
 
+<!-- add image as background -->
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
     class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
-  >
+    style={image? 'background-image:url($image)':''}
+    >
     <Headline
       title={title}
       subtitle={subtitle}

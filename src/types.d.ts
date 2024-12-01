@@ -110,6 +110,7 @@ export interface Headline {
   subtitle?: string;
   tagline?: string;
   classes?: Record<string, string>;
+  backgroundImage?: string;
 }
 
 interface TeamMember {
@@ -129,11 +130,13 @@ interface Social {
 export interface Stat {
   amount?: number | string;
   title?: string;
+  titleverb?: string;
   icon?: string;
 }
 
 export interface Item {
   title?: string;
+  subtitle?: string;
   description?: string;
   icon?: string;
   classes?: Record<string, string>;
@@ -281,6 +284,8 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isAfterContent?: boolean;
   callToAction?: CallToAction;
+  backgroundImage?: string;  
+  backgroundOpacity?: number; 
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}

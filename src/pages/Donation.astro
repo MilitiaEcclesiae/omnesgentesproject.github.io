@@ -1,0 +1,221 @@
+---
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features2.astro';
+import Contact2 from '~/components/widgets/Contact.astro';
+import { YouTube } from 'astro-embed';
+const metadata = {
+   title: 'Donation',
+ };
+---
+
+ <!--- ref: 
+https://donar.ayudaalaiglesianecesitada.org/
+https://www.ayudaalaiglesianecesitada.org/herencias-y-legados
+//(herencias y legados)
+--> 
+
+
+
+  <Layout metadata={metadata}>
+
+<!-- image with words and payment system:
+Con tu ayuda
+servimos a la
+Iglesia necesitada
+en todo el mundo -->
+
+<!-- Hero -->
+<YouTube id="Ha-nvzGxyCg" />
+<style is:inline>
+  lite-youtube {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+</style>
+
+    <Content
+isAfterContent
+items={[
+  {
+    title:"Cada año, financiamos alrededor de 5.000 proyectos pastorales y de emergencia humanitaria en 140 países",
+    description:"Estamos donde la Iglesia católica necesita ayuda muy urgente. Apoyamos a diócesis enteras verdaderamente necesitadas en el mundo y a congregaciones religiosas sin distinción en su labor evangelizadora. Apoyamos también a los cristianos perseguidos en tantos países, a causa de su fe en Jesucristo y a miles de personas en situación de emergencia, amparadas por las iglesias locales.",
+    callToAction: {
+      target: '_blank',
+      text: 'DONA AHORA',
+      href: '#',
+      icon: 'tabler:download',
+    }
+  },
+]}
+image={{
+  src: '',
+  alt: 'Colorful Image',
+  loading: '',
+}}
+/> 
+
+<!-- insert images -->
+
+
+<Features
+id="features"
+title="El 100% de los proyectos que desarrolla ACN se sostienen gracias a los donativos"
+subtitle="La generosidad de nuestros benefactores hace posible que financiemos cada año alrededor de 5.000 proyectos de carácter pastoral (sostenimiento y formación de sacerdotes y religiosos, formación de catequistas y laicos, construcción y reconstrucción de iglesias, vehículos y medios de comunicación para la evangelización, material catequético) y excepcionalmente, ayuda de emergencia."
+columns={3}
+items={[
+  {
+    title: 'Construcción y reconstrucción de iglesias',
+    description: '',
+    icon: 'tabler:layers-union',
+  },
+  {
+    title: 'Sostenimiento de sacerdotes',
+    description: ``,
+    icon: 'tabler:artboard',
+  },
+  {
+    title: 'Formación religiosa',
+    description: '',
+    icon: 'tabler:writing',
+  },
+  {
+    title: 'Sostenimiento de religiosas',
+    description: ``,
+    icon: 'tabler:podium',
+  },
+  {
+    title: 'Formación de laicos',
+    description: ``,
+    icon: 'tabler:rocket',
+  },
+  {
+    title: 'Transportes para evangelizars',
+    description: ``,
+    icon: 'tabler:eyeglass',
+  },
+  {
+    title: 'Material catequético',
+    description: ``,
+    icon: 'tabler:eyeglass',
+  },
+  {
+    title: 'Medios de comunicación para la evangelización',
+    description: ``,
+    icon: 'tabler:eyeglass',
+  },
+  {
+    title: 'Ayuda de emergencia',
+    description: ``,
+    icon: 'tabler:eyeglass',
+  },
+]}
+/>
+    <Steps
+    title="A guided journey from plans to creativity"
+    tagline="simplified process"
+    isReversed={true}
+    items={[
+      {
+        title: 'Explore plans',
+        icon: 'tabler:number-1',
+      },
+      {
+        title: 'Select a plan',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'Sign Up / Log In',
+        icon: 'tabler:number-3',
+      },
+      {
+        title: 'Review order',
+        icon: 'tabler:number-4',
+      },
+      {
+        title: 'Enter payment details',
+        icon: 'tabler:number-5',
+      },
+      {
+        title: 'Confirmation',
+        icon: 'tabler:number-6',
+      },
+      {
+        title: 'Download and start using the template(s)',
+        icon: 'tabler:number-7',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+<!-- columns={1} -->
+  <FAQs
+  title="Frequently Asked Questions"
+  subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+  tagline="FAQs"
+  classes={{ container: 'max-w-6xl' }}     
+  items={[
+    {
+      title: '¿A quién y cómo llega tu donativo?',
+      description:
+        "Si deseas destinar tu donativo a una campaña específica, se utilizará para financiar proyectos relacionados. Si al recibir tu aporte las necesidades de esa campaña ya están cubiertas, se redirigirá a proyectos similares o a necesidades pastorales o de emergencia en el mismo país. Si no especificas un destino, se destinará a las necesidades más urgentes. En Ayuda a la Iglesia Necesitada gestionamos los donativos con la máxima transparencia, comprometidos con la confianza de nuestros benefactores y la Iglesia que sufre, nuestra razón de ser. Además, tus aportaciones pueden ser deducibles: los primeros 150 € anuales tienen una deducción del 80% (te deduces 120 €, por lo que tu donativo solo te costará 30 €). A partir de esa cantidad, la deducción es del 35%, y del 40% si el donativo es recurrente.", 
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: '¿Cómo y cuánto desgravan tus donativos?',
+      description: " Los primeros 150 € donados se desgravan al 80% (te deduces 120 €, solo te costará 30 €). A partir de esa cantidad, la deducción es del 35%, y del 40% si es recurrente. Para desgravar, indica tu nombre completo, DNI, dirección y el destino del donativo, o contacta con nosotros.",
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: '¿Qué considera Hacienda como donativo recurrente?',
+      description:
+        "Si has donado los dos años anteriores por un importe igual o superior al del año anterior, la desgravación será del 40% en todo lo que exceda los primeros 150€. Te animamos a hacer donaciones recurrentes. No olvides indicar tu nombre, DNI, dirección y el destino del donativo.",
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: '¿Problemas con tu donativo?',
+      description: "Si tienes problemas al donar, llámanos al 91 725 92 12 / 93 237 37 63 (L-V, 7:30-16 hs.) o escríbenos a info@ayudaalaiglesianecesitada.org. Si no podemos ayudarte inmediatamente, realiza una transferencia a: Santander ES74 0049 2674 59 2814342966, La Caixa ES21 2100 2415 42 0200140293. Recuerda indicar tu nombre, DNI y código postal para desgravar.",
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: '¿Quieres que sea periódico pero que no sea mensual?',
+      description: "Si quieres hacer un donativo periódico pero que no sea mensual, sino trimestral, semestral o anual, te puedes poner en contacto con nosotros a través del teléfono: 91 725 92 12 o a través del correo electrónico: info@ayudaalaiglesianecesitada.org ",
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Ventajas de hacer testamento',
+      description:
+        "Es la garantía de que se cumplirá tu voluntad. \n Evita problemas futuros o conflictos entre los herederos. Si no hay testamento, hay que hacer una declaración de herederos (procedimiento más largo, complejo y costoso) y si no hay herederos ni testamento, tu patrimonio pasará al Estado. \n Es económico, se puede modificar y es muy sencillo", 
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Confío en Ayuda a la Iglesia Necesitada porque…',
+      description:
+        "Ayuda a la Iglesia Necesitada es una organización internacional católica dedicada a la ayuda pastoral a cristianos perseguidos. No recibe ayudas públicas y su financiación proviene exclusivamente de donativos privados. Actuamos con total transparencia y nuestros informes son auditados. Consulta nuestro informe de auditoría.", 
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Trámites para incluir a Ayuda a la Iglesia Necesitada en tu testamento',
+      description:
+        "Para dejar bienes a Ayuda a la Iglesia Necesitada en tu testamento, acude a un notario y proporciona los datos de la fundación: Calle Ferrer del Río, 14, 28028 Madrid, CIF: R-2800175-H. Envíanos copia del testamento o la página relevante. Todos los datos personales serán tratados con confidencialidad y conforme a la ley.", 
+      icon: 'tabler:chevrons-right',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</FAQs>
+
+<Contact2 />
+
+
+
+</Layout>
+
+

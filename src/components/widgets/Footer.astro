@@ -25,18 +25,34 @@ export interface Props {
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
 ---
+<!--   find place to add icon and image !!!
+icon: 'tabler:mail',
+callToAction: {
+  target: '_blank',
+  text: 'Write to us',
+  href: '/',
+  variant: 'link', -->
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
-  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+   <!-- Background Image -->
+  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> 
+  <!-- <div
+  class="footer-background absolute inset-0 pointer-events-none"
+  aria-hidden="true"
+  style="background-image: url('public/OmnesVideoMAINPoster.jpg'); background-size: cover; background-position: center; opacity: 0.4"
+></div> -->
   <div
     class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
   >
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+
+      <!-- Footer Logo and Links -->
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
           <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
         </div>
         <div class="text-sm text-muted flex gap-1">
+          <img src="OGPICON.jpg" alt="OGPICON" class="w-12 h-12 mr-2" />  
           {
             secondaryLinks.map(({ text, href }, index) => (
               <>
@@ -51,6 +67,8 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
           }
         </div>
       </div>
+
+       <!-- Footer Links Section -->
       {
         links.map(({ title, links }) => (
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
@@ -74,6 +92,8 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         ))
       }
     </div>
+
+    <!-- Footer Social and Note Section -->
     <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
       {
         socialLinks?.length ? (
@@ -102,3 +122,5 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
     </div>
   </div>
 </footer>
+
+

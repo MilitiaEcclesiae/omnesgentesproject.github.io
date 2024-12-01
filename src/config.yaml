@@ -1,24 +1,24 @@
 site:
-  name: AstroWind
+  name: 'Omnes Gentes Project'  
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
-# Default SEO metadata
+# Default SEO metadata 
 metadata:
   title:
-    default: AstroWind
+    default: Omnes Gentes Project
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Suitable for Sta& Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: OGP_OFFICIALSITE
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/OGPICON.jpg'  
         width: 1200
         height: 628
     type: website
@@ -27,14 +27,14 @@ metadata:
     site: '@onwidget'
     cardType: summary_large_image
 
-i18n:
+i18n:  #update
   language: en
   textDirection: ltr
 
 apps:
   blog:
     isEnabled: true
-    postsPerPage: 6
+    postsPerPage: 7
 
     post:
       isEnabled: true
@@ -61,7 +61,7 @@ apps:
         index: false
 
     isRelatedPostsEnabled: true
-    relatedPostsCount: 4
+    relatedPostsCount: 7
 
 analytics:
   vendors:

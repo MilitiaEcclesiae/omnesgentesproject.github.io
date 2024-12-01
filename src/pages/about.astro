@@ -1,228 +1,274 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Contact from '~/components/widgets/Contact.astro';
+import Timeline from '~/components/ui/Timeline.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import TeamMember from "~/components/widgets/TeamMember.astro";
+import Content from '~/components/widgets/Content.astro';
+import BgImagewithText from '~/components/common/BgImagewithText.astro';
+import { YouTube } from 'astro-embed';
 
 const metadata = {
   title: 'About us',
 };
+
+const timelineItems = [
+  {
+    title: 'Nace QNTLC',
+    description: 'En el 2014, ...',
+    icon: 'tabler:rocket', // Changed icon to a rocket, representing the start of something (QNTLC)
+    classes: {
+      panel: 'bg-blue-50 dark:bg-blue-200 p-4 rounded-lg', // Light blue for light mode, and soft blue for dark mode
+      title: 'text-blue-800 dark:text-blue-500', // Adjusted text color
+      description: 'text-blue-600 dark:text-blue-400' // Adjusted text color
+    }
+  },
+  {
+    title: 'Nace la Orden San Elías 2016',
+    description: 'En el 2016, ',
+    //icon: 'tabler:church', // Changed to a church icon, reflecting the religious context
+    classes: {
+      panel: 'bg-green-50 dark:bg-green-200 p-4 rounded-lg', // Light green for light mode, and softer green for dark mode
+      title: 'text-green-800 dark:text-green-500',
+      description: 'text-green-600 dark:text-green-400'
+    }
+  },
+  {
+    title: 'Nace OGP en India',
+    description: 'En el 2016,',
+    icon: 'tabler:globe', // The globe icon still works here, representing international expansion
+    classes: {
+      panel: 'bg-yellow-50 dark:bg-yellow-200 p-4 rounded-lg', // Light yellow for light mode, soft yellow for dark mode
+      title: 'text-yellow-800 dark:text-yellow-500',
+      description: 'text-yellow-600 dark:text-yellow-400'
+    }
+  },
+  {
+    title: 'Nace FSA Fundación San Elías',
+    description: 'En el 2020, .',
+    icon: 'tabler:heart', // Changed to a heart icon, representing a foundation's love and mission
+    classes: {
+      panel: 'bg-pink-50 dark:bg-pink-200 p-4 rounded-lg', // Light pink for light mode, soft pink for dark mode
+      title: 'text-pink-800 dark:text-pink-500',
+      description: 'text-pink-600 dark:text-pink-400'
+    }
+  },
+  {
+    title: 'Nace FAE Familia Apostólica Eliata',
+    description: 'En el 2020, ',
+    icon: 'tabler:users', // Changed to a users icon, symbolizing the apostolic family/community
+    classes: {
+      panel: 'bg-indigo-50 dark:bg-indigo-200 p-4 rounded-lg', // Light indigo for light mode, softer indigo for dark mode
+      title: 'text-indigo-800 dark:text-indigo-500',
+      description: 'text-indigo-600 dark:text-indigo-400'
+    }
+  },
+];
+
+
+const teamMembers = [
+  {
+    name: 'Padre Federico Highton',
+    role: 'Fundador y Director OGP',
+    image: 'Pdr.F.jpeg',
+    socialLinks: {
+      mail: 'https://www.linkedin.com/in/johndoe',
+    },
+  },
+  {
+    name: 'Karla Noguez',
+    role: '',
+    image: 'Karla.jpeg',
+    socialLinks: {
+      mail: 'https://www.linkedin.com/in/janesmith',
+    },
+  },
+  {
+    name: 'Leonor Suaya de Highton',
+    role: '',
+    image: 'SuayaH.jpeg',
+    socialLinks: {
+      mail: 'https://www.linkedin.com/in/markjohnson',
+    },
+  },
+  {
+    name: 'Valeria Zimmermann',
+    role: '',
+    image: 'Valeria.jpeg',
+    socialLinks: {
+      mail: 'https://www.linkedin.com/in/markjohnson',
+    },
+  },
+];
 ---
 
+<!-- Feature: TOC  -->
+
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
+  <YouTube id="SPGdJyvXMaI" />
+  <style is:inline>
+    lite-youtube {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  </style>
+
+
+<!-- inline formating: <div style='text-align: left;'></div>; <strong>, <em>  bold&italic; <span style='color: blue;'></span> -color txt; <blockquote> and <cite></cite> -->
+
+<Features2
+  title="Anunciamos el Evangelio donde nunca antes fue escuchado"
+  subtitle="<div style='text-align: left;'>El Omnes Gentes Project (OGP) es una misión global dedicada a llevar el Evangelio a las regiones más remotas, donde el mensaje de Cristo nunca ha llegado y donde no existen comunidades católicas.  <br/><br/>Enviamos misioneros con una única misión: ganar almas para Jesús y trabajar para vivir una vida de santidad. Nuestro propósito es cumplir con el mandato de Jesús de llevar el Evangelio a todos los pueblos, <br/><br/><blockquote>como se expresa en: </br><cite>'Id y anunciad el Evangelio a todos los pueblos (Omnes Gentes), bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.'<br /> -Mt 28:19</blockquote></div>"
   >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
-    </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+ </Features2>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
-    </Fragment>
-  </Hero>
+
+ <div class="space-y-8">
+  <BgImagewithText
+    backgroundImage="/images/first-image.jpg"
+    bgSize="cover"
+    bgOpacity="0.6"
+    title="Nuestro Lema"
+    description1={`
+      'Et praedicabitur hoc evangelium regni in universo orbe in testimonium omnibus gentibus; Et tunc veniet consummatio' 'Y será predicado este Evangelio del reino en todo el mundo, para testimonio de todas las naciones, y entonces vendrá el fin'.
+                    -Mt XXIV, 14`}
+  />
+</div>
+
+<Content
+  title="¿Qué es el Omnes Gentes Project?"
+  subtitle=""
+  items={
+  [{ title: '', description: 'El Omnes Gentes Project es una iniciativa global que tiene como único objetivo realizar el primer anuncio del Evangelio en las regiones donde jamás se ha escuchado hablar de Cristo. Esta misión se realiza en colaboración con la Orden San Elías, y hemos llevado a cabo numerosas misiones en diversas partes del mundo, estableciendo comunidades de fe donde antes no existían. A través de estas misiones, buscamos cumplir el llamado de Jesús y llevar Su mensaje de esperanza y salvación.' },
+  ]  
+  }
+  image="/assets/images/about-us.jpg"
+  isReversed={true}
+  backgroundImage="/assets/images/background.jpg"  
+  backgroundOpacity={0.3}  
+/>
+<Content
+  title=""
+  subtitle=""
+  items={
+  [{ description: 'Nuestros misioneros viajan a tierras de misión para ganar almas para Jesucristo. En lugares donde nunca hubo presencia católica, los misioneros trabajan para compartir el Evangelio, fundar comunidades y preparar a las personas para una vida de santidad. Una de nuestras historias más impactantes ocurrió cuando, durante una expedición, un líder tribal escuchó el mensaje del Evangelio, se convirtió y, como signo de su fe, donó un terreno para la construcción de una iglesia católica. Hoy, ese terreno está destinado a ser la primera iglesia en esa aldea, y el proyecto sigue adelante con la esperanza de construir un lugar donde los nativos puedan adorar a Dios.' }
+  ]  
+  }
+  image="/assets/images/about-us.jpg"
+  isAfterContent={true}
+  backgroundImage="/assets/images/background.jpg"  
+  backgroundOpacity={0.3}  
+/>
+
+  <!-- Timeline component usage -->
+  <Timeline items={timelineItems} classes={{
+    container: 'max-w-4xl mx-auto my-8 px-4',
+    panel: 'bg-white shadow-lg',
+    title: 'font-semibold text-2xl',
+    description: 'text-base text-gray-700 dark:text-gray-400',
+  }} />
+
+<Content
+  title="¿Qué Hacemos?"
+  items={
+  [{ title: 'Enviamos Misioneros:', description: 'Nuestros misioneros están comprometidos con la tarea de predicar el Evangelio donde más se necesita, buscando ganar almas para Cristo.', icon: 'tabler:rocket' },
+   { title: 'Establecemos Iglesias:', description: 'En cada aldea a la que llegamos, buscamos establecer comunidades vivas y comprometidas con la fe católica.', icon: 'tabler:rocket' },
+   { title: 'Formamos Cristianos:', description: 'No solo evangelizamos, sino que también trabajamos para formar y educar en la fe a los nuevos cristianos, ayudándolos a crecer espiritualmente.', icon: 'tabler:rocket' }
+  ]  
+  }
+  image="/assets/images/about-us.jpg"
+  isReversed={true}
+  backgroundImage="/assets/images/background.jpg"  
+  backgroundOpacity={0.3}  
+/>
 
   <!-- Stats Widget ****************** -->
-
   <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
+   title="Datos 2024"
+   subtitle=""
+   stats={[
+     { titleverb:`LLEGAMOS A`, amount: '7', title: 'PAISES' },
+     { titleverb:'GRACIAS A', amount: '10K', title: 'BENEFACTORES' },
+   ]}
   />
 
-  <!-- Features3 Widget ************** -->
+  <div class="space-y-8">
+    <BgImagewithText
+      backgroundImage="/images/second-image.jpg"
+      bgSize="contain"
+      bgOpacity="0.8"
+      title="Nuestro Propósito"
+      description1={` Solo tenemos una misión: Predicar y Ganar almas.`}
+    />
+  </div>
 
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
+
+<YouTube id="mSyX2nDR6Sk" />
+<style is:inline>
+  lite-youtube {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+</style>
+
+<!-- TEAM -->
+ <h1 class="text-4xl font-bold text-center mt-8 mb-4">Meet Our Team</h1>
+ <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+   {teamMembers.map(member => (
+     <TeamMember
+       name={member.name}
+       role={member.role}
+       image={member.image}
+       socialLinks={member.socialLinks}
+     />
+   ))}
+ </div>
+
+  <Contact
+    id="form"
+    tagline="Contact"
+    title="Drop us a message today!"
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    inputs={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+        type: 'text',
+        name: 'name',
+        label: 'Name',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+        type: 'email',
+        name: 'email',
+        label: 'Email',
       },
     ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+    textarea={{
+      label: 'Message',
     }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
     }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
+    description="Our support team typically responds within 24 business hours."
   />
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
+  <div class="space-y-8">
+  <BgImagewithText
+    backgroundImage="src/assets/images/OmnesVideoMAINPoster.jpg"
+    bgSize="contain"
+    bgOpacity="1"
+    description={`El Omnes Gentes Project sigue el mandato de Cristo, llevando el Evangelio a cada rincón del mundo, con el ferviente deseo de cumplir la misión de 'hacer discípulos de todas las naciones'. Con cada paso que damos, nuestra visión se hace más clara: evangelizar las áreas donde no se conoce a Cristo, transformando vidas y comunidades en la luz del Evangelio.
+    `}
   />
+</div>
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
 </Layout>
+
+ 
+    
+
+ 

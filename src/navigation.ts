@@ -1,183 +1,113 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'SOBRE NOSOTROS',
+      href: getPermalink('/about')
+    },      
+    {
+      text: 'ACTUALIDAD',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'LAS ULTIMAS MISIONES',   
+          href: getPermalink('misiones', 'category'),
+        },
+        // {
+        //   text: 'Eventos',  //eventos/camapanas(DE ORACION etc)/actividades>>landing page   
+        //   href: getPermalink(''),
+        // },
+        {
+          text: 'TESTIMONIOS',  
+          href: getPermalink('testimonios', 'category'),
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: 'PODCAST',  
+          href: `https://www.youtube.com/channel/UCZi70I4cl1Dp1KXFEVmbIQA`,
         },
       ],
     },
     {
-      text: 'Pages',
+      text: 'COLABORA',
       links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+        {  
+          text: 'HAZ UN DONATIVO', 
+          href: getPermalink('/Donation'),
         },
         {
-          text: 'Services',
-          href: getPermalink('/services'),
+          text: 'OFRECE UNA MISA',
+          href: getPermalink('/misa'),
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: 'HAZTE VOLUNTARIO',  
+          href: getPermalink('/voluntario'),
         },
       ],
     },
     {
-      text: 'Landing',
+      text: 'SEMINARIUM',
       links: [
-        {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+        {  
+          text: 'DOMUS DISCIPULORUM', 
+          href: getPermalink('/Seminario'),
         },
         {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          text: 'SCUTUM FIDEI',  
+          href: getPermalink('/ScutumFidei'),
         },
       ],
-    },
-    {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },
-    {
-      text: 'Widgets',
-      href: '#',
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  //actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  //HOW TO ADD BURGER NAV ICON TO INCLUDE ALL??? 
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'ACTUALIDAD',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'LAS ULTIMAS MISIONES', href: getPermalink('misiones', 'category') },
+        { text: 'TESTIMONIOS', href: getPermalink('testimonios', 'category') },
+        { text: 'PODCAST', href: `https://www.youtube.com/channel/UCZi70I4cl1Dp1KXFEVmbIQA` },
       ],
     },
     {
-      title: 'Platform',
+      title: 'COLABORA',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'HAZ UN DONATIVO', href: getPermalink('/Donation') },
+        { text: 'OFRECE UNA MISA', href: getPermalink('/misa') },
+        { text: 'HAZTE VOLUNTARIO', href: getPermalink('voluntario') },
       ],
     },
     {
-      title: 'Support',
+      title: 'SEMINARIUM',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'DOMUS DISCIPULORUM', href: getPermalink(`/Seminario`) },
+        { text: 'SCUTUM FIDEI', href: getPermalink('/ScutumFidei') },
       ],
     },
   ],
-  secondaryLinks: [
+  secondaryLinks: [  
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/channel/UCZi70I4cl1Dp1KXFEVmbIQA' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/OmnesGentesProject1/' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/omnes_gentes_project/' },
+    { ariaLabel: 'Whatsapp', icon: 'tabler:brand-whatsapp', href: 'https://chat.whatsapp.com/CG4xxpAh8Y7FhAj2kOuNiK' },
+    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:contact@yourdomain.com' },
+    //    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="public/ChurchMilitiaICON.jpeg" loading="lazy"></img>
+    by <a class="text-blue-600 underline dark:text-muted" href="#">Militia+Ecclesiae</a> · All rights reserved.
   `,
 };
+
+
+
+ //specific post href: getPermalink('get-started-website-with-astro-tailwind-css', 'post')
+ //   href: getPermalink('tutorials', 'category'),
+ //   href: getPermalink('astro', 'tag'),

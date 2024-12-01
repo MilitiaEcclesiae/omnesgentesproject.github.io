@@ -1,0 +1,203 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import BgImagewithText from '~/components/common/BgImagewithText.astro';
+
+
+const metadata = {
+   title: 'material-para-rezar',
+ };
+---
+
+  <Layout metadata={metadata}>
+
+    <div class="space-y-8">
+      <BgImagewithText
+        backgroundImage="src/assets/images/shieldoffaith.jpeg"
+        bgSize="60%"
+        bgOpacity="1"
+        title={"Scutum Fidei"}
+        description1={`"Taking the shield of faith, with which you can quench all the flaming darts of the evil one." -Ephesians 6:16`}
+      />
+    </div>
+
+    <Content
+    isReversed
+    items={[
+      {
+        title:"Este Adviento reza con el Santo de cada día para preparar la venida del Señor",
+        description:"Queremos compartir contigo este calendario de Adviento. Un material para rezar y para preparar la venida del Señor con el Santo de cada día, una oración y un propósito. Déjanos tus datos y descárgalo.",
+        callToAction: {
+          target: '_blank',
+          text: 'DESCARGA PDF »',
+          href: '#',
+          icon: 'tabler:download',
+        }
+      },
+    ]}
+    image={{
+      src: '~/assets/images/advent.jpeg',
+      alt: 'Colorful Image',
+      loading: '',
+    }}
+    /> 
+
+    <!-- bg image -->
+    <Features3
+    title="Manas Espirituales"  
+    subtitle=""
+    columns={3}
+    items={[
+      {
+        title: 'Rosario',
+        description: 'Cirements.',
+        callToAction: {
+        target: '_blank',
+        text: 'DESCARGA PDF »',
+        href: "/downloads/item2.zip",
+        icon: 'tabler:download',
+      }
+      },
+      {
+        title: 'Santa Biblia Catolica',
+        description: 'Clearl charges',
+        callToAction: {
+        target: '_blank',
+        text: 'DESCARGA PDF »',
+        href: "/downloads/item2.zip",
+        icon: 'tabler:download',
+      }
+      },
+      {
+        title: 'Catechismo',
+        description: 'Secure paysactions.',
+        callToAction: {
+        target: '_blank',
+        text: 'DESCARGA PDF »',
+        href: "/downloads/item2.zip",
+        icon: 'tabler:download',
+      }
+      },
+      {
+        title: 'Manual Misionero del Omnes Gentes Project',
+        description: '',
+        callToAction: {
+        target: '_blank',
+        text: 'DESCARGA PDF »',
+        href: "/https://drive.google.com/drive/folders/1s4baE1H9x78iRM-RwwLYemMqdvqdYRKZ",
+        icon: 'tabler:download',
+      }
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <div class="space-y-8">
+    <BgImagewithText
+      backgroundImage="src/assets/images/publishment.jpeg"
+      bgSize="100%"
+      bgOpacity="1"
+      title={"BIBLIOGRAFÍA"}
+      description1={``}
+    />
+  </div>
+
+
+  <Content
+  isReversed
+  items={[
+    {
+      title:"Tinieblas Tibetanas",
+      subtitle:"Pdre.Federico Highton",
+      description:"El lector que no tiene entre sus manos un libro de diálogo, sino un libro profundamente crítico. No espere, pues, el lector encontrar aquí tentativas superficiales de conciliación, bajo las cuales a menudo, si no siempre, se enmascaran las debilidades de un perfil psicológico tendencialmente complaciente: lo que el lector encontrará es una verdadera puesta en luz o iluminación cruda, directa, llana y lisa, de los graves errores que hacen a la identidad misma de un falso camino que hoy en día es públicamente promocionado, promovido y legitimado como alternativa al Cristianismo.",
+      callToAction: {
+        target: '_blank',
+        text: 'COMPRAR',
+        href: 'https://www.amazon.com/-/es/Federico-Highton/dp/9878805891',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: '~/assets/images/libro_Tinieblas.jpg',
+    alt: '',
+    loading: '',
+  }}
+  /> 
+  <Content
+  isAfterContent
+  items={[
+    {
+      title:"Ad Gentes",
+      subtitle:"Pdre.Federico Highton",
+      description:"El presente trabajo que el lector tiene entre manos es una recopilación de textos que, con enorme esfuerzo y en circunstancias de las más adversas (en la meseta tibetana no hay bibliotecas que consultar, sillones donde descansar, mesas donde comer…), el autor ha redactado al galope y a los golpes, quijotescamente, sus pensamientos. Por ello, no encontraremos aquí un tratado acerca de las misiones, sino más bien reflexiones, sermones, cartas, panegíricos y, sobre todo, un enorme celo por las almas. Ese celo que le hacía decir a Dios Nuestro Señor que había venido a traer “fuego sobre la tierra y ¡cuánto desearía que ya estuviera ardiendo!” (Lc 12,49).",
+      callToAction: {
+        target: '_blank',
+        text: 'COMPRAR',
+        href: 'https://www.amazon.com/AD-GENTES-Introducci%C3%B3n-Apost%C3%B3lica-evangelizadas/dp/1728687667/ref=sr_1_1?s=books&sr=1-1',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: '~/assets/images/book_AdGentes.jpg',
+    alt: 'Colorful Image',
+    loading: '',
+  }}
+  /> 
+  <Content
+  isReversed
+  items={[
+    {
+      title:"Esbozo de Aforismos",
+      subtitle:"Pdre.Federico Highton",
+      description:"Estas páginas son nomás el faro aludido en la metáfora dorsiana. Las luces y los apagones que de ellas brotan, tienen la métrica y el compás -de forma y de contenido- para que si uno le ha hecho caso a Nuestro Señor y se ha lanzado a navegar en alta mar, no se estrelle contra ningún peñasco ni encalle en un acantilado, ni acabe de náufrago en la Isla de Soqotra o en la bahía de Sulawesi. Si es diestro de alma, eso sí, puede llegar a Jauja, como llegó el Padre Leonardo Castellani. Y quedarse a morar allí porque encontró al fin el alma de un hermano. Lo que no es poca cosa en el fatal hundimiento en que nos hallamos (del Prólogo).",
+      callToAction: {
+        target: '_blank',
+        text: 'COMPRAR',
+        href: 'https://www.amazon.com/Esbozo-aforismos-Spanish-Federico-Highton-ebook/dp/B077W5V9R9/ref=sr_1_1?s=books&sr=1-1',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: '~/assets/images/libro_esbozo.jpg',
+    alt: 'Colorful Image',
+    loading: '',
+  }}
+  /> 
+  <Content
+  isAfterContent
+  items={[
+    {
+      title:"Editorial Que No te la Cuenten",
+      subtitle:"Pdre.Javier Olivera Ravasi",
+      description:"",
+      callToAction: {
+        target: '_blank',
+        text: 'Conoce nuestra selección de libros',
+        href: 'https://editorial.quenotelacuenten.org/',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: '~/assets/images/libro_qntlc.jpg',
+    alt: 'Colorful Image',
+    loading: '',
+  }}
+  /> 
+
+  <div class="space-y-8">
+    <BgImagewithText
+      backgroundImage="src/assets/images/OmnesVideoMAINPoster.jpg"
+      bgSize="contain"
+      bgOpacity="1"
+      title={""}
+      description1={``}
+    />
+  </div>
+</Layout>
+
+

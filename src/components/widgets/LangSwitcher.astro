@@ -1,0 +1,12 @@
+---
+const languages = ['en', 'es'];
+const currentLang = 'en'; // Get this dynamically
+---
+
+<div class="language-switcher">
+  {languages.map((lang) => (
+    <a href={`/${lang}`} class={lang === currentLang ? 'active' : ''}>
+      {lang.toUpperCase()}
+    </a>
+  ))}
+</div>
