@@ -1,10 +1,9 @@
 ---
 import FAQs from '~/components/widgets/FAQs.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features2.astro';
-import Contact2 from '~/components/widgets/Contact.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import { YouTube } from 'astro-embed';
 const metadata = {
    title: 'Donation',
@@ -27,14 +26,21 @@ servimos a la
 Iglesia necesitada
 en todo el mundo -->
 
-<!-- Hero -->
-<YouTube id="Ha-nvzGxyCg" />
-<style is:inline>
-  lite-youtube {
-    margin: 0 auto;
-    max-width: 100%;
-  }
-</style>
+<Steps2
+title="Otras maneras de hacer tu donativo:"
+items={[
+  {
+    title: 'A través de Whatsapp',
+    description: `+1 (980) 860-0772`,
+    icon: 'tabler:brand-whatsapp',
+  },
+  {
+    title: 'Transferencia Bancaria(indicando concepto, tu nombre completo y DNI).<br>Para desgravar el donativo escríbenos',
+    description: 'donations@omnesgentesproject.com',
+    icon: 'tabler:mail',
+  },
+]}
+/>
 
     <Content
 isAfterContent
@@ -46,12 +52,12 @@ items={[
       target: '_blank',
       text: 'DONA AHORA',
       href: '#',
-      icon: 'tabler:download',
+      icon: 'tabler:heart',
     }
   },
 ]}
 image={{
-  src: '',
+  src: '~/assets/images/donation01.jpeg',
   alt: 'Colorful Image',
   loading: '',
 }}
@@ -62,7 +68,7 @@ image={{
 
 <Features
 id="features"
-title="El 100% de los proyectos que desarrolla ACN se sostienen gracias a los donativos"
+title="El 100% de los proyectos que desarrolla OGP se sostienen gracias a los donativos"
 subtitle="La generosidad de nuestros benefactores hace posible que financiemos cada año alrededor de 5.000 proyectos de carácter pastoral (sostenimiento y formación de sacerdotes y religiosos, formación de catequistas y laicos, construcción y reconstrucción de iglesias, vehículos y medios de comunicación para la evangelización, material catequético) y excepcionalmente, ayuda de emergencia."
 columns={3}
 items={[
@@ -113,51 +119,20 @@ items={[
   },
 ]}
 />
-    <Steps
-    title="A guided journey from plans to creativity"
-    tagline="simplified process"
-    isReversed={true}
-    items={[
-      {
-        title: 'Explore plans',
-        icon: 'tabler:number-1',
-      },
-      {
-        title: 'Select a plan',
-        icon: 'tabler:number-2',
-      },
-      {
-        title: 'Sign Up / Log In',
-        icon: 'tabler:number-3',
-      },
-      {
-        title: 'Review order',
-        icon: 'tabler:number-4',
-      },
-      {
-        title: 'Enter payment details',
-        icon: 'tabler:number-5',
-      },
-      {
-        title: 'Confirmation',
-        icon: 'tabler:number-6',
-      },
-      {
-        title: 'Download and start using the template(s)',
-        icon: 'tabler:number-7',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
 
-<!-- columns={1} -->
+<YouTube id="Ha-nvzGxyCg" />
+<style is:inline>
+  lite-youtube {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+</style>
+
   <FAQs
   title="Frequently Asked Questions"
   subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
   tagline="FAQs"
+  columns={2}
   classes={{ container: 'max-w-6xl' }}     
   items={[
     {
@@ -212,10 +187,57 @@ items={[
   </Fragment>
 </FAQs>
 
-<Contact2 />
-
-
-
 </Layout>
 
 
+<!-- {
+  title: 'Call us',
+  description: '+1 (234) 567-890',
+  icon: 'tabler:headset',
+}, 
+subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
+callToAction={{
+  text: 'Otras',
+  href: '/',
+}}
+-->
+
+<!-- <Steps
+title="A guided journey from plans to creativity"
+tagline="simplified process"
+isReversed={true}
+items={[
+  {
+    title: 'Explore plans',
+    icon: 'tabler:number-1',
+  },
+  {
+    title: 'Select a plan',
+    icon: 'tabler:number-2',
+  },
+  {
+    title: 'Sign Up / Log In',
+    icon: 'tabler:number-3',
+  },
+  {
+    title: 'Review order',
+    icon: 'tabler:number-4',
+  },
+  {
+    title: 'Enter payment details',
+    icon: 'tabler:number-5',
+  },
+  {
+    title: 'Confirmation',
+    icon: 'tabler:number-6',
+  },
+  {
+    title: 'Download and start using the template(s)',
+    icon: 'tabler:number-7',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+  alt: 'Steps image',
+}}
+/> -->

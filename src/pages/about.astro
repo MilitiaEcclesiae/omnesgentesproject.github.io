@@ -12,7 +12,7 @@ import { YouTube } from 'astro-embed';
 const metadata = {
   title: 'About us',
 };
-
+const formAction = "https://script.google.com/macros/s/AKfycbx6jhWcuNan0lfsR8JEIx0DwSEb8cqCIZPq4HYuE2RXqvPx-mjku3e2NCuE4SKXwPzK/exec"
 const timelineItems = [
   {
     title: 'Nace QNTLC',
@@ -66,12 +66,11 @@ const timelineItems = [
   },
 ];
 
-
 const teamMembers = [
   {
     name: 'Padre Federico Highton',
     role: 'Fundador y Director OGP',
-    image: 'Pdr.F.jpeg',
+    image: '/src/assets/images/Pdr.F.jpeg',
     socialLinks: {
       mail: 'https://www.linkedin.com/in/johndoe',
     },
@@ -79,7 +78,7 @@ const teamMembers = [
   {
     name: 'Karla Noguez',
     role: '',
-    image: 'Karla.jpeg',
+    image: '/src/assets/images/Karla.jpeg',
     socialLinks: {
       mail: 'https://www.linkedin.com/in/janesmith',
     },
@@ -87,15 +86,7 @@ const teamMembers = [
   {
     name: 'Leonor Suaya de Highton',
     role: '',
-    image: 'SuayaH.jpeg',
-    socialLinks: {
-      mail: 'https://www.linkedin.com/in/markjohnson',
-    },
-  },
-  {
-    name: 'Valeria Zimmermann',
-    role: '',
-    image: 'Valeria.jpeg',
+    image: '/src/assets/images/SuayaH.jpeg',
     socialLinks: {
       mail: 'https://www.linkedin.com/in/markjohnson',
     },
@@ -130,39 +121,39 @@ const teamMembers = [
 
  <div class="space-y-8">
   <BgImagewithText
-    backgroundImage="/images/first-image.jpg"
+    backgroundImage="src/assets/images/fire.jpeg"
     bgSize="cover"
-    bgOpacity="0.6"
+    bgOpacity="0.9"
     title="Nuestro Lema"
-    description1={`
-      'Et praedicabitur hoc evangelium regni in universo orbe in testimonium omnibus gentibus; Et tunc veniet consummatio' 'Y será predicado este Evangelio del reino en todo el mundo, para testimonio de todas las naciones, y entonces vendrá el fin'.
-                    -Mt XXIV, 14`}
-  />
+    description={`"Et praedicabitur hoc evangelium regni in universo orbe in testimonium omnibus gentibus; Et tunc veniet consummatio"`}
+    description1={'"Y será predicado este Evangelio del reino en todo el mundo, para testimonio de todas las naciones, y entonces vendrá el fin." -Mt XXIV, 14'}
+    />
 </div>
 
 <Content
   title="¿Qué es el Omnes Gentes Project?"
   subtitle=""
-  items={
-  [{ title: '', description: 'El Omnes Gentes Project es una iniciativa global que tiene como único objetivo realizar el primer anuncio del Evangelio en las regiones donde jamás se ha escuchado hablar de Cristo. Esta misión se realiza en colaboración con la Orden San Elías, y hemos llevado a cabo numerosas misiones en diversas partes del mundo, estableciendo comunidades de fe donde antes no existían. A través de estas misiones, buscamos cumplir el llamado de Jesús y llevar Su mensaje de esperanza y salvación.' },
-  ]  
-  }
-  image="/assets/images/about-us.jpg"
-  isReversed={true}
-  backgroundImage="/assets/images/background.jpg"  
-  backgroundOpacity={0.3}  
+  isReversed
+  items={[{ 
+    title: '', 
+    description: 'El Omnes Gentes Project es una iniciativa global que tiene como único objetivo realizar el primer anuncio del Evangelio en las regiones donde jamás se ha escuchado hablar de Cristo. Esta misión se realiza en colaboración con la Orden San Elías, y hemos llevado a cabo numerosas misiones en diversas partes del mundo, estableciendo comunidades de fe donde antes no existían. A través de estas misiones, buscamos cumplir el llamado de Jesús y llevar Su mensaje de esperanza y salvación.' },
+  ]}
+  image={{
+    src: "~/assets/images/Fondo-Orden-San-Elias.jpg",
+    alt: 'Colorful Image',
+  }}
 />
 <Content
   title=""
   subtitle=""
+  isAfterContent
   items={
   [{ description: 'Nuestros misioneros viajan a tierras de misión para ganar almas para Jesucristo. En lugares donde nunca hubo presencia católica, los misioneros trabajan para compartir el Evangelio, fundar comunidades y preparar a las personas para una vida de santidad. Una de nuestras historias más impactantes ocurrió cuando, durante una expedición, un líder tribal escuchó el mensaje del Evangelio, se convirtió y, como signo de su fe, donó un terreno para la construcción de una iglesia católica. Hoy, ese terreno está destinado a ser la primera iglesia en esa aldea, y el proyecto sigue adelante con la esperanza de construir un lugar donde los nativos puedan adorar a Dios.' }
-  ]  
-  }
-  image="/assets/images/about-us.jpg"
-  isAfterContent={true}
-  backgroundImage="/assets/images/background.jpg"  
-  backgroundOpacity={0.3}  
+  ]}
+  image={{
+    src: "~/assets/images/Sacerdotes.jpg",
+    alt: 'Colorful Image',
+  }}
 />
 
   <!-- Timeline component usage -->
@@ -175,16 +166,17 @@ const teamMembers = [
 
 <Content
   title="¿Qué Hacemos?"
+  isReversed
   items={
   [{ title: 'Enviamos Misioneros:', description: 'Nuestros misioneros están comprometidos con la tarea de predicar el Evangelio donde más se necesita, buscando ganar almas para Cristo.', icon: 'tabler:rocket' },
    { title: 'Establecemos Iglesias:', description: 'En cada aldea a la que llegamos, buscamos establecer comunidades vivas y comprometidas con la fe católica.', icon: 'tabler:rocket' },
    { title: 'Formamos Cristianos:', description: 'No solo evangelizamos, sino que también trabajamos para formar y educar en la fe a los nuevos cristianos, ayudándolos a crecer espiritualmente.', icon: 'tabler:rocket' }
   ]  
   }
-  image="/assets/images/about-us.jpg"
-  isReversed={true}
-  backgroundImage="/assets/images/background.jpg"  
-  backgroundOpacity={0.3}  
+  image={{
+    src: "~/assets/images/IMG_20240901_135236.jpg",
+    alt: 'Colorful Image',
+  }}
 />
 
   <!-- Stats Widget ****************** -->
@@ -199,14 +191,13 @@ const teamMembers = [
 
   <div class="space-y-8">
     <BgImagewithText
-      backgroundImage="/images/second-image.jpg"
-      bgSize="contain"
+      backgroundImage="src/assets/images/Voluntario1.jpg"
+      bgSize="110% 100%"
       bgOpacity="0.8"
       title="Nuestro Propósito"
       description1={` Solo tenemos una misión: Predicar y Ganar almas.`}
     />
   </div>
-
 
 <YouTube id="mSyX2nDR6Sk" />
 <style is:inline>
@@ -229,6 +220,7 @@ const teamMembers = [
    ))}
  </div>
 
+ <form action={formAction} method="POST" class="contact-form">
   <Contact
     id="form"
     tagline="Contact"
@@ -255,20 +247,55 @@ const teamMembers = [
     }}
     description="Our support team typically responds within 24 business hours."
   />
+  </form>
 
   <div class="space-y-8">
   <BgImagewithText
-    backgroundImage="src/assets/images/OmnesVideoMAINPoster.jpg"
+    backgroundImage="src/assets/images/apostles.jpeg"
     bgSize="contain"
-    bgOpacity="1"
-    description={`El Omnes Gentes Project sigue el mandato de Cristo, llevando el Evangelio a cada rincón del mundo, con el ferviente deseo de cumplir la misión de 'hacer discípulos de todas las naciones'. Con cada paso que damos, nuestra visión se hace más clara: evangelizar las áreas donde no se conoce a Cristo, transformando vidas y comunidades en la luz del Evangelio.
-    `}
+    bgOpacity="0.7"
+    description={`El Omnes Gentes Project sigue el mandato de Cristo, llevando el Evangelio a cada rincón del mundo, con el ferviente deseo de cumplir la misión de 'hacer discípulos de todas las naciones'.`}
+    description1={'Con cada paso que damos, nuestra visión se hace más clara: evangelizar las áreas donde no se conoce a Cristo, transformando vidas y comunidades en la luz del Evangelio.'}
   />
 </div>
-
 </Layout>
-
- 
     
+<script>
+  // Wait for the document to be ready
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.contact-form');
+    
+    // Ensure the form exists before proceeding
+    if (form && form instanceof HTMLFormElement) {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent default form submission behavior
+        
+        const formData = new FormData(form); // Get form data
+        const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON
+        
+        // Send the form data to the Google Apps Script endpoint
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        
+        // Parse the response from the Google Apps Script
+        const result = await response.json();
+        
+        // Show an alert based on the response
+        if (result.result === 'Success') {
+          alert('Thank you for your submission!');
+        } else {
+          alert('There was an error. Please try again later.');
+        }
+      });
+    } else {
+      console.error("Form element with class 'contact-form' not found.");
+    }
+  });
+</script>
+
+
 
  

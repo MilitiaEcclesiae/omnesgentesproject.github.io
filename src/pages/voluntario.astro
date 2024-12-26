@@ -14,16 +14,16 @@ const metadata = {
     <div class="space-y-8">
       <!-- First Instance -->
       <BgImagewithText
-        backgroundImage="src/assets/images/HEAD-COLABORA-VOD.jpg"
-        bgSize="91%"
+        backgroundImage="src/assets/images/HEAD01.jpg"
+        bgSize="100% 100%"
         bgOpacity="1"
         title={"COLABORA"}
-        description1={`
-          SE PARTE DE LA MISION! 
+        description={`
+          ¡SE PARTE DE LA MISION!
         `}
-        description2={`
-          TODOS SOMOS MISIONEROS!
-        `}
+        description1={
+           '¡TODOS SOMOS MISIONEROS!'
+        }
       />
     </div>
 
@@ -50,13 +50,14 @@ items={[
   },
 ]}
 image={{
-  src: '~/assets/images/Colabora-Cuerpo-Misionero-test.jpg',
-  alt: 'Colorful Image',
+  src: '~/assets/images/Colabora-Cuerpo-Misionero-01.jpg',
+  alt: 'CuerpoMisionero',
   loading: '',
 }}
 /> 
 
 <Content
+isReversed
 items={[
   {
     title:"NUESTRA MISIÓN COMO CUERPO MISIONERO CATÓLICO",
@@ -70,14 +71,14 @@ items={[
   },
 ]}
 image={{
-  src: '~/assets/images/Archipielago-01-300x225.jpg',
+  src: '~/assets/images/IMG_8870.jpeg',
   alt: '',
   loading: '',
 }}
 /> 
 
 <Content
-isReversed
+isAfterContent
 items={[
   {
     title:"¿VOCACIÓN MISIONERA, YO?",
@@ -96,10 +97,8 @@ items={[
     }
   },
 ]}
-
-
 image={{
-  src: '~/assets/images/Colabora-Cuerpo-Misionero-02.jpg',
+  src: '~/assets/images/voluntario2.jpg',
   alt: '',
   loading: '',
 }}
@@ -107,8 +106,8 @@ image={{
 
 <div class="space-y-8">
   <BgImagewithText
-    backgroundImage="src/assets/images/Panama-2022-06-300x225.jpg"
-    bgSize="contain"
+    backgroundImage="src/assets/images/Voluntario1.jpg"
+    bgSize="100% 125%"
     bgOpacity="1"
     title={"Como Individuales"}
     description={`
@@ -142,8 +141,8 @@ items={[
 
 <div class="space-y-8">
   <BgImagewithText
-    backgroundImage="src/assets/images/Voluntarios-Instituciones.jpg"
-    bgSize="100%"
+    backgroundImage="src/assets/images/image10.png"
+    bgSize="100% auto"
     bgOpacity="1"
     title={"Como Instituciones y Parroquias"}
     description={`
@@ -172,7 +171,7 @@ items={[
   },
 ]}
 image={{
-  src: '~/assets/images/Adopta-Misionero-192x300.jpg',
+  src: '~/assets/images/IMG_20230309_134527.jpg',
   alt: 'Colorful Image',
   loading: '',
 }}
@@ -187,17 +186,17 @@ items={[
   },
   {
     title:"Existen múltiples formas de involucrarse:",
-    description:"A través de programas de ayuda o premios a la Solidaridad en tu empresa o fundación. -Adoptando un proyecto específico para impactar de manera directa.",
+    description:"A través de programas de ayuda o premios a la Solidaridad en tu empresa o fundación. Adoptando un proyecto específico para impactar de manera directa.",
     callToAction: {
       target: '_blank',
-      text: '¿Te interesa colaborar?<br/>Déjanos un mensaje con el objetivo social y ámbito de actuación de tu institución, y juntos encontraremos la mejor forma de colaborar para cambiar vidas.',
-      href: '#',
+      text: '¿Te interesa colaborar?<br/>Déjanos un mensaje con el objetivo social y ámbito de actuación de tu institución, <br>y juntos encontraremos la mejor forma de colaborar para cambiar vidas.',
+      href: 'mailto:info@omnesgentesproject.com',
       icon: 'tabler:mail',
     }
   },
 ]}
 image={{
-  src: '~/assets/images/Panama-2022-Cronicas-07.jpg',
+  src: '~/assets/images/voluntary4.jpeg',
   alt: 'Colorful Image',
   loading: '',
 }}
@@ -206,7 +205,7 @@ image={{
 <div class="space-y-8">
   <BgImagewithText
     backgroundImage="src/assets/images/Panama-2022-04.jpg"
-    bgSize="contain"
+    bgSize="100% 200%"
     bgOpacity="1"
     title={""}
     description={`

@@ -10,19 +10,15 @@ export const headerData = {
       text: 'ACTUALIDAD',
       links: [
         {
-          text: 'LAS ULTIMAS MISIONES',   
+          text: 'Las Ultimas Misiones',   
           href: getPermalink('misiones', 'category'),
         },
-        // {
-        //   text: 'Eventos',  //eventos/camapanas(DE ORACION etc)/actividades>>landing page   
-        //   href: getPermalink(''),
-        // },
         {
-          text: 'TESTIMONIOS',  
+          text: 'Testimonios',  
           href: getPermalink('testimonios', 'category'),
         },
         {
-          text: 'PODCAST',  
+          text: 'Podcast',  
           href: `https://www.youtube.com/channel/UCZi70I4cl1Dp1KXFEVmbIQA`,
         },
       ],
@@ -31,15 +27,19 @@ export const headerData = {
       text: 'COLABORA',
       links: [
         {  
-          text: 'HAZ UN DONATIVO', 
+          text: 'Haz un Donativo', 
           href: getPermalink('/Donation'),
         },
+        {  
+          text: 'Haz un Donativo/Donorbox', 
+          href: `https://donorbox.org/omnesgentesproject`,
+        },
         {
-          text: 'OFRECE UNA MISA',
+          text: 'Ofrece una Misa',
           href: getPermalink('/misa'),
         },
         {
-          text: 'HAZTE VOLUNTARIO',  
+          text: 'Hazte Voluntario',  
           href: getPermalink('/voluntario'),
         },
       ],
@@ -48,18 +48,18 @@ export const headerData = {
       text: 'SEMINARIUM',
       links: [
         {  
-          text: 'DOMUS DISCIPULORUM', 
+          text: 'Domus Discipulorium', 
           href: getPermalink('/Seminario'),
         },
         {
-          text: 'SCUTUM FIDEI',  
+          text: 'Scutum Fidei',  
           href: getPermalink('/ScutumFidei'),
         },
       ],
     },
   ],
-  //actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
-  //HOW TO ADD BURGER NAV ICON TO INCLUDE ALL??? 
+  actions: [{ text: 'Donacion', href: 'https://donorbox.org/omnesgentesproject', target: '_blank' }],
+  //HOW TO ADD BURGER NAV ICON TO INCLUDE ALL???  /donation
 };
 
 export const footerData = {
@@ -67,24 +67,24 @@ export const footerData = {
     {
       title: 'ACTUALIDAD',
       links: [
-        { text: 'LAS ULTIMAS MISIONES', href: getPermalink('misiones', 'category') },
-        { text: 'TESTIMONIOS', href: getPermalink('testimonios', 'category') },
-        { text: 'PODCAST', href: `https://www.youtube.com/channel/UCZi70I4cl1Dp1KXFEVmbIQA` },
+        { text: 'Las Ultimas Misiones', href: getPermalink('misiones', 'category') },
+        { text: 'Testimonios', href: getPermalink('testimonios', 'category') },
+        { text: 'Podcast', href: `https://www.youtube.com/channel/UCZi70I4cl1Dp1KXFEVmbIQA` },
       ],
     },
     {
       title: 'COLABORA',
       links: [
-        { text: 'HAZ UN DONATIVO', href: getPermalink('/Donation') },
-        { text: 'OFRECE UNA MISA', href: getPermalink('/misa') },
-        { text: 'HAZTE VOLUNTARIO', href: getPermalink('voluntario') },
+        { text: 'Haz un Donativo', href: getPermalink('/Donation') },
+        { text: 'Ofrece una Misa', href: getPermalink('/misa') },
+        { text: 'Hazte Voluntario', href: getPermalink('voluntario') },
       ],
     },
     {
       title: 'SEMINARIUM',
       links: [
-        { text: 'DOMUS DISCIPULORUM', href: getPermalink(`/Seminario`) },
-        { text: 'SCUTUM FIDEI', href: getPermalink('/ScutumFidei') },
+        { text: 'Domus Discipulorium', href: getPermalink(`/Seminario`) },
+        { text: 'Scutum Fidei', href: getPermalink('/ScutumFidei') },
       ],
     },
   ],
@@ -97,11 +97,11 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/OmnesGentesProject1/' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/omnes_gentes_project/' },
     { ariaLabel: 'Whatsapp', icon: 'tabler:brand-whatsapp', href: 'https://chat.whatsapp.com/CG4xxpAh8Y7FhAj2kOuNiK' },
-    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:contact@yourdomain.com' },
+    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:info@omnesgentesproject.com' },
     //    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="public/ChurchMilitiaICON.jpeg" loading="lazy"></img>
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="src/assets/images/ChurchMilitiaICON.jpeg" loading="lazy"></img>
     by <a class="text-blue-600 underline dark:text-muted" href="#">Militia+Ecclesiae</a> · All rights reserved.
   `,
 };

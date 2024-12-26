@@ -1,0 +1,124 @@
+---
+interface Event {
+  title: string;
+  image: string;
+  link: string;
+}
+
+const events: Event[] = [
+  {
+    title: 'Event 1: Charity Run',
+    image: '/src/assets/images/20230206_093155.jpg', // Ensure the image path is correct
+    link: '/events/charity-run'
+  },
+  {
+    title: 'Event 2: Community Service',
+    image: '/assets/images/event2.jpg',
+    link: '/events/community-service'
+  },
+  {
+    title: 'Event 3: Music Concert',
+    image: '/assets/images/event3.jpg',
+    link: '/events/music-concert'
+  }
+];
+
+let currentEventIndex = 0;
+const nextEvent = () => {
+  currentEventIndex = (currentEventIndex + 1) % events.length;
+};
+const prevEvent = () => {
+  currentEventIndex = (currentEventIndex - 1 + events.length) % events.length;
+};
+setInterval(() => {
+  nextEvent();
+}, 3000); // Change event every 3 seconds
+---
+
+<style>
+  .gallery-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  .gallery {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  .event-card {
+    position: relative;
+    min-width: 100%;
+    margin-right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .event-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .card-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 5px;
+    color: white;
+    max-width: 80%;
+    text-align: left;
+  }
+  .card-content h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .card-content a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  /* Left and Right Arrows */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .arrow-left {
+    left: 1px;
+  }
+
+  .arrow-right {
+    right: 1px;
+  }
+
+</style>
+
+<div class="gallery-wrapper">
+  <div class="gallery" style={`transform: translateX(-${currentEventIndex * 100}%)`}>
+    {events.map(event => (
+      <div class="event-card">
+        <img src={event.image} alt={event.title} />
+        <div class="card-content">
+          <h3>{event.title}</h3>
+          <a href={event.link}>View Details</a>
+        </div>
+      </div>
+    ))}
+  </div>
+  <!-- Left and Right Arrows -->
+  <div class="arrow arrow-left" onclick={prevEvent}>&lt;</div>
+  <div class="arrow arrow-right" onclick={nextEvent}>&gt;</div>
+</div>

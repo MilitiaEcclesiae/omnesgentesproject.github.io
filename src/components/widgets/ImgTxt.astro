@@ -1,0 +1,59 @@
+---
+interface Props {
+  image: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+const { title, subtitle, description } = Astro.props;
+---
+
+<style>
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Fixed height for the image */
+    background-image: url(${image});
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .overlay-card {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent grey background */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%; /* To ensure some spacing around the card */
+    max-width: 400px;
+  }
+
+  .overlay-card h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .overlay-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .overlay-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
+
+<div class="image-container">
+  <div class="overlay-card">
+    <h2>{title}</h2>
+    <h3>{subtitle}</h3>
+    <p>{description}</p>
+  </div>
+</div>

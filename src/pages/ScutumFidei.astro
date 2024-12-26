@@ -4,23 +4,19 @@ import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import BgImagewithText from '~/components/common/BgImagewithText.astro';
 
-
 const metadata = {
    title: 'material-para-rezar',
  };
 ---
 
   <Layout metadata={metadata}>
-
-    <div class="space-y-8">
       <BgImagewithText
         backgroundImage="src/assets/images/shieldoffaith.jpeg"
-        bgSize="60%"
-        bgOpacity="1"
+        bgSize="75%"
+        bgOpacity="0.7"
         title={"Scutum Fidei"}
-        description1={`"Taking the shield of faith, with which you can quench all the flaming darts of the evil one." -Ephesians 6:16`}
+        description={`"Taking the shield of faith, with which you can quench all the flaming darts of the evil one." -Ephesians 6:16`}
       />
-    </div>
 
     <Content
     isReversed
@@ -43,7 +39,7 @@ const metadata = {
     }}
     /> 
 
-    <!-- bg image -->
+    <!-- add bg -->
     <Features3
     title="Manas Espirituales"  
     subtitle=""
@@ -189,15 +185,6 @@ const metadata = {
   }}
   /> 
 
-  <div class="space-y-8">
-    <BgImagewithText
-      backgroundImage="src/assets/images/OmnesVideoMAINPoster.jpg"
-      bgSize="contain"
-      bgOpacity="1"
-      title={""}
-      description1={``}
-    />
-  </div>
 </Layout>
 
 

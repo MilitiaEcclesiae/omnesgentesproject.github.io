@@ -1,7 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
-
+import Prices from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import BgImagewithText from '~/components/common/BgImagewithText.astro';
 
 const metadata = {
    title: 'ofrece-misas',
@@ -12,17 +14,50 @@ const metadata = {
 https://donar.ayudaalaiglesianecesitada.org/
 https://www.ayudaalaiglesianecesitada.org/herencias-y-legados
 --> 
-
-
-
-
   <Layout metadata={metadata}>
-<!-- Image bg, 
-OFRECE UNA MISA
-¿Imaginas mayor acto de amor que la celebración de una Santa Misa en acción de gracias, para pedir ayuda o para interceder ante Dios por quien necesita consuelo, fortaleza y esperanza?    
-Si solicitas Misas a ACN, intercederás por los tuyos, por tus propias intenciones y sostendrás a la Iglesia que sufre pobreza, discriminación y persecución en el mundo. -->
 
-<!-- payment system -->
+<Prices
+title="OFRECE UNA MISA"
+subtitle="Celebra una Misa en acción de gracias o para interceder por tus seres queridos, apoyando a las misiones evangélicas, con tu aporte destinado íntegramente al sacerdote celebrante."
+prices={[
+  {
+    title: 'Ordinaria',
+    subtitle: 'Celebración de una Misa por una intención particular o de un ser querido',
+    price: 10,
+    period: 'por una intención particular',
+    callToAction: {
+      target: '_blank',
+      text: 'Solicitar Misa',
+      href: '#',
+    },
+  },
+  {
+    title: 'Novenaria',
+    subtitle: 'Celebración de 9 Misas seguidas por una intención particular o por el alma de un difunto',
+    price: 90,
+    period: 'por una intención particular',
+    callToAction: {
+      target: '_blank',
+      text: 'Solicitar Misa',
+      href: '#',
+    },
+    hasRibbon: true,
+    ribbonTitle: 'popular',
+  },
+  {
+    title: 'Gegoriana',
+    subtitle: 'Celebración de 30 Misas seguidas por el eterno descanso de un difunto',
+    price: 300,
+    period: 'por una intención particular',
+    callToAction: {
+      target: '_blank',
+      text: 'Solicitar Misa',
+      href: '#',
+    },
+  },
+]}
+/>
+
 
 <Content
 isReversed
@@ -35,12 +70,12 @@ items={[
       target: '_blank',
       text: 'OFRECE UNA MISA POR TUS INTENCIONES »',
       href: '#',
-      icon: 'tabler:download',
+      icon: 'tabler:phone',
     }
   },
 ]}
 image={{
-  src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+  src: '~/assets/images/misa02.jpeg',
   alt: 'Colorful Image',
   loading: 'eager',
 }}
@@ -54,20 +89,19 @@ items={[
     description:"Las Misas que solicitas a través de Ayuda a la Iglesia Necesitada, las celebran sacerdotes sin recursos en países de guerra, escasez, discriminación o persecución religiosa. ¿Imaginas que en la selva del Amazonas, en el altiplano boliviano, en plena guerra de Ucrania o en Tierra Santa, un sacerdote celebre una Santa Misa por tus intenciones o las de los tuyos?  ¡Tú puedes hacerlo posible! /n El donativo o estipendio de Misa que haces cuando encargas la celebración de una Eucaristía se convierte en auténtica ayuda de emergencia para el sacerdote en cuestión. /n Solo con tu ayuda miles de sacerdotes podrán disponer de los recursos mínimos (alimento, vivienda, asistencia médica y medicinas)  para sobrevivir y seguir siendo el sustento físico y espiritual de su comunidad. En ocasiones también destinan los estipendios a obras de caridad con sus feligreses, actividades pastorales y gastos en su parroquia.",
     callToAction: {
       target: '_blank',
-      text: 'OFRECE UNA MISA POR TUS INTENCIONES »',
+      text: 'SOLICITA UNA MISA AHORA »',
       href: '#',
-      icon: 'tabler:download',
+      icon: 'tabler:phone',
     }
   },
 ]}
 image={{
-  src: '',
+  src: '~/assets/images/misa05.jpg',
   alt: 'Colorful Image',
   loading: '',
 }}
 /> 
 
-<!-- quotation with image as bg -->
 
 <Content
 isReversed
@@ -80,21 +114,36 @@ items={[
       target: '_blank',
       text: 'OFRECE UNA MISA »',
       href: '#',
-      icon: 'tabler:download',
+      icon: 'tabler:phone',
     }
   },
 ]}
 image={{
-  src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+  src: '~/assets/images/misa04.jpeg',
   alt: 'Colorful Image',
   loading: 'eager',
 }}
 />
 
-<!-- 
-Tipos de Misas
+<CallToAction
+title="Misas por tu eterno descanso"
+subtitle="Puedes solicitar que se celebren Misas a tu fallecimiento, por el eterno descanso de tu alma.Qué tranquilidad saber que se celebrarán Eucaristías por ti y qué satisfacción que puedas desde el cielo seguir sosteniendo a la Iglesia en el mundo. Contáctanos en: <br>+1 (980) 860-0772 <br>info@omnesgentesproject.com"
+actions={[
+  {
+    variant: 'primary',
+    text: 'Si, QUIERO SABER MAS',
+    href: '/',
+  },
+]}
+/>
 
-image w/bg quotations -->
+<BgImagewithText
+  backgroundImage="src/assets/images/misa03.jpeg"
+  bgSize="100% 100%"
+  bgOpacity="0.7"
+  description='"Cuando la entrega generosa hacia los demás se vuelve el estilo de nuestras acciones, damos gracias al Corazón de Cristo y nuestro corazón se inflama”'
+  description1=`Papa Francisco`
+  />
 
 </Layout>
 
