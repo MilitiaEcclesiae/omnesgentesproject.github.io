@@ -1,0 +1,144 @@
+---
+// Define the props for the component
+export interface Event {
+  image: string;
+  title: string;
+  subtitle: string;
+  link: string;
+}
+
+// Define the props interface
+export interface Props {
+  events: Event[];
+  backgroundSize?: string; // Optional prop for background size
+  titleSize?: string; // Optional prop for title font size
+  subtitleSize?: string; // Optional prop for subtitle font size
+  buttonStyle?: string; // Optional prop for button styles
+}
+
+// Destructure the props
+const { events, backgroundSize = 'cover', titleSize = '2rem', subtitleSize = '1.2rem', buttonStyle = '' } = Astro.props;
+---
+
+<div class="event-gallery">
+  <div class="event-carousel">
+    {events.map((event, index) => (
+      <div
+        class="event-slide"
+        aria-hidden={index !== 0}
+        style={`background-image: url(${event.image}); background-size: ${backgroundSize};`}
+      >
+        <div class="event-content">
+          <h2 class="event-title" style={`font-size: ${titleSize};`}>{event.title}</h2>
+          <p class="event-subtitle" style={`font-size: ${subtitleSize};`}>{event.subtitle}</p>
+          <a href={event.link} class="event-button" style={buttonStyle}>LEARN MORE</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .event-gallery {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .event-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .event-slide {
+    flex: 0 0 100%;
+    height: 500px;
+    background-position: center;
+    position: relative;
+    display: none;
+  }
+
+  .event-slide[aria-hidden="false"] {
+    display: block;
+  }
+
+  .event-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 70%;
+  }
+
+  .event-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: 5px;
+  }
+
+  .event-button:hover {
+    background: #0056b3;
+  }
+</style>
+
+<script>
+  // Carousel logic
+  let currentIndex = 0;
+  let intervalId;
+
+  // Function to update the active slide
+  const updateCarousel = () => {
+    document.querySelectorAll('.event-slide').forEach((slide, index) => {
+      slide.setAttribute('aria-hidden', (index !== currentIndex).toString());
+    });
+  };
+
+  // Function to move to the next slide
+  const nextEvent = () => {
+    const eventSlides = document.querySelectorAll('.event-slide');
+    eventSlides[currentIndex].setAttribute('aria-hidden', 'true');
+    currentIndex = (currentIndex + 1) % eventSlides.length;
+    eventSlides[currentIndex].setAttribute('aria-hidden', 'false');
+  };
+
+  // Function to start the auto-cycle
+  const startAutoCycle = () => {
+    intervalId = setInterval(nextEvent, 3500);
+  };
+
+  // Function to stop the auto-cycle
+  const stopAutoCycle = () => {
+    clearInterval(intervalId);
+  };
+
+  // Initialize the carousel
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCarousel();
+    startAutoCycle();
+
+    const carouselContainer = document.querySelector('.event-gallery');
+    if (carouselContainer) {
+      carouselContainer.addEventListener('mouseenter', stopAutoCycle);
+      carouselContainer.addEventListener('mouseleave', startAutoCycle);
+    }
+  });
+
+  // Cleanup event listeners and interval on component unmount
+  document.addEventListener('astro:beforeunload', () => {
+    clearInterval(intervalId);
+    const carouselContainer = document.querySelector('.event-gallery');
+    if (carouselContainer) {
+      carouselContainer.removeEventListener('mouseenter', stopAutoCycle);
+      carouselContainer.removeEventListener('mouseleave', startAutoCycle);
+    }
+  });
+</script>

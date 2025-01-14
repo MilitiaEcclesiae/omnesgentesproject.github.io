@@ -1,0 +1,266 @@
+---
+import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+
+const image01 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551585/HEAD01_uv56cu.jpg',
+  alt: 'A beautiful landscape',
+};
+const image02 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551848/voluntary3_n1zu4j.jpg',
+  alt: 'A beautiful landscape',
+};
+const image03 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551838/Voluntarios_cbgxmo.jpg',
+  alt: 'A beautiful landscape',
+};
+const image04 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736623031/voluntary09_nmaosl.jpg',
+  alt: 'A beautiful landscape',
+};
+
+const metadata = {
+     title: 'Voluntario',
+   };
+---
+
+<!-- Voluntary
+https://www.marines.com/life-as-a-marine/standards/battle-ready.html -->
+
+  <Layout metadata={metadata}>
+  
+    <SocialLinkSticker />
+      <div class="space-y-8">
+        <!-- First Instance -->
+        <TextOverlayImage
+        image={image01}
+        title="BATTLE READY"
+        subtitle='BE PART OF THE MISSION!'
+        subtitle02='WE ARE ALL MISSIONARIES!'
+        textPosition="middle"
+        textBgOpacity={0.4}
+        titleSize="7rem"
+        subtitleSize="2rem"
+        imageWidth="100%" 
+        imageHeight="550px"
+      />
+      </div>
+  
+  <Content
+  isAfterContent
+  title=''
+  items={[
+    {
+      title: "WHAT DOES IT MEAN TO BE AN EPIC MISSIONARY?",
+      description:"The missionaries of the Omnes Gentes Project (OGP) preach the Gospel in the most challenging places: the savannah, the ice, the jungle, or the mountains. They live thrilling apostolic expeditions, striving until every nation is won for God!",
+    },
+    {
+      description:"Trained to adapt and overcome any obstacle, OGP missionaries are dedicated and resolute in praying and preaching to win souls for Christ. Whether through direct preaching, building chapels and schools, or humanitarian aid, their mission not only transforms lives but continues to impact communities long after their service.",
+    },
+    {
+      title:"EPIC AND ADVENTUROUS SPIRIT",
+      description:"What sets Epic Missionaries apart is not just their training or equipment. What truly drives them is an epic spirit: a deep desire to achieve divine glory and fulfill the mission of winning souls for Christ, no matter the challenges. This spirit is reflected in their determination, dedication, and high standard of excellence.",
+      },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551673/Colabora-Cuerpo-Misionero-01_tcx6uv.jpg',
+    alt: 'CuerpoMisionero',
+    loading: 'lazy',
+  }}
+    imageWidth={600} 
+    imageHeight={600}
+  /> 
+
+  <Content
+  isReversed
+  title='OUR MISSIONARY SPIRIT'
+  items={[
+        {
+      title:"EPIC AND ADVENTUROUS SPIRIT",
+      description:"What sets Epic Missionaries apart is not just their training or equipment. What truly drives them is an epic spirit: a deep desire to achieve divine glory and fulfill the mission of winning souls for Christ, no matter the challenges. This spirit is reflected in their determination, dedication, and high standard of excellence.",
+      },
+    {
+      title:"OUR MISSION AS A CATHOLIC MISSIONARY BODY",
+      description:"Since 2016, OGP missionaries have been committed to winning souls for Jesus Christ, facing challenges in contexts of paganism, idolatry, polygamy, and hostile territories. Through thrilling apostolic expeditions, our missionaries inspire others to commit more deeply to the apostolic expansion of the Church. We preach in the savannah, the ice, the jungle, and the mountains.",
+      callToAction: {
+        target: '_blank',
+        text: 'Want to learn more about our missions?',
+        href: getPermalink('missions', 'category'),
+        icon: 'tabler:book',
+      }
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736619541/IMG_8870_l6zav1.jpg',
+    alt: '',
+    loading: 'lazy',
+  }}
+      imageWidth={650} 
+      imageHeight={500}
+  /> 
+  <Content
+  isAfterContent
+  title='MISSIONARY VOCATION, ME?'
+  items={[
+    {
+      title:"Have you ever thought about being a missionary? ",
+      description:'As Pope Francis said: "I would like to encourage everyone to be bearers of the good news of Christ… I appeal to all those who feel the call of the Holy Spirit to not be afraid and to be generous with the Lord."',
+    },
+    {
+      title:"MISSIONARY, ME? FIND YOUR MISSION",
+      description:"The missionary path is noble and demanding, reserved for those with a heart willing to serve, overcome adversity, and win souls for Jesus Christ. Empowered by God’s grace, our missionaries face fears, doubts, and fatigue, bringing the light of the Gospel to the darkest corners of the world.",
+      callToAction: {
+        target: '_blank',
+        text: 'SIf you feel the call, join us! Send a message, and a priest will contact you.',
+        href: 'https://chat.whatsapp.com/CG4xxpAh8Y7FhAj2kOuNiK',
+        icon: 'tabler:brand-whatsapp',
+      }
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551826/voluntario2_fo0psv.jpg',
+    alt: '',
+    loading: 'lazy',
+  }}
+      imageWidth={600} 
+      imageHeight={500}
+  /> 
+  
+  <div class="space-y-8">
+    <TextOverlayImage
+    image={image02}
+    title="AS INDIVIDUALS"
+    textPosition="middle"
+    textBgOpacity={0.6}
+    titleSize="4.5rem"
+  />
+  </div>
+  
+  <Features
+  id="features"
+  title="Want to collaborate with OGP? "
+  subtitle="Every initiative is welcome. OGP relies on the generosity of volunteers who contribute in various ways:"
+  columns={3}
+  items={[
+    {
+      title: 'PRAYERS',
+      description: 'The power of prayer sustains our mission',
+      icon: 'tabler:heart',
+    },
+    {
+      title: 'Talents and Time',
+      description: `Offer your skills to support our initiatives`,
+      icon: 'tabler:clock',
+    },
+    {
+      title: 'Donations',
+      description: 'Contribute with material or financial resources',
+      icon: 'tabler:tip-jar',
+    },
+  ]}
+  />
+  
+    <div class="space-y-8">
+      <TextOverlayImage
+      image={image04}
+      title="Become a Digital Missionary for OGP!"
+      subtitle='Join us in advancing the Gospel through the digital frontier. Use your skills in media editing, digital art design, GenerativeAI, and web technologies to support global missions and bring Christ’s light to the cyber domain. Your talents can transform lives and spread hope in the digital age. Answer the call—serve as a beacon of faith in the virtual world. Volunteer today and make an eternal impact!'
+      titleSize="3rem"
+      subtitleSize="1.5rem"
+      textPosition="middle"
+      textBgOpacity={0.6}
+    />
+    </div>
+
+<br/><br/><br/>
+  <div class="space-y-8">
+    <TextOverlayImage
+    image={image03}
+    title="AS INSTITUTIONS AND PARISHES"
+    titlesize="3rem"
+    textPosition="middle"
+    textBgOpacity={0.6}
+  />
+  </div>
+  <Content
+  isAfterContent
+  items={[
+    {
+      description:"Your company, foundation, or parish can make a profound difference in the lives of persecuted and needy Christians worldwide. By joining as an entity, you can support projects, solidarity awards, and aid programs for those suffering for their faith.",
+    },
+    { title: "COLLABORATE AS A COMPANY",
+      description:"Your company or foundation has the opportunity to be a transformative force by adopting projects, supporting aid initiatives, or contributing to solidarity awards.",
+    },
+    {
+      title:"COLLABORATE AS A PARISH",
+      description:"Through Omnes Gentes Project, your parish can engage with the reality of suffering Christians by hosting conferences, exhibitions, charity events, and other activities to raise awareness of their plight.",
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551629/IMG_20230309_134527_bokdq7.jpg',
+    alt: 'Colorful Image',
+    loading: '',
+  }}
+      imageWidth={600} 
+      imageHeight={500}
+  /> 
+  <Content
+  isReversed
+  items={[
+    {
+      title:"YOUR HELP MAKES A DIFFERENCE",
+      description:"If you are part of the board or trustees of a foundation, company, or work within one, you can join our cause to support Christians enduring persecution, discrimination, or living in extreme conditions in the world's most needy countries.",
+    },
+    {
+      title:"There are multiple ways to get involved:",
+      description:"Through aid programs or solidarity awards in your company or foundation. By adopting a specific project to create a direct impact.",
+      callToAction: {
+        target: '_blank',
+        text: "Interested in collaborating?  Leave us a message with the social objective and scope of your institution, and together we will find the best way to collaborate and change lives.",
+        href: 'mailto:info@omnesgentesproject.com',
+        icon: 'tabler:mail',
+      }
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736621088/voluntary4_vf0iow.jpg',
+    alt: 'Colorful Image',
+    loading: '',
+  }}
+      imageWidth={700} 
+      imageHeight={500}
+  /> 
+
+  
+  
+  
+  </Layout>
+  
+  
+  
+
+<!-- 
+  WHERE THE HOLY FIRE IGNITES SOULS
+You already know the unity and purpose it takes to bring light to the darkest corners of the world. Do you feel a calling to channel your passion, your unwavering faith, and your relentless drive for victory—into something greater? The Missionaries of the Omnes Gentes Project are called to proclaim the Gospel where it has never been heard, to ignite the Holy Fire in hearts that have yet to know Christ. This is not just a mission—it is a divine battle for souls, a sacred duty to bring the truth of the Catholic Faith to those who live in spiritual darkness. 
+<b>Will you answer the call to fight for the Kingdom of God?</b>
+
+
+CARRY THE HOLY FIRE TO THE FRONTLINES
+The battle for souls is fought by courageous missionaries who are called to lead, adapt, and act with divine purpose. From remote villages to uncharted territories, the Missionaries of the Omnes Gentes Project bring the light of Christ to those who have never heard His name. Many faithful already possess the spiritual gifts and unwavering resolve needed to answer this sacred call—to win the greatest battle of all: the salvation of souls. Hone your faith, deepen your prayer, and develop new strengths to take your place among the most devoted and effective warriors for Christ. 
+<b>Will you harness your gifts to fight for the Kingdom of God and bring the Holy Fire to the ends of the earth?</b>
+
+
+THE CALL IS DIVINE. THE MISSION IS SACRED.
+Does your unwavering faith and unyielding determination compel you to overcome every obstacle and bring the light of Christ to the darkest corners of the world?
+
+EARN YOUR PLACE.
+
+
+A FAITH THAT CANNOT BE SILENCED
+The relentless drive to bring Christ’s light to the world is the defining trait of the Missionaries of the Omnes Gentes Project. The fire of the Holy Spirit, shared by all who answer this call, burns brightly long after the first step of the journey. From the depths of prayer to the frontlines of evangelization, missionaries never cease striving to conquer darkness with the truth of the Gospel. 
+<b>We are a brotherhood and sisterhood of faith, united in purpose, unwavering in our mission to proclaim the Holy Catholic Faith to those who have never heard His name.</b>
+ -->

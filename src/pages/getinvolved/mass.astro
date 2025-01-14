@@ -1,0 +1,180 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
+import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
+
+const image01 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551822/ultimamision-fondo-300x141_l0ggny.jpg',
+  alt: 'A',
+};
+const image02 = {
+  src: 'https://cdn.pixabay.com/photo/2024/09/30/14/22/ai-generated-9085934_1280.jpg',
+  alt: 'Heaven',
+};
+const image03 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736614845/misa03_icdge1.jpg',
+  alt: 'Pope',
+};
+
+const metadata = {
+   title: 'ofrece-misas',
+ };
+---
+
+ <!--- ref: 
+https://donar.ayudaalaiglesianecesitada.org/
+https://www.ayudaalaiglesianecesitada.org/herencias-y-legados
+--> 
+  <Layout metadata={metadata}>
+
+    <SocialLinkSticker />
+    <div class="space-y-3">
+      <TextOverlayImage
+    image={image01}
+    title="OFFER A MASS"
+    subtitle='Celebrate a Mass in thanksgiving or to intercede for your loved ones, while supporting evangelical missions. Your contribution is entirely dedicated to the celebrating priest, ensuring your gift uplifts both souls and the Church’s mission.'
+    textPosition="middle"
+    textBgOpacity={0.3}
+  />
+  </div>
+
+<Prices
+prices={[
+  {
+    title: 'Ordinary Mass',
+    subtitle: 'Celebration of a Mass for a specific intention or a loved one.',
+    price: 10,
+    period: 'For a specific intention',
+    callToAction: {
+      target: '_blank',
+      text: 'Request Mass',
+      href: '#',
+    },
+  },
+  {
+    title: 'Novenary Mass',
+    subtitle: 'Celebration of 9 consecutive Masses for a specific intention or the soul of a departed loved one.',
+    price: 90,
+    period: 'For a specific intention',
+    callToAction: {
+      target: '_blank',
+      text: 'Request Mass',
+      href: '#',
+    },
+    hasRibbon: true,
+    ribbonTitle: 'popular',
+  },
+  {
+    title: 'Gregorian Mass',
+    subtitle: 'Celebration of 30 consecutive Masses for the eternal rest of a departed soul.',
+    price: 300,
+    period: 'For a specific intention',
+    callToAction: {
+      target: '_blank',
+      text: 'Request Mass',
+      href: '#',
+    },
+  },
+]}
+/>
+
+
+<Content
+isReversed
+items={[
+  {
+    title:"The Holy Mass Has Infinite Value—For Whom Will You Offer It?",
+    description: 
+"The Holy Mass offers infinite grace—offer it for your departed loved ones, the souls in purgatory, the sick, sacramental celebrations, marriages in crisis, or the conversion of loved ones. For our Church, persecuted Christians, and peace in the world, the Eucharist is the greatest spiritual work of mercy. It is the most precious gift you can give, bringing hope and healing to countless souls.",
+    callToAction: {
+      target: '_blank',
+      text: 'OFFER A MASS FOR YOUR INTENTIONS »',
+      href: '#',
+      icon: 'tabler:gift',
+    }
+  },
+]}
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551740/misa02_ufmepv.jpg',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+    imageWidth={650} 
+    imageHeight={450}
+/> 
+<Content
+isAfterContent
+items={[
+  {
+    title:"With a Mass, You Help a Priest and His Community",
+    description:"The Masses you request through Omnes Gentes Project are celebrated by priests in impoverished, or persecuted regions, bringing your intentions to the altar in places like the Amazon, Tibet, or Iran. Your donation becomes vital aid, providing priests with food, shelter, medical care, and the means to sustain their communities spiritually and physically. These stipends also support charitable works, pastoral activities, and parish needs, ensuring your gift transforms lives.",
+    callToAction: {
+      target: '_blank',
+      text: 'REQUEST A MASS NOW »',
+      href: '#',
+      icon: 'tabler:clock-hour-4',
+    }
+  },
+]}
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551741/misa05_pfffxb.jpg',
+  alt: 'Colorful Image',
+  loading: '',
+}}
+    imageWidth={650} 
+    imageHeight={450}
+/> 
+<Content
+isReversed
+items={[
+  {
+    title:"A Blessing for the Entire Church",
+    description: 
+"Your Mass stipend is an immense blessing for the universal Church. Thanks to you, Christianity endures in places where resources are scarce, where it is a minority, or where it risks disappearing. Every Mass you request becomes a light in the darkness for many.",
+    callToAction: {
+      target: '_blank',
+      text: 'OFFER A MASS »',
+      href: '#',
+      icon: 'tabler:heart-handshake',
+    }
+  },
+]}
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551745/misa04_srovx6.jpg',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+    imageWidth={650} 
+    imageHeight={500}
+/>
+
+
+  <div class="space-y-3">
+    <TextOverlayImage
+  image={image02}
+  title="Masses for Your Eternal Rest"
+  subtitle='You can request that Masses be celebrated upon your passing, for the eternal rest of your soul. What peace it brings to know that the Holy Eucharist will be offered for you, and what joy to know that, from heaven, you can continue to support the Church on earth. Contact us at:'
+  subtitle02="+1 (980) 860-0772 | info@omnesgentesproject.com"
+  textPosition="middle"
+  textBgOpacity={0.6}
+  buttonText="Yes, I WANT TO LEARN MORE"
+  buttonLink="https://donorbox.org/omnesgentesproject"
+  buttonVariant="primary"
+  buttonIcon="tabler:headset"
+/>
+</div>
+
+  <div class="space-y-3">
+    <TextOverlayImage
+  image={image03}
+  title='"When generous giving to others becomes the hallmark of our actions, we give thanks to the Heart of Christ, and our own hearts are set ablaze." — Pope Francis'
+  textPosition="middle"
+  textBgOpacity={0.6}
+/>
+</div>
+
+</Layout>
+
+

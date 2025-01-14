@@ -1,0 +1,204 @@
+---
+import { YouTube } from 'astro-embed';
+import Layout from '~/layouts/PageLayout.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features2.astro';
+import FAQsAccordion from '~/components/widgets/FAQsAccordion.astro';
+import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
+import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
+
+const image01 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551671/20230206_093155_l7u16w.jpg',
+  alt: 'HolyFire',
+};
+const image02 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551623/IMG_1380_cpbvd9.jpg',
+  alt: 'HolyFire',
+};
+
+
+const callToAction01 = {
+  text: 'DONATE NOW',
+  href: '#',
+  icon: 'tabler:heart-handshake',
+};
+const items01 = [
+  {
+    description: 'This is our calling—to bring hope, faith, and love to the farthest reaches of the world, where the light of the Gospel has yet to shine. Together, we are the hands and feet of Christ, reaching out to the forgotten, the oppressed, and the broken. With your support, we can continue to build the Kingdom of God, one soul at a time, in places where His name is most needed.',
+  },
+  {
+    description: 'Let us rise to this holy mission, for the harvest is plentiful, and the time is now. Together, we can bring the Good News to the ends of the earth, for the glory of God and the salvation of souls. Amen.',
+  },
+];
+
+const metadata = {
+   title: 'Donation',
+ };
+---
+
+ <!--- ref: 
+https://donar.ayudaalaiglesianecesitada.org/
+https://www.ayudaalaiglesianecesitada.org/herencias-y-legados
+//(herencias y legados)
+--> 
+
+  <Layout metadata={metadata}>
+
+  <SocialLinkSticker />
+<!-- payment system w/buttons:
+ -->
+    <div class="space-y-3">
+      <TextOverlayImage
+    image={image01}
+    title="With your help, we carry the light of the Gospel to the farthest corners of the earth, where the name of Christ has yet to be proclaimed."
+    subtitle='"Et praedicabitur hoc evangelium regni in universo orbe in testimonium omnibus gentibus; Et tunc veniet consummatio"'
+    textPosition="middle"
+    textBgOpacity={0.5}
+  />
+  </div>
+
+<Steps2
+title="Other Ways to Make Your Donation:"
+items={[
+  {
+    title: 'Via WhatsApp',
+    description: `+1 (980) 860-0772`,
+    icon: 'tabler:brand-whatsapp',
+  },
+  {
+    title: 'Bank Transfer: Include the purpose, your full name, and ID number. To make your donation tax-deductible, please contact us.',
+    description: 'donations@omnesgentesproject.com',
+    icon: 'tabler:mail',
+  },
+]}
+/>
+
+
+<Content
+  content='<h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Every year, we fund approximately 7 apostolic and humanitarian emergency projects in 7 countries.</h3><p1 class="text-1xl tracking-tight dark:text-grey sm:text-3xl mb-2">Connect Us to learn more about our cause.</p1>'
+  callToAction={callToAction01}
+  image="https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551583/donation01_z7mly8.jpg"
+  imageWidth={700} 
+  imageHeight={700}
+  isReversed
+  isDark
+  items={items01}
+/>
+
+
+<Features
+id="features"
+title="100% of OGP's Projects Are Sustained by Donations"
+subtitle="<p3 class='tracking-tight text-left'>The generosity of our benefactors enables us to fund nearly 5,000 projects annually. These include pastoral initiatives—such as supporting and forming priests and religious, training catechists and laypeople, building and rebuilding churches, providing vehicles and communication tools for evangelization, and supplying catechetical materials—as well as critical emergency aid.</p3>"
+columns={3}
+items={[
+  {
+    title: 'Building and Restoring Churches',
+    icon: 'tabler:building-church',
+  },
+  {
+    title: 'Supporting Priests',
+    icon: 'tabler:sunrise',
+  },
+  {
+    title: 'Religious Formation',
+    icon: 'tabler:book',
+  },
+  {
+    title: 'Sustaining Missionaries',
+    icon: 'tabler:sun-electricity',
+  },
+  {
+    title: 'Forming Lay Leaders',
+    icon: 'tabler:bible',
+  },
+  {
+    title: 'Transport for Missionary Work',
+    icon: 'tabler:car',
+  },
+  {
+    title: 'Catechetical Materials',
+    icon: 'tabler:bible',
+  },
+  {
+    title: 'Communication Tools for Missionaries',
+    icon: 'tabler:headset',
+  },
+  {
+    title: 'Emergency Aid',
+    icon: 'tabler:ambulance',
+  },
+]}
+/>
+
+<YouTube id="Ha-nvzGxyCg" />
+<style is:inline>
+  lite-youtube {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+</style>
+
+<FAQsAccordion
+  title="Frequently Asked Questions"
+  subtitle="Learn how your generosity brings hope and faith to those in need. Discover the impact of your gifts, the blessings of tax-deductible giving, and the power of recurring support. Together, we serve the Apostolic missions with faith, transparency, and love, answering God’s call to make a difference."
+  items={[
+  {
+    title: 'Who Benefits from Your Donation, and How?',
+    details: 'If you wish to allocate your donation to a specific campaign, it will fund related projects. If the campaign’s needs are already met when your donation is received, it will be redirected to similar projects or pastoral and emergency needs in the same country. If no specific destination is indicated, your donation will be used for the most urgent needs. At Aid to the Church in Need, we manage donations with full transparency, committed to the trust of our benefactors and the suffering Church, which is our core mission. Additionally, your contributions may be tax-deductible: the first €150 annually are deductible at 80% (you deduct €120, so your donation effectively costs you €30). For amounts above €150, the deduction is 35%, or 40% for recurring donations.',
+  },
+  {
+    title: 'How Are Donations Tax-Deductible, and by How Much?',
+    details: 'The first €150 donated are deductible at 80% (you deduct €120, so your donation effectively costs you €30). For amounts above €150, the deduction is 35%, or 40% for recurring donations. To claim the deduction, provide your full name, ID number, address, and the purpose of the donation, or contact us.',
+  },
+  {
+    title: 'What Does the Tax Authority Consider a Recurring Donation?',
+    details: 'If you have donated for the past two years with an amount equal to or greater than the previous year, the deduction will be 40% for amounts exceeding the first €150. We encourage recurring donations. Remember to provide your name, ID number, address, and the purpose of the donation.',
+  },
+  {
+    title: 'Want to Make Periodic Donations That Are Not Monthly?',
+    details: 'If you wish to make periodic donations (quarterly, semi-annually, or annually) instead of monthly, contact us at 91 725 92 12 or email info@ayudaalaiglesianecesitada.org.',
+  },
+  {
+    title: 'Benefits of Making a Will',
+    details: 'A will ensures your wishes are fulfilled. It prevents future disputes or conflicts among heirs. Without a will, a declaration of heirs is required (a longer, more complex, and costly process). If there are no heirs or will, your estate goes to the state. Creating a will is affordable, modifiable, and straightforward.',
+  },
+  {
+    title: 'Why Trust Omnes Gentes Project?',
+    details: 'Omnes Gentes Project is an international Catholic organization dedicated to providing pastoral aid to persecuted Christians. We do not receive public funding and rely solely on private donations. We operate with full transparency, and our reports are audited. You can review our audit report.',
+  },
+  {
+    title: 'Steps to Include Omnes Gentes Project in Your Will',
+    details: 'To leave assets to Omnes Gentes Project in your will, visit a notary and provide the foundation’s details: Ferrer del Río Street, 14, 28028 Madrid, Tax ID: R-2800175-H. Send us a copy of the will or the relevant page. All personal data will be handled confidentially and in compliance with the law.',
+  },
+  ]}
+  titleTextSize="text-4xl"
+  titleTextColor="text-blue-900"
+  subtitleTextSize="text-3xl"
+  subtitleTextColor="text-blue-700"
+  itemTextSize="text-700"
+  itemTextColor="text-silver-900"
+  itemHoverTextColor="text-blue-900"
+  contentTextSize="text-1500"
+  contentTextColor="text-silver-700"
+/>
+
+<div class="space-y-3">
+  <TextOverlayImage
+image={image02}
+title="Ignite the Holy Fire Across the World"
+subtitle='Your donation fuels the Catholic Mission at the End of the World, bringing Christ’s light to the most faithful and underserved. Together, we can ignite hearts with the Gospel and strengthen the Lord’s work.'
+subtitle02='DONATE TODAY and be part of this divine mission!'
+description='"And the gospel must first be preached to all nations." – Mark 13:10'
+textPosition="middle"
+textBgOpacity={0.5}
+buttonText="Donate"
+buttonLink="https://donorbox.org/omnesgentesproject"
+buttonVariant="primary"
+buttonIcon="tabler:heart-handshake"
+/>
+</div>
+
+</Layout>
+

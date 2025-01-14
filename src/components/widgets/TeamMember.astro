@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  name: string;
+  role: string;
+  image: string;
+  socialLinks: { [key: string]: string };
+}
+
+const { name, role, image, socialLinks } = Astro.props as Props;
+---
+
+<div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
+  <img
+    src={image}
+    alt={name}
+    class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-gray-200"
+  />
+  <h3 class="text-xl font-semibold text-gray-800">{name}</h3>
+  <p class="text-gray-500 mb-4">{role}</p>
+  
+  <div class="flex space-x-4">
+    {Object.entries(socialLinks).map(([platform, link]) => (
+      <a href={link} target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-500">
+        <Icon name={`tabler:${platform}`} class="w-6 h-6" />
+      </a>
+    ))}
+  </div>
+</div>

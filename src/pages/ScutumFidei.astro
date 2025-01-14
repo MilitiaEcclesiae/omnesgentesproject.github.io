@@ -1,0 +1,200 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
+import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
+
+const image01 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551638/shieldoffaith_tognni.jpg',
+  alt: 'A beautiful landscape',
+};
+const image02 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551638/publishment_vhdwpx.jpg',
+  alt: 'A beautiful landscape',
+};
+
+const metadata = {
+   title: 'material-para-rezar',
+ };
+---
+
+  <Layout metadata={metadata}>
+    <SocialLinkSticker />
+    <TextOverlayImage
+    image={image01}
+    title="Scutum Fidei"
+    subtitle='"Taking the shield of faith, with which you can quench all the flaming darts of the evil one." -Ephesians 6:16'
+    textPosition="middle"
+    textBgOpacity={0.6}
+  />
+
+    <Content
+    isReversed
+    items={[
+      {
+        title:"Este Adviento reza con el Santo de cada día para preparar la venida del Señor",
+        description:"Queremos compartir contigo este calendario de Adviento. Un material para rezar y para preparar la venida del Señor con el Santo de cada día, una oración y un propósito. Déjanos tus datos y descárgalo.",
+        callToAction: {
+          target: '_blank',
+          text: 'DESCARGA PDF »',
+          href: '#',
+          icon: 'tabler:download',
+        }
+      },
+    ]}
+    image={{
+      src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551667/advent_ceqgku.jpg',
+      alt: 'Colorful Image',
+      loading: '',
+    }}
+    /> 
+
+    <!-- add bg -->
+    <Features3
+    title="SPIRITUAL MANNA"  
+    subtitle=""
+    columns={3}
+    items={[
+      {
+        title: 'Rosary',
+        description: 'Deepen your prayer life with the Holy Rosary.',
+        callToAction: {
+        target: '_blank',
+        text: 'DOWNLOAD PDF »',
+        href: "/downloads/item2.zip",
+        icon: 'tabler:download',
+      }
+      },
+      {
+        title: 'Catholic Bible(RSVCE)',
+        description: 'Explore the Word of God in the Catholic tradition.',
+        callToAction: {
+        target: '_blank',
+        text: 'DOWNLOAD PDF »',
+        href: "/downloads/item2.zip",
+        icon: 'tabler:download',
+      }
+      },
+      {
+        title: 'Catechism of the Catholic Church',
+        description: 'Secure paysactions.',
+        callToAction: {
+        target: '_blank',
+        text: 'DOWNLOAD PDF »',
+        href: "/downloads/item2.zip",
+        icon: 'tabler:download',
+      }
+      },
+      {
+        title: 'Omnes Gentes Project Missionary Handbook',
+        description: 'A guide for missionary work',
+        callToAction: {
+        target: '_blank',
+        text: 'DOWNLOAD PDF »',
+        href: "/https://drive.google.com/drive/folders/1s4baE1H9x78iRM-RwwLYemMqdvqdYRKZ",
+        icon: 'tabler:download',
+      }
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <div class="space-y-8">
+    <TextOverlayImage
+    image={image02}
+    title="BIBLIOGRAFÍA"
+    textPosition="middle"
+    textBgOpacity={0.6}
+  />
+  </div>
+
+
+  <Content
+  isReversed
+  items={[
+    {
+      title:"Tinieblas Tibetanas(Tibetan Darkness)",
+      //subtitle:"Pdre.Federico Highton",
+      description:"The reader does not hold in their hands a book of dialogue, but a deeply critical work. Therefore, let the reader not expect to find here superficial attempts at reconciliation, beneath which—often, if not always—the weaknesses of a psychologically complacent profile are masked. Instead, what the reader will find is a raw, direct, plain, and unvarnished illumination of the grave errors that define the very identity of a false path that is today publicly promoted, advanced, and legitimized as an alternative to Christianity.",
+      callToAction: {
+        target: '_blank',
+        text: 'BUY',
+        href: 'https://www.amazon.com/-/es/Federico-Highton/dp/9878805891',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551737/libro_Tinieblas_wdmeo4.jpg',
+    alt: '',
+    loading: '',
+  }}
+  /> 
+  <Content
+  isAfterContent
+  items={[
+    {
+      title:"Ad Gentes",
+      //subtitle:"Pdre.Federico Highton",
+      description:"The present work that the reader holds is a compilation of texts written under immense effort and in the most adverse circumstances (on the Tibetan plateau, there are no libraries to consult, no chairs to rest in, no tables to eat at…). The author has penned these thoughts hastily and fervently, quixotically, in the heat of the moment. Thus, what you will find here is not a treatise on missions, but rather reflections, sermons, letters, panegyrics, and above all, an immense zeal for souls. That same zeal which led Our Lord to say that He had come to bring 'fire upon the earth, and how I wish it were already kindled!' (Luke 12:49).",
+      callToAction: {
+        target: '_blank',
+        text: 'BUY',
+        href: 'https://www.amazon.com/AD-GENTES-Introducci%C3%B3n-Apost%C3%B3lica-evangelizadas/dp/1728687667/ref=sr_1_1?s=books&sr=1-1',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551560/book_AdGentes_yomqpd.jpg',
+    alt: 'Colorful Image',
+    loading: 'lazy',
+  }}
+  /> 
+  <Content
+  isReversed
+  items={[
+    {
+      title:"Esbozo de Aforismos(Outline of Aphorisms)",
+      //subtitle:"Pdre.Federico Highton",
+      description:"These pages are but the lighthouse alluded to in the Dorsian metaphor. The flashes of light and moments of darkness that emerge from them have the rhythm and measure—both in form and content—so that if one has heeded Our Lord and set sail into the deep, they will not crash against the rocks, run aground on a cliff, or end up shipwrecked on the island of Socotra or in the bay of Sulawesi. If one is skilled in soul, however, they may reach Jauja, as Father Leonardo Castellani did. And there they may dwell, having found at last the soul of a brother. This is no small thing in the fatal shipwreck in which we find ourselves (From the Prologue).",
+      callToAction: {
+        target: '_blank',
+        text: 'BUY',
+        href: 'https://www.amazon.com/Esbozo-aforismos-Spanish-Federico-Highton-ebook/dp/B077W5V9R9/ref=sr_1_1?s=books&sr=1-1',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551632/libro_esbozo_nw1jd8.jpg',
+    alt: 'Colorful Image',
+    loading: '',
+  }}
+  /> 
+  <Content
+  isAfterContent
+  items={[
+    {
+      title:"Editorial Que No te la Cuenten",
+      //subtitle:"Pdre.Javier Olivera Ravasi",
+      description:"",
+      callToAction: {
+        target: '_blank',
+        text: 'Explore our curated selection of books',
+        href: 'https://editorial.quenotelacuenten.org/',
+        icon: 'tabler:brand-amazon',
+      }
+    },
+  ]}
+  image={{
+    src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551739/libro_qntlc_p8dpgi.jpg',
+    alt: 'Colorful Image',
+    loading: '',
+  }}
+  /> 
+
+</Layout>
+
+

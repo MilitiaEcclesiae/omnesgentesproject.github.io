@@ -5,20 +5,27 @@ import { getHomePermalink } from '~/utils/permalinks';
 const title = `Error 404`;
 ---
 
+<!-- use image of francis xavier as 404 -->
+
 <Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
-        </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
-      </div>
-    </div>
-  </section>
+
+  <div class="relative w-full h-screen bg-cover bg-center"
+  style="background-image: url('https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551665/404page_ktmjmw.jpg'); background-size: 100% 87%">
+<!-- Content Container (centered) -->
+<div class="absolute inset-0 flex justify-center items-center text-center px-4">
+ <div class="text-white bg-opacity-50 bg-black p-6 rounded-lg">
+  <h2 class="mb-8 font-bold text-9xl">
+    <span class="sr-only">Error</span>
+    <span class="text-primary">404</span>
+  </h2>
+  <p class="text-3xl font-semibold md:text-3xl">Oops! This page seems to have wandered off the path.</p>
+  <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
+    But don’t fret! There’s a whole world of wisdom and adventure waiting for you on our homepage—go forth and explore!
+  </p>
+  <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
+  <br/><br/><br/>
+ </div>
+</div>
+</div>
+
 </Layout>

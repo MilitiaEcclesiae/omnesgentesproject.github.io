@@ -1,0 +1,140 @@
+---
+import type { Image } from '~/types';
+
+interface Props {
+  images: Image[]; // Array of image objects with `src` and `alt` properties
+  imageSize?: string; // Custom image size (e.g., "500px", "100%")
+  textSize?: string; // Custom text size for buttons (e.g., "1.5rem", "2rem")
+  buttonSize?: string; // Custom button size (e.g., "40px", "50px")
+}
+
+const { images, imageSize = "100%", textSize = "1.5rem", buttonSize = "40px" } = Astro.props as Props;
+
+// Reactive variable for the current image index
+let currentIndex = 0;
+
+// Function to handle image navigation
+const navigateImage = (direction: 'next' | 'prev') => {
+  if (direction === 'next') {
+    currentIndex = (currentIndex + 1) % images.length;
+  } else {
+    currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+  }
+};
+
+// Touch event handlers for mobile
+let touchStartX = 0;
+
+const handleTouchStart = (e: TouchEvent) => {
+  touchStartX = e.touches[0].clientX;
+};
+
+const handleTouchEnd = (e: TouchEvent) => {
+  const touchEndX = e.changedTouches[0].clientX;
+  if (touchEndX < touchStartX) {
+    navigateImage('next'); // Swipe left
+  } else if (touchEndX > touchStartX) {
+    navigateImage('prev'); // Swipe right
+  }
+};
+
+// Keyboard event handler
+const handleKeyDown = (e: KeyboardEvent) => {
+  if (e.key === 'ArrowLeft') navigateImage('prev');
+  if (e.key === 'ArrowRight') navigateImage('next');
+};
+---
+
+<div
+  class="image-gallery"
+  on:touchstart={handleTouchStart}
+  on:touchend={handleTouchEnd}
+  style={`--image-size: ${imageSize}; --text-size: ${textSize}; --button-size: ${buttonSize};`}
+>
+  <!-- Left Button -->
+  <button class="nav-button left" on:click={() => navigateImage('prev')} aria-label="Previous Image">
+    &larr;
+  </button>
+
+  <!-- Image Container -->
+  <div class="image-container">
+    {images.map((image, index) => (
+      <img
+        src={image.src}
+        alt={image.alt}
+        class={`gallery-image ${index === currentIndex ? 'active' : ''}`}
+        loading="lazy"
+      />
+    ))}
+  </div>
+
+  <!-- Right Button -->
+  <button class="nav-button right" on:click={() => navigateImage('next')} aria-label="Next Image">
+    &rarr;
+  </button>
+</div>
+
+<style>
+  .image-gallery {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .image-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .gallery-image {
+    width: var(--image-size, 100%);
+    height: auto;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .gallery-image.active {
+    opacity: 1;
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: var(--text-size, 1.5rem);
+    width: var(--button-size, 40px);
+    height: var(--button-size, 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .nav-button.left {
+    left: 10px;
+  }
+
+  .nav-button.right {
+    right: 10px;
+  }
+
+  .nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+</style>
+
+<script>
+  // Add keyboard navigation
+  document.addEventListener('keydown', handleKeyDown);
+</script>

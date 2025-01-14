@@ -1,0 +1,116 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
+
+const image01 = {
+  src: '/images/hero.jpg',
+  alt: 'A beautiful landscape',
+};
+const image02 = {
+  src: '/images/hero.jpg',
+  alt: 'A beautiful landscape',
+};
+const image03 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551634/newsletter_portada_snnxfr.jpg',
+  alt: 'A beautiful landscape',
+};
+
+const subscribe = {
+  formUrl: "https://example.com/subscribe",
+  title: "Subscribe to Our Newsletter",
+  text: "Stay updated with the latest news and updates.",
+};
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+
+<SocialLinkSticker />
+<TextOverlayImage
+  image={image01}
+  title="OGP en Media"
+  textPosition="middle"
+  textBgOpacity={0.6}
+/>
+
+
+<Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Tune In Now – Ignite Your Faith!',
+        href: 'https://www.youtube.com/playlist?list=PLHijFrLuJ3UzbCuWOK4-l8n1N4HerUjLW',
+        target: '_blank',
+        icon: 'tabler:brand-google-podcasts',
+      },
+    ]}
+    >
+    <Fragment slot="title">
+        Daily Homily by Fr. Federico
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Join Daily Homily by Fr. Federico,</span> a fiery podcast from the Omnes Gentes Project, inspiring Catholics to boldly proclaim the Gospel to the ends of the earth. With powerful reflections rooted in the Church’s mission and the witness of persecuted Christians, Fr. Federico calls you to live your faith courageously and join the fight for souls—subscribe now and answer the call!
+        <br><br>
+        With a duration maximum of 15 minutes, this program can be listened weekly every Tuesday at 9:30 PM on youtube.
+    </Fragment>
+  </Hero>
+
+<div class="media-container">
+  <iframe
+    width="100%"
+    height="500" 
+    src="https://www.youtube.com/embed/kgrj7isAS0U"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Tune In Now – Ignite Your Faith!',
+        href: 'https://odysee.com/@SoulSync:0?view=content',
+        target: '_blank',
+        icon: 'tabler:brand-google-podcasts',
+      },
+    ]}
+    >
+    <Fragment slot="title">
+        Dai
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">J Federico,</span> of the earth. With powerful reflections rooted in the Church’s mission and the witness of persecuted Christians, Fr. Federico calls you to live your faith courageously and join the fight for souls—subscribe now and answer the call!
+        <br><br>
+        With a duration maximum of 15 minutes, this program can be listened weekly every Tuesday at 9:30 PM on youtube.
+    </Fragment>
+</Hero>
+<div class="media-container">
+    <iframe
+      width="100%"
+      height="500" 
+      src="https://odysee.com/@SoulSync:0/BDD_Acts1:8?r=4yFLrkgTYcL6sK4REdcVMfKyaFwWyb3T"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <TextOverlayImage
+  image={image03}
+  textPosition="middle"
+  textBgOpacity={0.6}
+  subscribe={subscribe}
+/>
+
+</Layout>
+

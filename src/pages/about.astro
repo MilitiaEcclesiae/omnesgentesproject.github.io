@@ -1,228 +1,423 @@
 ---
+import Layout from '~/layouts/PageLayout.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Layout from '~/layouts/PageLayout.astro';
+import TeamMember from "~/components/widgets/TeamMember.astro";
+import Content from '~/components/widgets/Content.astro';
+import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import EventGallery from '~/components/widgets/EventGallery.astro';
+import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
+import { YouTube } from 'astro-embed';
+
+
+
+const image01 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551584/fire_bbvv3s.jpg',
+  alt: 'HolyFire',
+};
+const image02 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551836/Voluntario1_ocewsp.jpg',
+  alt: 'A beautiful landscape',
+};
+const image03 = {
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551836/Voluntario1_ocewsp.jpg',
+  alt: 'A beautiful landscape',
+};
+
+
+const events = [
+  {
+    image: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736795894/qualityoffaith01_j6xv1e.jpg",
+    title: "QUALITY OF FAITH",
+    subtitle: "Missionaries are entrusted by Christ to fight and win the battle for souls. As bearers of His light, it is essential that missionaries embody the highest virtues of faith, hope, and love. Their character must reflect the holiness of the Gospel they proclaim.",
+  },
+  {
+    image: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736795888/divineintent01_lhhwbx.jpg",
+    title: "DIVINE INTENT",
+    subtitle: "No missionary is more attuned to the needs of the mission field than the one who stands on the frontlines, guided by the Holy Spirit. The concept of \"Divine Intent\" ensures every missionary understands the sacred purpose of their mission: to bring the truth of Christ to those who have never heard His name.",
+  },
+  {
+    image: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736795885/discern_lowdjj.jpg",
+    title: "DISCERNMENT IN ACTION",
+    subtitle: "We form missionaries for the spiritual battle by constantly challenging them to make wise, Spirit-led decisions with limited time, resources, or information. Missionaries are trained to rely on their faith, judgment, and resilience to respond swiftly to the needs of souls and the demands of the mission. <b>Through prayer and trust in God’s providence, they bring the light of Christ to the darkest corners of the world.</b>"
+  }
+];
+
+const teamMembers = [
+  {
+    name: 'Padre Federico Highton',
+    role: 'Fundador y Director OGP',
+    image: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551637/Pdr.F_urrzx4.jpg',
+    socialLinks: {
+      mail: '',
+    },
+  },
+  {
+    name: 'Karla Noguez',
+    role: '',
+    image: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551631/Karla_hyzcnm.jpg',
+    socialLinks: {
+      mail: '',
+    },
+  },
+  {
+    name: 'Leonor Suaya de Highton',
+    role: '',
+    image: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551811/SuayaH_g5t31t.jpg',
+    socialLinks: {
+      mail: '',
+    },
+  },
+];
 
 const metadata = {
   title: 'About us',
 };
+
 ---
 
+<!-- Feature: TOC  -->
+
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
+  <SocialLinkSticker />
+  <YouTube 
+      id="IYtrMO96IGU" 
+      poster="https://res.cloudinary.com/dqk5ejjai/image/upload/v1736554805/Hlc_vcoverage_rtlpfw.jpg"
+      params="start=09"
+      />
+  <style is:inline>
+    lite-youtube {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  </style>
+
+
+<!-- inline formating: <div style='text-align: left;'></div>; <strong>, <em>  bold&italic; <span style='color: blue;'></span> -color txt; <blockquote> and <cite></cite> -->
+
+<Features2
+  title="We proclaim the Gospel where it has never been heard before."
+  subtitle="<div style='text-align: left;'><span style='font-size: 24px; font-weight: bold;'>The Omnes Gentes Project (OGP)</span> is a global mission dedicated to bringing the Gospel to the most remote regions, where the message of Christ has never reached and where no Catholic communities exist. We send missionaries with one singular mission: <span style='font-size: 24px; font-weight: bold;'>to win souls for Jesus</span> and to strive to live a life of holiness. <br/><br/>Our purpose is to fulfill Jesus' command to carry the Gospel to all nations, as expressed in:<br/><br/><span style='font-size: 24px; font-weight: bold;'><cite>Go therefore and make disciples of all nations(Omnes Gentes), baptizing them in the name of the Father and of the Son and of the Holy Spirit.</cite>—Matthew 28:19</span> <br/><br/>This is our calling, our duty, and our joy. Together, we rise to bring the light of Christ to the darkest corners of the earth, for every soul deserves to hear the Good News and experience the saving love of our Lord. Let us be bold, faithful, and unwavering in this divine mission. <span style='font-size: 24px; font-weight: bold;'>For the glory of God and the salvation of souls!</span></div>"
   >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
-    </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+ </Features2>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
-    </Fragment>
-  </Hero>
+ <!-- title="Anunciamos el Evangelio donde nunca antes fue escuchado"
+  subtitle="<div style='text-align: left;'>El Omnes Gentes Project (OGP) es una misión global dedicada a llevar el Evangelio a las regiones más remotas, donde el mensaje de Cristo nunca ha llegado y donde no existen comunidades católicas.  <br/><br/>Enviamos misioneros con una única misión: ganar almas para Jesús y trabajar para vivir una vida de santidad. Nuestro propósito es cumplir con el mandato de Jesús de llevar el Evangelio a todos los pueblos, <br/><br/><blockquote>como se expresa en: </br><cite>'Id y anunciad el Evangelio a todos los pueblos (Omnes Gentes), bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.'<br /> -Mt 28:19</blockquote></div>" -->
 
-  <!-- Stats Widget ****************** -->
+ <div class="space-y-3">
+    <TextOverlayImage
+  image={image01}
+  title="Missionary Motto"
+  subtitle='"Et praedicabitur hoc evangelium regni in universo orbe in testimonium omnibus gentibus; Et tunc veniet consummatio"'
+  subtitle02=' " And this gospel of the kingdom will be preached throughout the whole world, as a testimony to all nations; and then the end will come." -Matthew 24:14'
+  description='These mottos guide every missionary’s heart and actions as they carry the Holy Fire to the world, transforming lives and winning souls for Christ.'
+  textPosition="middle"
+  textBgOpacity={0.6}
+/>
+</div>
+
+<Content
+  title="What is the Omnes Gentes Project?"
+  subtitle=""
+  isReversed
+  items={[{ 
+    title: '', 
+    description: 'The Omnes Gentes Project is a global initiative with one singular purpose: to proclaim the Gospel for the first time in regions where the name of Christ has never been heard. This mission is carried out in collaboration with the Order of Saint Elijah, and we have undertaken numerous missions across the world, establishing communities of faith where none existed before. Through these missions, we strive to answer the call of Jesus and bring His message of hope and salvation to the farthest corners of the earth.' },
+  ]}
+  image={{
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551584/Fondo-Orden-San-Elias_hlz2zb.jpg",
+    alt: 'Colorful Image',
+  }}
+/>
+<Content
+  title=""
+  subtitle=""
+  isAfterContent
+  items={
+  [{ description: 'Our missionaries journey to the world’s farthest reaches to win souls for Christ, sharing the Gospel, building communities, and nurturing hearts for holiness where the faith has never been known. In one powerful story, a tribal leader embraced the Gospel, donating land for the village’s first Catholic church. Today, that land is becoming a sacred space for worship, a testament to God’s transforming power and the hope of salvation. ' },
+  { description: "This is the heart of the Omnes Gentes Project: to bring the light of Christ to the darkest places, to plant the seeds of faith where they have never been sown, and to build a legacy of hope, salvation, and eternal life. <span style='font-size: 24px; font-weight: bold;'>For the glory of God and the salvation of souls!<span/>" },
+  ]}
+  image={{
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551802/Sacerdotes_tptivk.jpg",
+    alt: 'Colorful Image',
+  }}
+/>
+
+
+
+<!-- Timeline -->
+<Steps
+title="Testimony of Grace"
+subtitle='Each milestone marks a step forward in fulfilling Christ’s Great Commission, as we strive to bring His hope and salvation to all nations. For the glory of God and the salvation of souls!'
+items={[
+  {
+    title: '2014',
+    description:
+      "Est. QNTLC",
+    icon: 'tabler:brand-youtube',
+  },
+  {
+    title: '2016',
+    description:
+      "The Order of Saint Elijah is Founded",
+    icon: 'tabler:building-church',
+  },
+  {
+    title: '2016',
+    description:
+      'OGP Launches in India',
+    icon: 'tabler:flame',
+  },
+  {
+    title: '2020',
+    description:
+      'FSA(San Elijah Foundation) is Created',
+    icon: 'tabler:certificate',
+  },
+  {
+    title: '2020',
+    description:
+      'FAE(Eliata Apostolic Family) is Formed',
+    icon: 'tabler:friends',
+  },
+]}
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736559779/IMG_OGP_kvxxze.jpg',
+  alt: 'Steps image',
+}}
+/>
+
+
+
+<Content
+  title="What Do We Do?"
+  isReversed
+  items={
+  [{ title: 'We Send Missionaries:', description: 'Our missionaries are committed to preaching the Gospel where it is needed most, dedicating their lives to winning souls for Christ.', icon: 'tabler:rocket' },
+   { title: 'We Establish Churches:', description: 'In every village we reach, we strive to build vibrant and faithful Catholic communities, rooted in the love of Christ.', icon: 'tabler:rocket' },
+   { title: 'We Form Christians::', description: 'Beyond evangelization, we work to nurture and educate new believers, guiding them to grow in faith and spiritual maturity.', icon: 'tabler:rocket' }
+  ]  
+  }
+  image={{
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736560555/IMG_2021_lt5tar.jpg",
+    alt: 'Colorful Image',
+  }}
+/>
 
   <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
+   title="Data 2024"
+   subtitle=""
+   stats={[
+     { titleverb:`REACH`, amount: '7', title: 'COUNTRIES' },
+     { titleverb:'THANKS TO', amount: '10K', title: 'PATRONS' },
+   ]}
   />
 
-  <!-- Features3 Widget ************** -->
 
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
+  <TextOverlayImage
+    image={image02}
+    title="MISSIONARY MINDSET"
+    subtitle='A MISSIONARY’S EVERY ACTION IS GUIDED BY THEIR COMMITMENT TO CHRIST’S GREAT COMMISSION. This unwavering focus fuels their drive to bring the light of the Gospel to the darkest corners of the world.'
+    subtitle02='Missionaries are called to be adaptable and resilient, spreading the truth of the Catholic Faith in the face of ever-changing challenges.'
+    textPosition="middle"
+    textBgOpacity={0.6}
   />
 
-  <!-- Features3 Widget ************** -->
+  <EventGallery events={events} />
 
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
+  <Content
+  title=""
+  subtitle=""
+  isReversed
+  items={[{ 
+    title: 'DIVINE WARRIORS', 
+    description: 'In the spiritual battles we are called to fight, it is in every missionary’s heart to overcome the challenges, obstacles, and darkness that hinder the spread of the Gospel. Missionaries are trained to discern each situation with divine wisdom, making Spirit-led decisions according to the needs of the souls before them and the conditions of the mission field. They think, act, and move with a sense of holy purpose, carrying out Christ’s Great Commission to bring the light of the Holy Catholic Faith to those who have never heard His name.<b>We are warriors of the Spirit, driven by a divine mission to conquer darkness with the truth of Christ.</b> ' },
+  ]}
+  image={{
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736795891/divinewarriors04_grtthr.jpg",
+    alt: 'Colorful Image',
+  }}
+/>
+<Content
+  title=""
+  subtitle=""
+  isAfterContent
+  items={
+  [{ title: 'A FAITH FORGED IN FIRE', 
+     description: 'Conditions can change quickly on the spiritual battlefield, and missionaries must adapt to meet those challenges with decisive, Spirit-led action. No two missions are identical, and no missionary prepares for only one type of struggle. A peaceful encounter can turn into a trial of faith, a moment of despair can transform into an opportunity for grace—in an instant.' },
+  { description: "Missionaries may be called to bring hope to the hopeless, light to the lost, or truth to those trapped in darkness.</b> Regardless of the battles, missionaries carry the mindset to fulfill the will of Christ and the mission of His Church." },
+  {description: "With resilience forged in prayer and trust in God’s providence, they stand ready to bring the Holy Fire to the ends of the earth.</b>"}
+  ]}
+  image={{
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736795884/about_faithforgedinfire_wppmxi.jpg",
+    alt: 'Colorful Image',
+  }}
+/>
+
+
+
+
+
+  <div class="space-y-8">
+    <TextOverlayImage
+    image={image02}
+    title="Missionary Purpose"
+    subtitle='We have but only one mission: To preach and Win souls.'
+    textPosition="middle"
+    textBgOpacity={0.6}
+  />
+  </div>
+
+  <Content
+  title=""
+  subtitle=""
+  isReversed
+  items={[{ 
+    title: 'A DIVINE CALLING. A SACRED MISSION', 
+    description: 'The mission of the Omnes Gentes Project reflects the purpose of every missionary: to bring the light of Christ to the darkest corners of the world. In essence, the Gospel is that purpose. In a world of spiritual darkness, in hearts burdened by sin, and in lives untouched by the truth, there are battles that must be fought with unwavering faith and won with divine conviction. These battles take many forms—ignorance, despair, and unbelief—but each one demands a critical choice: to proclaim the Gospel or remain silent. To unite in faith or scatter in fear. To stand firm in the Lord or falter in doubt. It is a decision every missionary declares to the world with every soul saved, every heart ignited, and every life transformed by the Holy Fire. ' },
+    {description: "Victory is not an option—it is our mission"}
+  ]}
+  image={{
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736795078/01_xphrm0.jpg",
+    alt: 'Colorful Image',
+  }}
+/>
+<Content
+  title=""
+  subtitle=""
+  isAfterContent
+  items={
+  [{ title: "FINDING PURPOSE IN THE LORD'S MISSION", 
+     description: 'The Missionaries of the Omnes Gentes Project are a spiritual family, united in faith and purpose, carrying the Gospel to the ends of the earth. Together, we find individual purpose in a divine calling—the salvation of souls and the spread of God’s Kingdom. Side by side, we embrace trials and overcome adversity, fueled by the strength of the Holy Spirit. Each missionary stands as a vital part of a united body, stronger together than alone, more fulfilled in Christ than ever before.' },
+  { description: "Our mission is not just a duty—it is our divine destiny."}
+  ]}
+  image={{
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736795081/02_h9d208.jpg",
+    alt: 'Colorful Image',
+  }}
+/>
+
+<section id="values">
+<TextOverlayImage
+    image={image03}
+    title="OGP VALUES"
+    subtitle="FAITH | HOPE | LOVE"
+    description="With faith in God’s plan, hope in His promises, and love for His people, you will carry the Holy Fire to the ends of the earth, transforming lives and bringing the light of the Gospel to those who have never heard His name."
+    textPosition="middle"
+    textBgOpacity={0.6}
   />
 
-  <!-- Steps2 Widget ****************** -->
 
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
+  <!-- They are the  as foundation that guides every missionary’s actions in the fight to win souls for Christ and bring the light of the Gospel to the darkest corners of the world. These values strengthen our resolve and deepen our resilience as we face spiritual, emotional, and moral battles in the mission field. -->
+<Content
+isReversed
+id='values'
+title="VALUES DEFINED BY THE WAY WE ARE LIVED"
+subtitle='A missionary kneels in prayer, holding a crucifix, ready to bring the light of Christ to the world. <br>These values are not just words—they are the foundation of every missionary’s life, lived out in prayer, sacrifice, and unwavering dedication to the mission of Christ.'
 
-  <!-- Steps2 Widget ****************** -->
+image={{
+  src: 'https://cdn.pixabay.com/photo/2017/07/27/11/16/prayer-2544994_1280.jpg',
+  alt: 'Colorful Image',
+}}
+>
+<Fragment slot="content">
+  <span class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">FAITH</span> guides missionaries to embody the ultimate trust in God’s plan and providence. Never doubt, never waver; abide by an unwavering commitment to the Gospel; respect the dignity of every soul and love others as Christ loves us. Faith compels missionaries to act with divine purpose, to fulfill their sacred duty, and to hold themselves accountable to God’s will in every action.
+</Fragment>
+</Content>
+<Content
+isAfterContent
+image={{
+  src: 'https://cdn.pixabay.com/photo/2016/12/22/22/07/christmas-background-1926414_1280.jpg',
+  alt: 'Blueprint Image',
+}}
+>
+<Fragment slot="content">
+<span class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">HOPE</span> is the spiritual, emotional, and moral strength ingrained in missionaries. It carries them through the challenges of the mission field and aids in overcoming despair. It is the inner light that enables them to persevere in the face of adversity, to cling to God’s promises, and to bring the message of salvation to those who live in darkness. 
+</Fragment>
+</Content>
+<Content
+isReversed
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1736793272/sacredheart01_qlejte.webp',
+  alt: 'Colorful Image',
+}}
+>
+<Fragment slot="content">
+  <span class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">LOVE</span> is the spirit of selflessness and sacrifice found in missionaries. It leads to the highest order of devotion to Christ and His Church. It is the fire that fuels their unrelenting determination to bring the Gospel to the ends of the earth. Love inspires the courage to lay down their lives for others, to serve with humility, and to win souls for the Kingdom of God.
+</Fragment>
+</Content>
+</section>
 
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
+<!-- TEAM -->
+ <h1 class="text-4xl font-bold text-center mt-8 mb-4">Meet Our Team</h1>
+ <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+   {teamMembers.map(member => (
+     <TeamMember
+       name={member.name}
+       role={member.role}
+       image={member.image}
+       socialLinks={member.socialLinks}
+     />
+   ))}
+ </div>
+
+
+<Features3
+id="contact"
+title="Let Us Walk with You in Faith"
+subtitle="We’re here to answer your questions and light your path with faith."
+columns={3}
+items={[
+  {
+    title: 'Phone',
+    icon: 'tabler:phone',
+    callToAction: {
+      target: '_blank',
+      text: 'Call us',
       href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+      variant: 'link',
+    },
+  },
+  {
+    title: 'Email',
+    icon: 'tabler:mail',
+    callToAction: {
+      target: '_blank',
+      text: 'Write to us',
+      href: 'mailto:info@omnesgentesproject.com',
+      variant: 'link',
+    },
+  },
+  {
+    title: 'Chat',
+    icon: 'tabler:brand-whatsapp',
+    callToAction: {
+      target: '_blank',
+      text: 'Chat with us',
+      href: 'https://chat.whatsapp.com/CG4xxpAh8Y7FhAj2kOuNiK',
+      variant: 'link',
+    },
+  },
+]}
+/>
+<YouTube 
+    id="mSyX2nDR6Sk" 
+    poster='https://res.cloudinary.com/dqk5ejjai/image/upload/v1736561304/Hcl05_dcxonq.png'
+    />
+<style is:inline>
+  lite-youtube {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+</style>
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
 </Layout>
+    
+
+ 

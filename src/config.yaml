@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Omnes Gentes Project
+  site: 'https://astrowind.vercel.app'  #update
   base: '/'
   trailingSlash: false
 
@@ -9,23 +9,19 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
+    default: OmnesGentesProject
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Catholic Missions"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: OmnesGentesProject
     images:
-      - url: '~/assets/images/default.png'
+      - url: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551633/Logotipo-OmnesGentesProject_s7giz6.png'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
-    cardType: summary_large_image
 
 i18n:
   language: en

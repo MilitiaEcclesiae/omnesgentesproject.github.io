@@ -10,6 +10,8 @@ interface Props extends Widget {
   tagline?: string;
   callToAction?: CallToAction;
   actions?: string | CallToAction[];
+  backgroundImage?: string; // New prop for background image URL
+  overlayOpacity?: number; // Configurable overlay opacity
 }
 
 const {
@@ -17,42 +19,69 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   actions = await Astro.slots.render('actions'),
-
+  backgroundImage, // Background image URL
+  overlayOpacity = 0.3, // Default overlay opacity
   id,
   isDark = false,
   classes = {},
-  bg = await Astro.slots.render('bg'),
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`}>
   <div
-    class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
+    class="cta-container max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600 relative overflow-hidden"
   >
-    <Headline
-      title={title}
-      subtitle={subtitle}
-      tagline={tagline}
-      classes={{
-        container: 'mb-0 md:mb-0',
-        title: 'text-4xl md:text-4xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'text-xl text-muted dark:text-slate-400',
-      }}
-    />
+    <!-- Background Image -->
     {
-      actions && (
-        <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 mt-6">
-          {Array.isArray(actions) ? (
-            actions.map((action) => (
-              <div class="flex w-full sm:w-auto">
-                <Button {...(action || {})} class="w-full sm:mb-0" />
-              </div>
-            ))
-          ) : (
-            <Fragment set:html={actions} />
-          )}
-        </div>
+      backgroundImage && (
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style={`background-image: url(${backgroundImage}); opacity: ${overlayOpacity};`}
+        />
       )
     }
+
+    <!-- Semi-Transparent Overlay -->
+    <div class="absolute inset-0 bg-black/30 dark:bg-black/50" />
+
+    <!-- Content -->
+    <div class="relative z-10">
+      <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={{
+          container: 'mb-0 md:mb-0',
+          title: 'text-4xl md:text-4xl font-bold tracking-tighter mb-4 font-heading',
+          subtitle: 'text-xl text-muted dark:text-slate-400',
+        }}
+      />
+      {
+        actions && (
+          <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 mt-6">
+            {Array.isArray(actions) ? (
+              actions.map((action) => (
+                <div class="flex w-full sm:w-auto">
+                  <Button {...(action || {})} class="w-full sm:mb-0" />
+                </div>
+              ))
+            ) : (
+              <div set:html={actions} />
+            )}
+          </div>
+        )
+      }
+    </div>
   </div>
 </WidgetWrapper>
+
+<style>
+  .cta-container {
+    position: relative;
+  }
+
+  .cta-container > * {
+    position: relative;
+    z-index: 10; /* Ensure content is above the background */
+  }
+</style>

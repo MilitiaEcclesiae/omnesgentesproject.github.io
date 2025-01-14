@@ -1,0 +1,201 @@
+---
+import type { Image } from '~/types';
+import Button from '~/components/ui/Button.astro';
+import NewsLetter from '~/components/widgets/NewsLetter.astro';
+
+interface TextOverlayImageProps {
+  image: Image;
+  title?: string;
+  subtitle?: string;
+  subtitle02?: string;
+  subtitle03?: string;
+  description?: string;
+  description02?: string;
+  description03?: string;
+  textPosition?: 'top' | 'middle' | 'bottom';
+  textBgOpacity?: number;
+  buttonText?: string;
+  buttonLink?: string;
+  buttonType?: 'button' | 'submit' | 'reset';
+  buttonVariant?: 'primary' | 'secondary' | 'tertiary' | 'link';
+  buttonIcon?: string;
+  subscribe?: {
+    formUrl: string;
+    title: string;
+    text?: string;
+  };
+  backgroundSize?: string;
+  titleSize?: string;
+  subtitleSize?: string;
+  descriptionSize?: string;
+  textColor?: string;
+  buttonSize?: string;
+  buttonColor?: string;
+  buttonStyle?: string;
+  backgroundHeight?: string; // New prop
+  backgroundWidth?: string; // New prop
+}
+
+const {
+  image,
+  title,
+  subtitle,
+  subtitle02,
+  subtitle03,
+  description,
+  description02,
+  description03,
+  textPosition = 'middle',
+  textBgOpacity = 0.7,
+  buttonText,
+  buttonLink,
+  buttonType,
+  buttonVariant = 'primary',
+  buttonIcon,
+  subscribe,
+  backgroundSize = 'cover',
+  titleSize = '2.5rem',
+  subtitleSize = '1.5rem',
+  descriptionSize = '1rem',
+  textColor = 'white',
+  buttonSize = 'auto',
+  buttonColor = 'blue',
+  buttonStyle = 'rounded-lg',
+  backgroundHeight = '500px', // Default height
+  backgroundWidth = '100%', // Default width
+} = Astro.props as TextOverlayImageProps;
+
+const textPositionClasses = {
+  top: 'items-start',
+  middle: 'items-center',
+  bottom: 'items-end',
+};
+---
+
+<div
+  class="text-overlay-container"
+  style={`
+    --background-size: ${backgroundSize};
+    --title-size: ${titleSize};
+    --subtitle-size: ${subtitleSize};
+    --description-size: ${descriptionSize};
+    --text-color: ${textColor};
+    --button-size: ${buttonSize};
+    --button-color: ${buttonColor};
+    --button-style: ${buttonStyle};
+  `}
+>
+  <!-- Background Image -->
+  <img
+    src={image.src}
+    alt={image.alt}
+    class="background-image"
+    loading="lazy"
+    style={`
+      width: ${backgroundWidth};
+      height: ${backgroundHeight};
+    `}
+  />
+
+  <!-- Text Overlay Section -->
+  <div
+    class={`text-section ${textPositionClasses[textPosition]}`}
+    style={`--text-bg-opacity: ${textBgOpacity};`}
+  >
+    {title && <h1 class="title">{title}</h1>}
+    {subtitle && <h2 class="subtitle">{subtitle}</h2>}
+    {subtitle02 && <h2 class="subtitle">{subtitle02}</h2>}
+    {subtitle03 && <h2 class="subtitle">{subtitle03}</h2>}
+    {description && <p class="description">{description}</p>}
+    {description02 && <p class="description">{description02}</p>}
+    {description03 && <p class="description">{description03}</p>}
+
+    {buttonText && (
+      <Button
+        variant={buttonVariant}
+        text={buttonText}
+        {...(buttonLink ? { href: buttonLink } : {})}
+        {...(buttonType ? { type: buttonType } : {})}
+        icon={buttonIcon}
+        class="button"
+      />
+    )}
+
+    {subscribe && <NewsLetter {...subscribe} />}
+  </div>
+</div>
+
+<style>
+  .text-overlay-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: var(--background-size, cover);
+  }
+
+  .text-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--text-color, white);
+    text-align: center;
+    background-color: rgba(0, 0, 0, var(--text-bg-opacity, 0.7));
+  }
+
+  .title {
+    font-size: var(--title-size, 2.5rem);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: var(--subtitle-size, 1.5rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .description {
+    font-size: var(--description-size, 1rem);
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .button {
+    margin-top: 1.5rem;
+    width: var(--button-size, auto);
+    background-color: var(--button-color, blue);
+    border-radius: var(--button-style, 0.5rem);
+  }
+
+  @media (max-width: 768px) {
+    .text-section {
+      padding: 1rem;
+    }
+
+    .title {
+      font-size: calc(var(--title-size, 2.5rem) * 0.8);
+    }
+
+    .subtitle {
+      font-size: calc(var(--subtitle-size, 1.5rem) * 0.8);
+    }
+
+    .description {
+      font-size: calc(var(--description-size, 1rem) * 0.8);
+    }
+  }
+</style>

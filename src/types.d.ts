@@ -225,6 +225,7 @@ export interface Team extends Omit<Headline, 'classes'>, Widget {
 
 export interface Stats extends Omit<Headline, 'classes'>, Widget {
   stats?: Array<Stat>;
+  titleverb?: string;
 }
 
 export interface Pricing extends Omit<Headline, 'classes'>, Widget {
@@ -281,6 +282,8 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isAfterContent?: boolean;
   callToAction?: CallToAction;
+  imageWidth?: number; 
+  imageHeight?: number;
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}

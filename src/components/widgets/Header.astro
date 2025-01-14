@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
@@ -47,6 +46,8 @@ const {
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
+<!-- 2 features: Burger Menu, LangSWITCHER -->
+
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
@@ -72,7 +73,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+        <!-- <Logo /> -->
+        <img src='https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551633/Logotipo-OmnesGentesProject_s7giz6.png' class="h-12 mr-12" />
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
