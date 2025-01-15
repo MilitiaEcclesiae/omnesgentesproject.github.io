@@ -1,8 +1,14 @@
 ---
-import BackToTopButton from "./BackToTopButton.astro"
+const languages = [
+  { value: 'en', label: 'English' },
+  { value: 'es', label: 'Spanish' },
+  { value: 'fr', label: 'French' },
+  { value: 'cn', label: 'Chinese' },
+  { value: 'ar', label: 'Arabic' },
+];
 ---
-<!-- Social Links -->
-<aside class="social-sticker fixed left-4 top-1/2 flex flex-col gap-4 z-50 p-3 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg">
+
+<aside class="social-sticker fixed left-4 top-1/3 flex flex-col gap-4 z-50 p-3 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg">
     <a
       href="https://donorbox.org/omnesgentesproject"
       target="_blank"
@@ -69,6 +75,20 @@ import BackToTopButton from "./BackToTopButton.astro"
       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
       </svg>
     </a>
+
+    <!-- Language Switcher -->
+    <select
+    id="languageSelector"
+    aria-label="Select language"
+    class="p-2 rounded-md bg-white/80 dark:bg-gray-700/80 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  >
+    {
+      languages.map(({ value, label }) => (
+        <option value={value}>{label}</option>
+      ))
+    }
+  </select>
+
     <!-- Back to Top Button -->
   <button
   id="back-to-top"
@@ -92,13 +112,40 @@ import BackToTopButton from "./BackToTopButton.astro"
 </button>
   </aside>
   
-  <!-- Back to Top Script -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const backToTopButton = document.getElementById('back-to-top');
   
+<script>
+   // Language Switcher
+   document.getElementById('languageSelector').addEventListener('change', async (e) => {
+    const language = e.target.value;
+
+    try {
+      // Fetch translated content from the backend API
+      const response = await fetch(`/api/translate?lang=${language}`);
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch translation: ${response.statusText}`);
+      }
+
+      const translatedContent = await response.text();
+
+      // Update the content on the page
+      const contentElement = document.getElementById('content');
+      if (contentElement) {
+        contentElement.innerHTML = translatedContent;
+      } else {
+        console.error('Content element not found.');
+      }
+    } catch (error) {
+      console.error('Translation failed:', error);
+      alert('Failed to load translation. Please try again.');
+    }
+  });
+  
+  //Back to Top Script 
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('back-to-top');  
       // Smooth scroll to top
-      backToTopButton.addEventListener('click', () => {
+      document.addEventListener('click', () => {
         window.scrollTo({
           top: 0,
           behavior: 'smooth'

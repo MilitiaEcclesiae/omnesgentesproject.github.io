@@ -88,13 +88,6 @@ const metadata = {
       poster="https://res.cloudinary.com/dqk5ejjai/image/upload/v1736554805/Hlc_vcoverage_rtlpfw.jpg"
       params="start=09"
       />
-  <style is:inline>
-    lite-youtube {
-      margin: 0 auto;
-      max-width: 100%;
-    }
-  </style>
-
 
 <!-- inline formating: <div style='text-align: left;'></div>; <strong>, <em>  bold&italic; <span style='color: blue;'></span> -color txt; <blockquote> and <cite></cite> -->
 
@@ -119,6 +112,7 @@ const metadata = {
   description='These mottos guide every missionary’s heart and actions as they carry the Holy Fire to the world, transforming lives and winning souls for Christ.'
   textPosition="middle"
   textBgOpacity={0.6}
+  height="60%"
 />
 </div>
 
@@ -229,7 +223,12 @@ image={{
     textBgOpacity={0.6}
   />
 
-  <EventGallery events={events} />
+  <EventGallery 
+    events={events} 
+    backgroundSize="1000px 500px"
+    titleSize="1.5rem"
+    subtitleSize="1rem"
+    />
 
   <Content
   title=""
@@ -327,7 +326,7 @@ image={{
 }}
 >
 <Fragment slot="content">
-  <span class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">FAITH</span> guides missionaries to embody the ultimate trust in God’s plan and providence. Never doubt, never waver; abide by an unwavering commitment to the Gospel; respect the dignity of every soul and love others as Christ loves us. Faith compels missionaries to act with divine purpose, to fulfill their sacred duty, and to hold themselves accountable to God’s will in every action.
+  <span class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">FAITH</span> guides missionaries to embody the ultimate trust in God’s plan and providence. Never doubt, never waver; abide by an unwavering commitment to the Gospel; respect the dignity of every soul and love others as Christ loves us. Faith compels missionaries to act with divine purpose, to fulfill their sacred duty, and to hold themselves accountable to God’s will in every action.
 </Fragment>
 </Content>
 <Content
@@ -338,7 +337,7 @@ image={{
 }}
 >
 <Fragment slot="content">
-<span class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">HOPE</span> is the spiritual, emotional, and moral strength ingrained in missionaries. It carries them through the challenges of the mission field and aids in overcoming despair. It is the inner light that enables them to persevere in the face of adversity, to cling to God’s promises, and to bring the message of salvation to those who live in darkness. 
+<span class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">HOPE</span> is the spiritual, emotional, and moral strength ingrained in missionaries. It carries them through the challenges of the mission field and aids in overcoming despair. It is the inner light that enables them to persevere in the face of adversity, to cling to God’s promises, and to bring the message of salvation to those who live in darkness. 
 </Fragment>
 </Content>
 <Content
@@ -349,13 +348,13 @@ image={{
 }}
 >
 <Fragment slot="content">
-  <span class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">LOVE</span> is the spirit of selflessness and sacrifice found in missionaries. It leads to the highest order of devotion to Christ and His Church. It is the fire that fuels their unrelenting determination to bring the Gospel to the ends of the earth. Love inspires the courage to lay down their lives for others, to serve with humility, and to win souls for the Kingdom of God.
+  <span class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">LOVE</span> is the spirit of selflessness and sacrifice found in missionaries. It leads to the highest order of devotion to Christ and His Church. It is the fire that fuels their unrelenting determination to bring the Gospel to the ends of the earth. Love inspires the courage to lay down their lives for others, to serve with humility, and to win souls for the Kingdom of God.
 </Fragment>
 </Content>
 </section>
 
 <!-- TEAM -->
- <h1 class="text-4xl font-bold text-center mt-8 mb-4">Meet Our Team</h1>
+ <h1 class="text-3xl font-bold text-center mt-8 mb-4">Meet Our Team</h1>
  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
    {teamMembers.map(member => (
      <TeamMember

@@ -12,15 +12,15 @@ const image01 = {
   src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551710/IMG-2020_roosrv.jpg',
   alt: 'A beautiful landscape',
 };
-const image02 = {
-  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551634/newsletter_portada_snnxfr.jpg',
-  alt: 'A beautiful landscape',
-};
-const subscribe = {
-  formUrl: 'https://example.com/subscribe',
-  title: 'Subscribe to Our Newsletter',
-  text: 'Stay updated with the latest news and events.',
-};
+// const image02 = {
+//   src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551634/newsletter_portada_snnxfr.jpg',
+//   alt: 'A beautiful landscape',
+// };
+// const subscribe = {
+//   formUrl: 'https://example.com/subscribe',
+//   title: 'Subscribe to Our Newsletter',
+//   text: 'Stay updated with the latest news and events.',
+// };
 
 const metadata = {
   title: 'Campaigns',
@@ -36,7 +36,7 @@ const metadata = {
   subtitle='Explore all our active charitable campaigns, crafted to meet the most pressing needs of our fellow believers. Thanks to your unwavering support, we fund over 5,000 projects annually across more than 130 countries, spreading the Gospel and serving as instruments of God’s love and mercy.'
   textPosition="middle"
   textBgOpacity={0.6}
-  buttonText="ANSWER THE CALL TO SERVE"
+  buttonText="DONATE"
   buttonLink="https://donorbox.org/omnesgentesproject"
   buttonVariant="primary"
   buttonIcon="tabler:heart-handshake"
@@ -66,7 +66,7 @@ callToAction={{
 }}
 >
 <Fragment slot="content">
-  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
     Project 1: <br /><span class="text-2xl">Sanando las Comunidades Más Aisladas de Malawi</span>
   </h3>
 </Fragment>
@@ -133,7 +133,7 @@ callToAction={{
 }}
 >
 <Fragment slot="content">
-  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
     Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
   </h3>
 </Fragment>
@@ -160,7 +160,7 @@ callToAction={{
       },
     ]}
 imageWidth={600} 
-imageHeight={450}
+imageHeight={400}
   >
   </Content>
   <Content
@@ -179,7 +179,7 @@ imageHeight={450}
     ]}
   
 imageWidth={600} 
-imageHeight={500}
+imageHeight={400}
   >
   </Content>
 
@@ -253,8 +253,8 @@ imageWidth={600}
 imageHeight={500}
 >
 <Fragment slot="content">
-  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-    Did you know your donations are up to 80% tax-deductible?' <br/><br/><span class="text-2xl">By making a donation, you can claim this contribution as a deduction on your income tax return.</span>
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+    Did you know your donations are up to 80% tax-deductible? <br/><br/><span class="text-1xl">By making a donation, you can claim this contribution as a deduction on your income tax return.</span>
   </h3>
 </Fragment>
 <Fragment slot="bg">
@@ -263,12 +263,12 @@ imageHeight={500}
 </Content>
 
 
-  <TextOverlayImage
+  <!-- <TextOverlayImage
   image={image02}
   textPosition="middle"
   textBgOpacity={0.6}
   subscribe={subscribe}
-/>
+/> -->
 
 </Layout>
 

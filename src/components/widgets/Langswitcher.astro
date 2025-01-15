@@ -1,0 +1,47 @@
+---
+// Define the available languages and their labels
+const languages = [
+  { value: 'en', label: 'English' },
+  { value: 'es', label: 'Spanish' },
+  { value: 'fr', label: 'French' },
+  { value: 'cn', label: 'Chinese' },
+  { value: 'ar', label: 'Arabic' },
+];
+---
+
+<select id="languageSelector" aria-label="Select language">
+  {
+    languages.map(({ value, label }) => (
+      <option value={value}>{label}</option>
+    ))
+  }
+</select>
+
+<script>
+  // Add event listener for language selection
+  document.getElementById('languageSelector').addEventListener('change', async (e) => {
+    const language = e.target.value;
+
+    try {
+      // Fetch translated content from the backend API
+      const response = await fetch(`/api/translate?lang=${language}`);
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch translation: ${response.statusText}`);
+      }
+
+      const translatedContent = await response.text();
+
+      // Update the content on the page
+      const contentElement = document.getElementById('content');
+      if (contentElement) {
+        contentElement.innerHTML = translatedContent;
+      } else {
+        console.error('Content element not found.');
+      }
+    } catch (error) {
+      console.error('Translation failed:', error);
+      alert('Failed to load translation. Please try again.');
+    }
+  });
+</script>

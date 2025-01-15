@@ -13,7 +13,7 @@ metadata:
 ---
 
 import { YouTube } from 'astro-embed';
-import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero from '~/components/widgets/Hero.astro';
 
   <p class="audio-description">
     "From bytes to blessings: Our AI missionaries summarize the journey. Spoiler: They’re great at spreading the Word, but terrible at walking on water."
@@ -60,17 +60,3 @@ Esto nos dijo Amaris, “Mary”, quien alegremente nos recibió en su casa con 
 <br/>
 <YouTube id="XYw19vM21b4" />
 <br/>
-<Hero2
-    tagline="¡Tu ayuda vale mucho para nosotros y ellos!<br><br>Dios bendiga tu generosidad<br>"
-    actions={[
-      { variant: 'primary', 
-        text: 'Donacion', 
-        href: 'https://donorbox.org/omnesgentesproject',
-        icon: 'tabler:heart'},
-    ]}
-    image={{
-      src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551623/IMG_1380_cpbvd9.jpg',
-      alt: 'Donation',
-    }}
-  />
-[[Top]](#top)

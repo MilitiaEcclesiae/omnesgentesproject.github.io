@@ -40,12 +40,12 @@ const events = [
 
 //Content component
 const callToAction01 = {
-  text: '<p3 class="text-2xl tracking-tight sm:text-1xl mb-2">LEARN MORE</p3>', 
+  text: '<p3 class="text-1.5xl tracking-tight sm:text-1xl mb-2">LEARN MORE</p3>', 
   href: '/about#contact',     
   icon: 'tabler:cross',
 };
 const callToAction02 = {
-  text: '<p3 class="text-2xl tracking-tight sm:text-1xl mb-2">LEARN MORE</p3>', 
+  text: '<p3 class="text-1.5xl tracking-tight sm:text-1xl mb-2">LEARN MORE</p3>', 
   href: '/about#values',     
   icon: 'tabler:cross',
 };
@@ -75,10 +75,10 @@ const Campaign = [
 /////////////////MissionsFor2025
 const title = "Missions For 2025";
 const content01 = `
-  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
     Project1:
   </h3>
-  <p1 class="text-1xl tracking-tight dark:text-grey sm:text-3xl mb-2">
+  <p1 class="text-1xl tracking-tight dark:text-grey sm:text-2xl mb-2">
     Connect Us to learn more about our cause.
   </p1>
 `;
@@ -88,8 +88,8 @@ const callToAction03 = {
   icon: 'tabler:map-check',
 };
 const image01 = "https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80";
-const imageWidth01 = 700;
-const imageHeight01 = 700;
+const imageWidth01 = 500;
+const imageHeight01 = 500;
 const items01 = [
   {
     title: 'Description:',
@@ -102,10 +102,10 @@ const items01 = [
 ];
 //
 const content02 = `
-  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
     Project2:
   </h3>
-  <p1 class="text-1xl tracking-tight dark:text-grey sm:text-3xl mb-2">
+  <p1 class="text-1xl tracking-tight dark:text-grey sm:text-2xl mb-2">
     Connect Us to learn more about our cause.
   </p1>
 `;
@@ -115,8 +115,8 @@ const callToAction04 = {
   icon: 'tabler:map-check',
 };
 const image02 = "https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80";
-const imageWidth02 = 700;
-const imageHeight02 = 700;
+const imageWidth02 = 500;
+const imageHeight02 = 500;
 const items02 = [
   {
     title: 'Description:',
@@ -129,10 +129,10 @@ const items02 = [
 ];
 //
 const content03 = `
-  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
     Project1:
   </h3>
-  <p1 class="text-1xl tracking-tight dark:text-grey sm:text-3xl mb-2">
+  <p1 class="text-1xl tracking-tight dark:text-grey sm:text-2xl mb-2">
     Connect Us to learn more about our cause.
   </p1>
 `;
@@ -142,8 +142,8 @@ const callToAction05 = {
   icon: 'tabler:map-check',
 };
 const image03 = "https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80";
-const imageWidth03 = 700;
-const imageHeight03 = 700;
+const imageWidth03 = 500;
+const imageHeight03 = 500;
 const items03 = [
   {
     title: 'Description:',
@@ -180,8 +180,8 @@ const metadata = {
   <EventGallery
   events={events}
   backgroundSize="1500px 900px"
-  titleSize="3rem"
-  subtitleSize="1.5rem"
+  titleSize="1.5rem"
+  subtitleSize="1rem"
   buttonStyle="background: #0047AB; color: #fff;"
 />
 
@@ -189,30 +189,28 @@ const metadata = {
   
 <Content
   title="BECOME A MISSIONARY"
-  content='<h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">FIND YOUR PLACE IN OUR FIGHT</h3><p1 class="text-1xl tracking-tight dark:text-grey sm:text-3xl mb-2">Connect Us to learn more about our cause.</p1>'
+  content='<h5 class="text-1xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">FIND YOUR PLACE IN OUR FIGHT</h5><p1 class="tracking-tight dark:text-grey sm:text-1.5xl mb-2">Connect Us to learn more about our cause.</p1>'
   callToAction={callToAction01}
   image="https://cdn.pixabay.com/photo/2024/05/30/07/07/archangel-8797957_1280.jpg"
-  imageWidth={500} 
+  imageWidth={450} 
   imageHeight={500}
   isReversed
-  isDark
 />
 <Content
-  content='<h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">MISSIONARY VALUES</h5><p1 class="text-1xl tracking-tight dark:text-grey sm:text-3xl mb-2">See how our core values of honor, courage, and commitment fuel our fight and drive our will to win.</p1>'
+  content='<h4 class="text-1xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">MISSIONARY VALUES</h4><p1 class="text-1xl tracking-tight dark:text-grey sm:text-1.5xl mb-2">See how our core values of honor, courage, and commitment fuel our fight and drive our will to win.</p1>'
   callToAction={callToAction02}
   image="https://cdn.pixabay.com/photo/2024/01/17/00/25/ai-generated-8513302_1280.png"
-  imageWidth={500} 
+  imageWidth={450} 
   imageHeight={500}
   isAfterContent
-  isDark
 />
 
 <!-- Campaign Gallery -->
 <CampaignGallery
   campaigns={Campaign}
   backgroundSize="1500px 700px"
-  titleSize="3rem"
-  subtitleSize="1.5rem"
+  titleSize="1.5rem"
+  subtitleSize="1rem"
   buttonStyle="background: #0047AB; color: #fff;"
 />
 
@@ -226,7 +224,6 @@ const metadata = {
   imageWidth={imageWidth01}
   imageHeight={imageHeight01}
   isReversed
-  isDark
   items={items01}
 />
 <Content
@@ -236,7 +233,6 @@ const metadata = {
   imageWidth={imageWidth02}
   imageHeight={imageHeight02}
   isAfterContent
-  isDark
   items={items02}
 />
 <Content
@@ -246,7 +242,6 @@ const metadata = {
   imageWidth={imageWidth03}
   imageHeight={imageHeight03}
   isReversed
-  isDark
   items={items03}
 />
 
@@ -319,7 +314,7 @@ const metadata = {
 <style>
   /* Use :global to target the component's internal elements */
   :global(.event-gallery .background-element) {
-    background-size: 50% !important; /* Increase specificity and use !important */
+    background-size: 45% !important; /* Increase specificity and use !important */
   }
 </style>
 

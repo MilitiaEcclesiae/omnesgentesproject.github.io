@@ -1,6 +1,6 @@
 API integration-payment
-Multilingual: en/es/cn/arab/frances
 
+Log&Sec: depchek(unused dependencies)/helmet as midware to setup header sec; cloudflare; minify&obsfucate
 
 MainPage:
 Image Selection
@@ -13,7 +13,6 @@ Donation:
 whatsapp num for donation?
 Integrate payment system
 
-3rd.Payment system
 
 Prompts:
 test, examine, debug and optimize and refactor the code in the most succinct manner, meanwhile make the code more reusability, in which make the image size, text size and button size adjustable if any aplied: 
@@ -25,7 +24,7 @@ MOST IMPORTANT: The audio must be in Espanol
 DO NOT CREATE AUDIO IN ENGLISH
 
 
-CDN(videos/audios): http://cloudinary.com/
+CDN(videos/audios/posts in github): http://cloudinary.com/
 icon: https://tabler.io/icons
 deepseek
 Ref:Marine/ayuda https://www.ayudaalaiglesianecesitada.org/donativos-deduccion-y-desgravacion-ayuda-a-la-iglesia-necesitada/  /astrowind

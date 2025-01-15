@@ -46,8 +46,6 @@ const {
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
-<!-- 2 features: Burger Menu, LangSWITCHER -->
-
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },

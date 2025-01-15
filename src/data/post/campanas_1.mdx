@@ -12,8 +12,7 @@ metadata:
 ---
 
 import { YouTube } from 'astro-embed';
-import Hero2 from '~/components/widgets/Hero2.astro';
-
+import Hero from '~/components/widgets/Hero.astro';
 
 ### No somos indiferentes a la situación de pobreza extrema en la que vive la gente.
 
@@ -33,18 +32,3 @@ Necesitamos comprar medicamentos para la sarna y otras enfermedades que azotan n
 <br/>
 <YouTube id="c0YGuYn1X7Y" />
 <br/>
-<Hero2
-    tagline="¡Tu ayuda vale mucho para nosotros y ellos!<br><br>Dios bendiga tu generosidad<br>"
-    actions={[
-      { variant: 'primary', 
-        text: 'Donacion', 
-        href: 'https://donorbox.org/omnesgentesproject',
-        icon: 'tabler:heart'},
-    ]}
-    image={{
-      src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551623/IMG_1380_cpbvd9.jpg',
-      alt: 'Donation',
-    }}
-  />
-
-[[Top]](#top)
