@@ -1,22 +1,20 @@
 ---
 import { YouTube } from 'astro-embed';
 import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
 import Steps2 from '~/components/widgets/Steps2.astro';
+import DonateForm from '~/components/widgets/DonateForm.astro'
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features2.astro';
 import FAQsAccordion from '~/components/widgets/FAQsAccordion.astro';
 import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
 import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
+import Test from '~/components/widgets/Test.astro';
 
-const image01 = {
-  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551671/20230206_093155_l7u16w.jpg',
-  alt: 'HolyFire',
-};
 const image02 = {
   src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551623/IMG_1380_cpbvd9.jpg',
   alt: 'HolyFire',
 };
-
 
 const callToAction01 = {
   text: 'DONATE NOW',
@@ -48,36 +46,155 @@ https://www.ayudaalaiglesianecesitada.org/herencias-y-legados
   <SocialLinkSticker />
 <!-- payment system w/buttons:
  -->
-    <div class="space-y-3">
-      <TextOverlayImage
-    image={image01}
-    title="With your help, we carry the light of the Gospel to the farthest corners of the earth, where the name of Christ has yet to be proclaimed."
-    subtitle='"Et praedicabitur hoc evangelium regni in universo orbe in testimonium omnibus gentibus; Et tunc veniet consummatio"'
-    textPosition="middle"
-    textBgOpacity={0.5}
-  />
-  </div>
+<DonateForm />
+<Test />    
 
-<Steps2
-title="Other Ways to Make Your Donation:"
-callToAction={{
-  text: 'Contact us',
-  href: 'https://donorbox.org/omnesgentesproject',
-}}
+  <Steps2
+  title="Other Ways to Make Your Donation:"
+  callToAction={{
+    text: 'Contact us',
+    href: 'https://donorbox.org/omnesgentesproject',
+  }}
+  items={[
+    {
+      title: 'Via WhatsApp',
+      description: `+1 (980) 860-0772`,
+      icon: 'tabler:brand-whatsapp',
+    },
+    {
+      title: 'Bank Transfer: Include the purpose, your full name, and ID number. To make your donation tax-deductible, please contact us.',
+      description: 'donations@omnesgentesproject.com',
+      icon: 'tabler:building-bank',
+    },
+  ]}
+  />
+
+
+<!-- LatestCampaigns**************** -->
+<Content
+title="Latest Charitable Campaigns"
+subtitle=""
+isReversed
 items={[
   {
-    title: 'Via WhatsApp',
-    description: `+1 (980) 860-0772`,
-    icon: 'tabler:brand-whatsapp',
+    title: 'Description:',
+    description:
+      'En las remotas regiones de Malawi, como Wenya y Chitipa, la atención médica es un lujo inaccesible. Sin transporte ni recursos, los habitantes sufren de enfermedades contagiosas y caen en manos de hechiceros que empeoran su situación. En enero de 2022, comenzamos las "Misiones Médicas Extremas" para llevar atención médica directa a estas comunidades. Con casi 300 pacientes atendidos y un 80% de recuperación, nuestra misión sigue creciendo, ¡y esperamos llegar a más personas con el apoyo adecuado!',
+  },
+]}
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551801/Proyecto-extremeMM_sylhfo.jpg',
+  alt: 'Tech Design Image',
+}}
+callToAction={{
+  target: '_blank',
+  text: 'Go to the project',
+  icon: 'tabler:chevron-right',
+  href: getPermalink('Campaigns_1', 'post'),
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+    Project 1: <br /><span class="text-2xl">Sanando las Comunidades Más Aisladas de Malawi</span>
+  </h3>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+<!-- **************** -->
+<Content
+isReversed
+isAfterContent={true}
+items={[
+  {
+    title: 'Description:',
+    description:
+      'En una remota aldea de Malawi, donde la fe en Cristo es desconocida, los habitantes claman por el Reino de Nuestro Señor. El Omnes Gentes Project ha llegado a esta región para plantar la Iglesia y llevar el Evangelio. Con la colaboración de fieles generosos, se prepara la primera entronización de Cristo Rey en Wenya, una misión histórica que reclama este territorio para Él. ¡Únete a nosotros en esta misión de esperanza y ayuda a llevar a Cristo a aquellos que más lo necesitan!',
+  },
+]}
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551864/WENYA_apapzx.jpg',
+  alt: 'Art and Music Poster Image',
+}}
+callToAction={{
+  target: '_blank',
+  text: 'Go to the project',
+  icon: 'tabler:chevron-right',
+  href: getPermalink('Campaigns_2', 'post'),
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+    Project 2: <br /><span class="text-2xl">WENYA, Entronización de Cristo Rey</span>
+  </h3>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+<!-- **************** -->
+<Content
+isReversed
+isAfterContent={true}
+items={[
+  {
+    title: 'Description:',
+    description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
+  },
+]}
+image={{
+  src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+  alt: 'Fashion e-commerce Image',
+}}
+callToAction={{
+  target: '_blank',
+  text: 'Go to the project',
+  icon: 'tabler:chevron-right',
+  href: '#',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+    Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
+  </h3>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+
+<Features
+id="features"
+title="Transforming Lives Through Faith and Action: 100% of OGP's Campaigns Sustained by Donations"
+subtitle="<p3 class='tracking-tight text-left'>Your Generosity Fuels Our Mission: Empowering 10 Annual Projects—Bringing the Gospel to Life Through Faith in Action.</p3>"
+columns={3}
+items={[
+  {
+    title: 'Building and Restoring Churches',
+    icon: 'tabler:building-church',
   },
   {
-    title: 'Bank Transfer: Include the purpose, your full name, and ID number. To make your donation tax-deductible, please contact us.',
-    description: 'donations@omnesgentesproject.com',
-    icon: 'tabler:mail',
+    title: 'Supporting Priests',
+    icon: 'tabler:sunrise',
+  },
+  {
+    title: 'Religious Formation',
+    icon: 'tabler:bible',
+  },
+  {
+    title: 'Sustaining Missionaries',
+    icon: 'tabler:sun-electricity',
+  },
+  {
+    title: 'Emergency Aid',
+    icon: 'tabler:ambulance',
   },
 ]}
 />
-
 
 
 
@@ -91,51 +208,6 @@ items={[
   items={items01}
 />
 
-
-<Features
-id="features"
-title="100% of OGP's Projects Are Sustained by Donations"
-subtitle="<p3 class='tracking-tight text-left'>The generosity of our benefactors enables us to fund nearly 5,000 projects annually. These include pastoral initiatives—such as supporting and forming priests and religious, training catechists and laypeople, building and rebuilding churches, providing vehicles and communication tools for evangelization, and supplying catechetical materials—as well as critical emergency aid.</p3>"
-columns={3}
-items={[
-  {
-    title: 'Building and Restoring Churches',
-    icon: 'tabler:building-church',
-  },
-  {
-    title: 'Supporting Priests',
-    icon: 'tabler:sunrise',
-  },
-  {
-    title: 'Religious Formation',
-    icon: 'tabler:book',
-  },
-  {
-    title: 'Sustaining Missionaries',
-    icon: 'tabler:sun-electricity',
-  },
-  {
-    title: 'Forming Lay Leaders',
-    icon: 'tabler:bible',
-  },
-  {
-    title: 'Transport for Missionary Work',
-    icon: 'tabler:car',
-  },
-  {
-    title: 'Catechetical Materials',
-    icon: 'tabler:bible',
-  },
-  {
-    title: 'Communication Tools for Missionaries',
-    icon: 'tabler:headset',
-  },
-  {
-    title: 'Emergency Aid',
-    icon: 'tabler:ambulance',
-  },
-]}
-/>
 
 <YouTube id="Ha-nvzGxyCg" />
 <style is:inline>
@@ -188,6 +260,33 @@ items={[
   contentTextSize="text-1500"
   contentTextColor="text-silver-700"
 />
+
+<Content
+isReversed
+isAfterContent={true}
+image={{
+  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551631/IMG_20230308_102945_gkt42c.jpg',
+  alt: 'Fashion e-commerce Image',
+}}
+callToAction={{
+  target: '_blank',
+  text: 'MORE INFORMATION',
+  icon: 'tabler:chevron-right',
+  href: '#',
+}}
+imageWidth={600} 
+imageHeight={500}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+    Did you know your donations are up to 80% tax-deductible? <br/><br/><span class="text-1xl">By making a donation, you can claim this contribution as a deduction on your income tax return.</span>
+  </h3>
+</Fragment>
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+
 
 <div class="space-y-3">
   <TextOverlayImage

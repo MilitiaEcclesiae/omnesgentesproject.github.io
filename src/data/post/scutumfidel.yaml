@@ -1,0 +1,79 @@
+metadata:
+  title: "material-para-rezar"
+
+images:
+  image01:
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551638/shieldoffaith_tognni.jpg"
+    alt: "A beautiful landscape"
+  image02:
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551638/publishment_vhdwpx.jpg"
+    alt: "A beautiful landscape"
+
+textOverlayImages:
+  - image: "image01"
+    title: "Scutum Fidei"
+    subtitle: '"Taking the shield of faith, with which you can quench all the flaming darts of the evil one." -Ephesians 6:16'
+    textPosition: "middle"
+    textBgOpacity: 0.6
+  - image: "image02"
+    title: "BIBLIOGRAFÍA"
+    textPosition: "middle"
+    textBgOpacity: 0.6
+
+contentItems:
+  - isReversed: true
+    items:
+      - title: "Este Adviento reza con el Santo de cada día para preparar la venida del Señor"
+        description: "Queremos compartir contigo este calendario de Adviento. Un material para rezar y para preparar la venida del Señor con el Santo de cada día, una oración y un propósito. Déjanos tus datos y descárgalo."
+        callToAction:
+          target: "_blank"
+          text: "DESCARGA PDF »"
+          href: "#"
+          icon: "tabler:download"
+    image:
+      src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551667/advent_ceqgku.jpg"
+      alt: "Colorful Image"
+      loading: ""
+  - isReversed: false
+    items:
+      - title: "Tinieblas Tibetanas(Tibetan Darkness)"
+        description: "The reader does not hold in their hands a book of dialogue, but a deeply critical work. Therefore, let the reader not expect to find here superficial attempts at reconciliation, beneath which—often, if not always—the weaknesses of a psychologically complacent profile are masked. Instead, what the reader will find is a raw, direct, plain, and unvarnished illumination of the grave errors that define the very identity of a false path that is today publicly promoted, advanced, and legitimized as an alternative to Christianity."
+        callToAction:
+          target: "_blank"
+          text: "BUY"
+          href: "https://www.amazon.com/-/es/Federico-Highton/dp/9878805891"
+          icon: "tabler:brand-amazon"
+    image:
+      src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551737/libro_Tinieblas_wdmeo4.jpg"
+      alt: ""
+      loading: "lazy"
+
+featuresItems:
+  - title: "Rosary"
+    description: "Deepen your prayer life with the Holy Rosary."
+    callToAction:
+      target: "_blank"
+      text: "DOWNLOAD PDF »"
+      href: "/downloads/item2.zip"
+      icon: "tabler:download"
+  - title: "Catholic Bible(RSVCE)"
+    description: "Explore the Word of God in the Catholic tradition."
+    callToAction:
+      target: "_blank"
+      text: "DOWNLOAD PDF »"
+      href: "/downloads/item2.zip"
+      icon: "tabler:download"
+  - title: "Catechism of the Catholic Church"
+    description: "Secure paysactions."
+    callToAction:
+      target: "_blank"
+      text: "DOWNLOAD PDF »"
+      href: "/downloads/item2.zip"
+      icon: "tabler:download"
+  - title: "Omnes Gentes Project Missionary Handbook"
+    description: "A guide for missionary work"
+    callToAction:
+      target: "_blank"
+      text: "DOWNLOAD PDF »"
+      href: "/https://drive.google.com/drive/folders/1s4baE1H9x78iRM-RwwLYemMqdvqdYRKZ"
+      icon: "tabler:download"

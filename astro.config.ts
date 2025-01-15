@@ -10,6 +10,7 @@ import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
+import yaml from '@rollup/plugin-yaml';
 
 import astrowind from './vendor/integration';
 
@@ -86,5 +87,6 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src'),
       },
     },
+    plugins: [yaml()],
   },
 });

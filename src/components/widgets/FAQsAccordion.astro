@@ -13,9 +13,9 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
   // Title and Subtitle Customization
-  titleTextSize = 'text-3xl',
+  titleTextSize = 'text-2xl sm:text-3xl', // Responsive text size
   titleTextColor = 'text-gray-900',
-  subtitleTextSize = 'text-xl',
+  subtitleTextSize = 'text-lg sm:text-xl', // Responsive text size
   subtitleTextColor = 'text-gray-600',
   // FAQ Item Customization
   itemTextSize = 'text-base',
@@ -26,7 +26,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${classes?.container ?? ''}`} bg={bg}>
   <!-- Headline with Customizable Styles -->
   <Headline
     title={title}
@@ -37,7 +37,7 @@ const {
   />
 
   <!-- FAQ Items with Customizable Styles -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 gap-4 sm:gap-6">
     {items.map((item, index) => (
       <div class="group relative rounded-md border border-silver-900" key={index}>
         <button
@@ -109,5 +109,21 @@ const {
 
   div[class*="max-h-0"] {
     transition: max-height 0.3s ease-in-out;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 640px) {
+    .group button {
+      padding: 0.75rem; /* Smaller padding for mobile */
+    }
+
+    .group div {
+      padding-left: 0.75rem; /* Smaller padding for mobile */
+      padding-right: 0.75rem;
+    }
+
+    .prose {
+      font-size: 0.875rem; /* Smaller font size for mobile */
+    }
   }
 </style>

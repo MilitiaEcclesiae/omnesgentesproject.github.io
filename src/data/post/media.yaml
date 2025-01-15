@@ -1,0 +1,47 @@
+metadata:
+  title: "About us"
+
+images:
+  hero:
+    src: "/images/hero.jpg"
+    alt: "A beautiful landscape"
+  newsletter:
+    src: "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551634/newsletter_portada_snnxfr.jpg"
+    alt: "Newsletter cover"
+
+subscribe:
+  formUrl: "https://example.com/subscribe"
+  title: "Subscribe to Our Newsletter"
+  text: "Stay updated with the latest news and updates."
+
+heroActions:
+  - variant: "primary"
+    text: "Tune In Now – Ignite Your Faith!"
+    target: "_blank"
+    icon: "tabler:brand-google-podcasts"
+
+sections:
+  ogpMedia:
+    title: "OGP en Media"
+    textPosition: "middle"
+    textBgOpacity: 0.6
+
+  dailyHomily:
+    title: "Daily Homily by Fr. Federico"
+    subtitle: |
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Join Daily Homily by Fr. Federico,</span> a fiery podcast from the Omnes Gentes Project, inspiring Catholics to boldly proclaim the Gospel to the ends of the earth. With powerful reflections rooted in the Church’s mission and the witness of persecuted Christians, Fr. Federico calls you to live your faith courageously and join the fight for souls—subscribe now and answer the call!
+        <br><br>
+        With a duration maximum of 15 minutes, this program can be listened weekly every Tuesday at 9:30 PM on YouTube.
+      </span>
+    youtubeEmbed: "https://www.youtube.com/embed/kgrj7isAS0U"
+
+  dai:
+    title: "Dai"
+    subtitle: |
+      <span class="hidden sm:inline">
+        <span class="font-semibold">J Federico,</span> of the earth. With powerful reflections rooted in the Church’s mission and the witness of persecuted Christians, Fr. Federico calls you to live your faith courageously and join the fight for souls—subscribe now and answer the call!
+        <br><br>
+        With a duration maximum of 15 minutes, this program can be listened weekly every Tuesday at 9:30 PM on YouTube.
+      </span>
+    odyseeEmbed: "https://odysee.com/@SoulSync:0/BDD_Acts1:8?r=4yFLrkgTYcL6sK4REdcVMfKyaFwWyb3T"

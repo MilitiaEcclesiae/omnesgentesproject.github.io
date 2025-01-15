@@ -1,0 +1,130 @@
+---
+// Sample podcast data
+const youtubePodcasts = [
+  { id: 1, title: "Episode 1: The Power of Prayer", url: "https://www.youtube.com/embed/abc123" },
+  { id: 2, title: "Episode 2: Living the Gospel", url: "https://www.youtube.com/embed/def456" },
+  { id: 3, title: "Episode 3: Faith in Action", url: "https://www.youtube.com/embed/ghi789" },
+];
+
+const odyseePodcasts = [
+  { id: 1, title: "Episode 1: The Joy of Giving", url: "https://odysee.com/embed/xyz123" },
+  { id: 2, title: "Episode 2: Trusting God", url: "https://odysee.com/embed/uvw456" },
+  { id: 3, title: "Episode 3: The Beauty of Faith", url: "https://odysee.com/embed/rst789" },
+];
+---
+
+<div class="max-w-3xl mx-auto p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-md">
+  <!-- Tabs for YouTube and Odysee -->
+  <div class="grid grid-cols-2 gap-4 mb-6">
+    <button
+      id="tab-youtube"
+      class="tab-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+      aria-selected="true"
+    >
+      YouTube
+    </button>
+    <button
+      id="tab-odysee"
+      class="tab-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+      aria-selected="false"
+    >
+      Odysee
+    </button>
+  </div>
+
+  <!-- YouTube Podcasts List -->
+  <div id="youtube-content">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">YouTube Podcasts</h2>
+    <div class="h-64 overflow-y-auto space-y-2">
+      {youtubePodcasts.map((podcast) => (
+        <div
+          class="p-3 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-50 transition-colors"
+          onclick={`playPodcast('${podcast.url}')`}
+        >
+          <p class="text-gray-700">{podcast.title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Odysee Podcasts List -->
+  <div id="odysee-content" class="hidden">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Odysee Podcasts</h2>
+    <div class="h-64 overflow-y-auto space-y-2">
+      {odyseePodcasts.map((podcast) => (
+        <div
+          class="p-3 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-50 transition-colors"
+          onclick={`playPodcast('${podcast.url}')`}
+        >
+          <p class="text-gray-700">{podcast.title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Podcast Player -->
+  <div class="mt-6">
+    <iframe
+      id="podcast-player"
+      class="w-full h-64 rounded-md shadow-sm"
+      src=""
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<script>
+  // Tabs functionality
+  const tabs = document.querySelectorAll('.tab-button');
+  const youtubeContent = document.getElementById('youtube-content');
+  const odyseeContent = document.getElementById('odysee-content');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // Set aria-selected attribute
+      tabs.forEach((t) => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+
+      // Show/hide content
+      if (tab.id === 'tab-youtube') {
+        youtubeContent.classList.remove('hidden');
+        odyseeContent.classList.add('hidden');
+      } else if (tab.id === 'tab-odysee') {
+        youtubeContent.classList.add('hidden');
+        odyseeContent.classList.remove('hidden');
+      }
+    });
+  });
+
+  // Play podcast functionality
+  function playPodcast(url) {
+    const player = document.getElementById('podcast-player');
+    player.src = url;
+  }
+</script>
+
+<style>
+  /* Tab button styles */
+  .tab-button[aria-selected="true"] {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+  }
+
+  .tab-button[aria-selected="false"] {
+    background-color: #f3f4f6; /* Gray */
+    color: #4b5563; /* Gray-700 */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .text-2xl {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .h-64 {
+      height: 48vh; /* Adjust height for mobile */
+    }
+  }
+</style>

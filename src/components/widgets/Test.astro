@@ -1,0 +1,209 @@
+---
+// Background image (replace with your image path)
+const backgroundImage = "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551822/ultimamision-fondo-300x141_l0ggny.jpg";
+
+// Mass intentions for the dropdown
+const massIntentions = [
+  { value: "thanksgiving", label: "Acción de gracias" },
+  { value: "intercession", label: "Intercesión por seres queridos" },
+  { value: "souls", label: "Por las almas del purgatorio" },
+];
+
+// Donation causes
+const donationCauses = [
+  { id: 1, title: "Support Seminarians", description: "Help form future priests.", goal: 10000, raised: 4500 },
+  { id: 2, title: "Build a Church", description: "Fund the construction of a new church.", goal: 50000, raised: 12000 },
+  { id: 3, title: "Feed the Poor", description: "Provide meals for families in need.", goal: 20000, raised: 8000 },
+];
+---
+
+<div class="relative min-h-[500px] flex items-center justify-center bg-cover bg-center" style={`background-image: url(${backgroundImage});`}>
+  <!-- Overlay for better readability -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto p-6">
+    <!-- Tabs for Donations, Mass Requests, and Spiritual Goods -->
+    <div class="grid grid-cols-3 gap-4 mb-6">
+      <button
+        id="tab-donations"
+        class="tab-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+        aria-selected="true"
+      >
+        Donaciones
+      </button>
+      <button
+        id="tab-mass-requests"
+        class="tab-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+        aria-selected="false"
+      >
+        Peticiones de Misa
+      </button>
+      <button
+        id="tab-spiritual-goods"
+        class="tab-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+        aria-selected="false"
+      >
+        Bienes Espirituales
+      </button>
+    </div>
+
+    <!-- Donations Content -->
+    <div id="donations-content">
+      <h2 class="text-3xl font-bold text-white mb-6">Apoya Nuestra Misión</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {donationCauses.map((cause) => (
+          <div class="bg-white/90 backdrop-blur-sm rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{cause.title}</h3>
+            <p class="text-gray-700 mb-4">{cause.description}</p>
+            <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+              <div
+                class="bg-blue-600 h-2 rounded-full"
+                style={`width: ${(cause.raised / cause.goal) * 100}%`}
+              ></div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              Recaudado: ${cause.raised} de ${cause.goal}
+            </p>
+            <button
+              class="w-full py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+            >
+              Donar Ahora
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mass Requests Content -->
+    <div id="mass-requests-content" class="hidden">
+      <h2 class="text-3xl font-bold text-white mb-6">Ofrece una Misa</h2>
+      <form class="bg-white/90 backdrop-blur-sm rounded-lg shadow-md p-6">
+        <div class="space-y-4">
+          <div>
+            <label for="mass-intention" class="block text-sm font-medium text-gray-700">Intención de la Misa</label>
+            <select
+              id="mass-intention"
+              class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            >
+              {massIntentions.map((intention) => (
+                <option value={intention.value}>{intention.label}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label for="full-name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+            <input
+              type="text"
+              id="full-name"
+              placeholder="Introduce tu nombre completo"
+              class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Introduce tu correo electrónico"
+              class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+          >
+            Enviar Petición
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Spiritual Goods Content -->
+    <div id="spiritual-goods-content" class="hidden">
+      <h2 class="text-3xl font-bold text-white mb-6">Bienes Espirituales</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/90 backdrop-blur-sm rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Rosario Bendecido</h3>
+          <p class="text-gray-700 mb-4">Recibe un rosario bendecido como agradecimiento por tu donación.</p>
+          <button
+            class="w-full py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+          >
+            Donar $20
+          </button>
+        </div>
+        <div class="bg-white/90 backdrop-blur-sm rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Libro de Oraciones</h3>
+          <p class="text-gray-700 mb-4">Descarga un libro de oraciones en PDF.</p>
+          <button
+            class="w-full py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+          >
+            Descargar Gratis
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Tabs functionality
+  const tabs = document.querySelectorAll('.tab-button');
+  const donationsContent = document.getElementById('donations-content');
+  const massRequestsContent = document.getElementById('mass-requests-content');
+  const spiritualGoodsContent = document.getElementById('spiritual-goods-content');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // Set aria-selected attribute
+      tabs.forEach((t) => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+
+      // Show/hide content
+      if (tab.id === 'tab-donations') {
+        donationsContent.classList.remove('hidden');
+        massRequestsContent.classList.add('hidden');
+        spiritualGoodsContent.classList.add('hidden');
+      } else if (tab.id === 'tab-mass-requests') {
+        donationsContent.classList.add('hidden');
+        massRequestsContent.classList.remove('hidden');
+        spiritualGoodsContent.classList.add('hidden');
+      } else if (tab.id === 'tab-spiritual-goods') {
+        donationsContent.classList.add('hidden');
+        massRequestsContent.classList.add('hidden');
+        spiritualGoodsContent.classList.remove('hidden');
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Tab button styles */
+  .tab-button[aria-selected="true"] {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+  }
+
+  .tab-button[aria-selected="false"] {
+    background-color: #f3f4f6; /* Gray */
+    color: #4b5563; /* Gray-700 */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .text-3xl {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .gap-6 {
+      gap: 2rem; /* Reduce gap on mobile */
+    }
+  }
+</style>

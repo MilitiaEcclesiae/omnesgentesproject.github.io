@@ -17,6 +17,15 @@ Integrate payment system
 Prompts:
 test, examine, debug and optimize and refactor the code in the most succinct manner, meanwhile make the code more reusability, in which make the image size, text size and button size adjustable if any aplied: 
 
+how to remodify the below component, to wrapup the component using shadcn dropdown menu component to make it expandable. 
+
+
+Test, examine, debug, optimize, and refactor the code to ensure the best performance. Use only the built-in Astro framework (no external libraries).
+
+Integrate a YAML file to dynamically load and input content for all components. Present only the final result.
+
+
+
 NOTEBOOK:
 -change lang
 idioma: Espanoal

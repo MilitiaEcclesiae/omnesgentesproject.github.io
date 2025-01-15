@@ -8,10 +8,6 @@ export const headerData = {
       href: getPermalink('/about'),
     },
     {
-      text: 'CAMPAIGNS',
-      href: getPermalink('/Campaigns'),
-    },
-    {
       text: 'UPDATES',
       links: [
         {
@@ -57,6 +53,8 @@ export const footerData = {
       title: 'Resources',
       links: [
         { text: 'ScutumFidei', href: '/ScutumFidei' },
+        { text: 'Missionary Mercies', href: 'www.fw3h29-zx.myshopify.com' },
+        { text: 'Media', href: '/media' },
       ],
     },
   ],
@@ -85,6 +83,7 @@ export const footerData = {
 //   text: 'Blog List',
 //   href: getBlogPermalink(),
 // },
+// 
 // {
 //   text: 'Article',
 //   href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),

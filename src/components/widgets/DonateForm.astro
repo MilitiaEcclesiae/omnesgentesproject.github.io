@@ -1,0 +1,239 @@
+---
+// Background image (replace with your image path)
+const backgroundImage = "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551671/20230206_093155_l7u16w.jpg";
+
+// Campaign names for the dropdown
+const campaigns = [
+  { value: "campaign1", label: "Campaña 1: Ayuda a los necesitados" },
+  { value: "campaign2", label: "Campaña 2: Construcción de iglesias" },
+  { value: "campaign3", label: "Campaña 3: Educación cristiana" },
+];
+---
+
+<div class="relative min-h-[500px] flex items-center justify-center bg-cover bg-center" style={`background-image: url(${backgroundImage});`}>
+  <!-- Overlay for better readability -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Donation Content -->
+  <div class="relative z-10 max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Left Column: Title, Subtitle, and Technical Issues Notice -->
+    <div class="flex flex-col justify-center text-white">
+      <h2 class="text-4xl font-bold mb-4">With your help, we carry the light of the Gospel to the farthest corners of the earth, where the name of Christ has yet to be proclaimed.</h2>
+      <p class="text-lg italic mb-6">
+        "Et praedicabitur hoc evangelium regni in universo orbe in testimonium omnibus gentibus; Et tunc veniet consummatio"
+      </p>
+      <div class="text-lg">
+        <p>
+          Estamos teniendo algunos problemas técnicos para realizar donaciones a través de la web. Le pedimos que, por ahora, para realizar donativos <strong class="text-blue-600">llame al 917 259 212</strong>.
+        </p>
+        <p class="mt-2">
+          Gracias, disculpen las molestias.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Column: Donation Form -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">Haz tu donación</h3>
+
+      <!-- Tabs for Donation Type -->
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <button
+          id="tab-unica"
+          class="tab-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+          aria-selected="true"
+        >
+          Única
+        </button>
+        <button
+          id="tab-mensual"
+          class="tab-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+          aria-selected="false"
+        >
+          Mensual
+        </button>
+      </div>
+
+      <!-- Donation Amount Buttons -->
+      <div class="grid grid-cols-3 gap-4 mb-6">
+        <button
+          class="amount-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+          data-amount="10"
+        >
+          10 €
+        </button>
+        <button
+          class="amount-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+          data-amount="50"
+        >
+          50 €
+        </button>
+        <button
+          class="amount-button py-2 px-4 rounded-md text-center font-medium transition-colors"
+          data-amount="100"
+        >
+          100 €
+        </button>
+      </div>
+
+      <!-- Campaign Selection Dropdown -->
+      <div class="mb-6">
+        <label for="campaign" class="block text-sm font-medium text-gray-700">Selecciona una campaña</label>
+        <select
+          id="campaign"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          {campaigns.map((campaign) => (
+            <option value={campaign.value}>{campaign.label}</option>
+          ))}
+        </select>
+      </div>
+
+      <!-- Donation Form -->
+      <form class="space-y-4">
+        <!-- Payment Method -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Método de pago</label>
+          <div class="mt-1 space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="payment-method" value="credit-card" class="mr-2" required />
+              Tarjeta de crédito
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="payment-method" value="paypal" class="mr-2" required />
+              PayPal
+            </label>
+          </div>
+        </div>
+
+        <!-- Credit Card Details (Conditional) -->
+        <div id="credit-card-details" class="hidden space-y-4">
+          <div>
+            <label for="card-number" class="block text-sm font-medium text-gray-700">Número de tarjeta</label>
+            <input
+              type="text"
+              id="card-number"
+              placeholder="1234 5678 9012 3456"
+              class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="expiry-date" class="block text-sm font-medium text-gray-700">Fecha de expiración</label>
+              <input
+                type="text"
+                id="expiry-date"
+                placeholder="MM/YY"
+                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="cvv" class="block text-sm font-medium text-gray-700">CVV</label>
+              <input
+                type="text"
+                id="cvv"
+                placeholder="123"
+                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="w-full py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Donar ahora
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Tabs functionality
+  const tabs = document.querySelectorAll('.tab-button');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // Set aria-selected attribute
+      tabs.forEach((t) => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+    });
+  });
+
+  // Donation amount buttons functionality
+  const amountButtons = document.querySelectorAll('.amount-button');
+  amountButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      amountButtons.forEach((btn) => btn.classList.remove('bg-blue-600', 'text-white'));
+      button.classList.add('bg-blue-600', 'text-white');
+    });
+  });
+
+  // Show/hide credit card details based on payment method
+  const paymentMethods = document.querySelectorAll('input[name="payment-method"]');
+  const creditCardDetails = document.getElementById('credit-card-details');
+
+  paymentMethods.forEach((method) => {
+    method.addEventListener('change', (e) => {
+      if (e.target.value === 'credit-card') {
+        creditCardDetails.classList.remove('hidden');
+      } else {
+        creditCardDetails.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Tab button styles */
+  .tab-button[aria-selected="true"] {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+  }
+
+  .tab-button[aria-selected="false"] {
+    background-color: #f3f4f6; /* Gray */
+    color: #4b5563; /* Gray-700 */
+  }
+
+  /* Donation amount button styles */
+  .amount-button {
+    background-color: #f3f4f6; /* Gray */
+    color: #4b5563; /* Gray-700 */
+  }
+
+  .amount-button.bg-blue-600 {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .text-4xl {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .text-2xl {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .text-lg {
+      font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .p-6 {
+      padding: 1rem; /* Smaller padding for mobile */
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .gap-8 {
+      gap: 2rem; /* Reduce gap on mobile */
+    }
+  }
+</style>

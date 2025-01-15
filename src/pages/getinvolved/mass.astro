@@ -4,11 +4,8 @@ import Content from '~/components/widgets/Content.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import SocialLinkSticker from '~/components/widgets/SocialLinkSticker.astro';
 import TextOverlayImage from '~/components/widgets/TextOverlayImage.astro';
+import OfferMassFormat from '~/components/widgets/OfferMassFormat.astro';
 
-const image01 = {
-  src: 'https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551822/ultimamision-fondo-300x141_l0ggny.jpg',
-  alt: 'A',
-};
 const image02 = {
   src: 'https://cdn.pixabay.com/photo/2024/09/30/14/22/ai-generated-9085934_1280.jpg',
   alt: 'Heaven',
@@ -30,16 +27,7 @@ https://www.ayudaalaiglesianecesitada.org/herencias-y-legados
   <Layout metadata={metadata}>
 
     <SocialLinkSticker />
-    <div class="space-y-3">
-      <TextOverlayImage
-    image={image01}
-     backgroundSize="1500px 900px"
-    title="OFFER A MASS"
-    subtitle='Celebrate a Mass in thanksgiving or to intercede for your loved ones, while supporting evangelical missions. Your contribution is entirely dedicated to the celebrating priest, ensuring your gift uplifts both souls and the Church’s mission.'
-    textPosition="middle"
-    textBgOpacity={0.3}
-  />
-  </div>
+    <OfferMassFormat />
 
 <Prices
 prices={[

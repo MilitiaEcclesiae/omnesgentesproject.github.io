@@ -1,0 +1,68 @@
+---
+// Background image (replace with your image path)
+const backgroundImage = "https://res.cloudinary.com/dqk5ejjai/image/upload/v1736551822/ultimamision-fondo-300x141_l0ggny.jpg";
+---
+
+<div class="relative min-h-[500px] flex items-center justify-center bg-cover bg-center" style={`background-image: url(${backgroundImage});`}>
+  <!-- Overlay for better readability -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Offer Mass Content -->
+  <div class="relative z-10 max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Left Column: Title and Subtitle -->
+    <div class="flex flex-col justify-center text-white">
+      <h2 class="text-4xl font-bold mb-4">OFFER A MASS</h2>
+      <p class="text-lg">
+        Celebrate a Mass in thanksgiving or to intercede for your loved ones, while supporting evangelical missions. Your contribution is entirely dedicated to the celebrating priest, ensuring your gift uplifts both souls and the Church’s mission.
+      </p>
+    </div>
+
+    <!-- Right Column: Offer Mass Form -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">Ofrece una Misa</h3>
+
+      <!-- Embedded Offer Mass Form -->
+      <div class="text-center">
+        <form-afrus-misas dataform="22703ec7-6864-49ce-9501-0a867cfe557d">
+          <div id="gateway-box"></div>
+        </form-afrus-misas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Load the external script for the form
+  const script = document.createElement('script');
+  script.src = 'https://afrus-frontend-assets.s3.eu-central-1.amazonaws.com/afrus.js';
+  document.head.appendChild(script);
+</script>
+
+<style>
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .text-4xl {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .text-2xl {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .text-lg {
+      font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .p-6 {
+      padding: 1rem; /* Smaller padding for mobile */
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .gap-8 {
+      gap: 2rem; /* Reduce gap on mobile */
+    }
+  }
+</style>
