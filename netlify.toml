@@ -41,6 +41,3 @@
      shuffleStringArray = true
    # Splits literal strings into chunks with length of splitStringsChunkLength option value
      splitStrings = true
-
-     [[plugins]]
-package = "@21yunbox/netlify-plugin-21yunbox-deploy-to-china-cdn"
